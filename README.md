@@ -1,2 +1,2 @@
-# ordenarAlfabeticamente
-Ordena alfabeticamente un objeto segun el campo requerido.
+# Programitas
+Cosas varias de utilidad
