@@ -164,7 +164,38 @@
 	    	"nombre": "Unidad central de proceso", 
 	    	"descripcion": "(Central Processing Unit, CPU). A esta unidad pertenece el procesador, que es, sin duda alguna, el componente más importante de la computadora; de él se dice que es el cerebro de la misma. ",
 	    	"color": "#CC0000"
+	    },
+	    {
+	    	"nombre": "Programador", 
+	    	"descripcion": "la persona que desarrolla un programa.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Usuario", 
+	    	"descripcion": "hace uso de los programas.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "", 
+	    	"descripcion": "",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "", 
+	    	"descripcion": "",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "", 
+	    	"descripcion": "",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "", 
+	    	"descripcion": "",
+	    	"color": "#38761d"
 	    }
+
 	]
 }
 
