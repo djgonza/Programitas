@@ -176,6 +176,98 @@
 	    	"color": "#38761d"
 	    },
 	    {
+	    	"nombre": "Software de Aplicación", 
+	    	"descripcion": "llamados aplicaciones de usuario o, simplemente, aplicaciones.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Sistema Operativo", 
+	    	"descripcion": "Sirve de intermediario (interfaz) entre los programas y la computadora.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Software del sistema", 
+	    	"descripcion": "Linux, MS-DOS, UNIX, Windows XP",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Software de red", 
+	    	"descripcion": "En ella se incluyen programas relacionados con la interconexión de equipos informáticos, es decir, programas necesarios para que las redes de computadoras funcionen. ",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Red informática", 
+	    	"descripcion": "Está compuesta por un conjunto de equipos informáticos conectados
+entre sí mediante distintos elementos de conexión, tales como: cables, tarjetas de
+red, dispositivos inalámbricos, etc. ",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Red cliente", 
+	    	"descripcion": "Pueden emplear los usuarios de una red para solicitar información (datos) y servicios (impresión de documentos, transferencia de ficheros, correo electrónico,...) a los equipos servidores",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Red servidor", 
+	    	"descripcion": "Sirve datos a los clientes que se los pidan.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Administrador de red", 
+	    	"descripcion": "Es la persona encargada de su administración",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Red de área local", 
+	    	"descripcion": "Los equipos están conectados a poca distancia. A ella pueden pertenecer, por ejemplo, todos los equipos de una oficina, un aula o un supermercado. En todos los casos, la configuración de los equipos puede ser cliente/servidor o igual a igual.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Red igual a igual", 
+	    	"descripcion": "todos los equipos pueden ser cliente y servidoral mismo tiempo, es decir, no existen equipos clientes exclusivos ni servidores dedicados.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Red de área extensa", 
+	    	"descripcion": "La red que conecte a los equipos de una empresa que tiene oficinas en varias ciudades o países es una WAN.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Internet", 
+	    	"descripcion": "Es una red que interconecta a millones de computadoras repartidas por todo el mundo. Para ello, se utilizan distintos medios físicos, tales como: líneas telefónicas, fibra óptica, enlaces vía satélite, ondas terrestres, etc.",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "Nodos", 
+	    	"descripcion": "Todas las computadoras intermedias entre el servidor y el cliente",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "TCP", 
+	    	"descripcion": "Transmission Control Protocol",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "IP", 
+	    	"descripcion": "Internet Protocol",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "ARPA", 
+	    	"descripcion": "Advanced Research Projects Agency",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "", 
+	    	"descripcion": "",
+	    	"color": "#38761d"
+	    },
+	    {
+	    	"nombre": "", 
+	    	"descripcion": "",
+	    	"color": "#38761d"
+	    },
+	    {
 	    	"nombre": "", 
 	    	"descripcion": "",
 	    	"color": "#38761d"
