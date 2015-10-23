@@ -197,9 +197,7 @@
 	    },
 	    {
 	    	"nombre": "Red informática", 
-	    	"descripcion": "Está compuesta por un conjunto de equipos informáticos conectados
-entre sí mediante distintos elementos de conexión, tales como: cables, tarjetas de
-red, dispositivos inalámbricos, etc. ",
+	    	"descripcion": "Está compuesta por un conjunto de equipos informáticos conectados entre sí mediante distintos elementos de conexión, tales como: cables, tarjetas de red, dispositivos inalámbricos, etc. ",
 	    	"color": "#38761d"
 	    },
 	    {
@@ -258,36 +256,65 @@ red, dispositivos inalámbricos, etc. ",
 	    	"color": "#38761d"
 	    },
 	    {
-	    	"nombre": "", 
-	    	"descripcion": "",
+	    	"nombre": "TCP/IP", 
+	    	"descripcion": "Permite a todas las computadoras del mundo conectadas a Internet comunicarse entre sí, con independencia del tipo que sean o del sistema operativo que utilicen.",
 	    	"color": "#38761d"
 	    },
 	    {
-	    	"nombre": "", 
-	    	"descripcion": "",
+	    	"nombre": "World Wide Web, WWW", 
+	    	"descripcion": "fue desarrollada en 1989 por el informático británico Timothy BernersLee en la Organización Europea para la Investigación Nuclear (European Organization for Nuclear Research, CERN). La WWW permite a los usuarios de Internet buscar y acceder a una gran cantidad de información multimedia (textos, imágenes, sonidos, animaciones y vídeos). ",
 	    	"color": "#38761d"
 	    },
 	    {
-	    	"nombre": "", 
-	    	"descripcion": "",
+	    	"nombre": "Intranet", 
+	    	"descripcion": "Es una red interna que ofrece a todos los usuarios de dicha red los mismos servicios que Internet (correo electrónico, transferencia de ficheros, páginas web,...). Una intranet puede ser pública o privada, dependiendo de si se puede acceder a ella desde Internet o, únicamente, desde los equipos de la propia red.",
 	    	"color": "#38761d"
 	    },
 	    {
-	    	"nombre": "", 
-	    	"descripcion": "",
-	    	"color": "#38761d"
+	    	"nombre": "Centros de datos", 
+	    	"descripcion": "Se denomina centro de procesamiento de datos a aquella ubicación donde se concentran los recursos necesarios para el procesamiento de la información de una organización.",
+	    	"color": "#1976d2"
 	    },
 	    {
-	    	"nombre": "", 
-	    	"descripcion": "",
-	    	"color": "#38761d"
+	    	"nombre": "Patron Cliente/Servidor", 
+	    	"descripcion": "a arquitectura cliente-servidor es un modelo de aplicación distribuida en el que las tareas se reparten entre los proveedores de recursos o servicios, llamados servidores, y los demandantes, llamados clientes.",
+	    	"color": "#1976d2"
 	    },
 	    {
-	    	"nombre": "", 
-	    	"descripcion": "",
-	    	"color": "#38761d"
+	    	"nombre": "Servidores Proxy", 
+	    	"descripcion": "Un proxy, o servidor proxy, en una red informática, es un servidor (un programa o sistema informático), que hace de intermediario en las peticiones de recursos que realiza un cliente (A) a otro servidor (C).",
+	    	"color": "#1976d2"
+	    },
+	    {
+	    	"nombre": "Direccion IP", 
+	    	"descripcion": "Una dirección IP es una etiqueta numérica que identifica, de manera lógica y jerárquica, a un interfaz de un dispositivo dentro de una red que utilice el protocolo IP, que corresponde al nivel de red del Modelo OSI.",
+	    	"color": "#1976d2"
+	    },
+	    {
+	    	"nombre": "Servidores Raiz", 
+	    	"descripcion": "Un servidor raíz (root server en inglés) es un servidor de nombres para la zona raíz del Sistema de nombres de dominio de Internet (DNS).1 Los servidores de nombres raíz son una parte fundamental de la Internet, ya que son el primer paso en la traducción de (resolver) los nombres de host legibles por humanos en direcciones IP que se utilizan en la comunicación entre los hosts de Internet.",
+	    	"color": "#1976d2"
+	    },
+	    {
+	    	"nombre": "Cadenas de servidores", 
+	    	"descripcion": "Este término generalmente se utiliza para hacer referencia a una interacción con una base de datos. Es la parte de una URL que contiene los datos que deben pasar a aplicaciones web como los programas CGI.",
+	    	"color": "#1976d2"
+	    },
+	    {
+	    	"nombre": "BackUp", 
+	    	"descripcion": "Una copia de seguridad, copia de respaldo o backup (su nombre en inglés) en tecnologías de la información e informática es una copia de los datos originales que se realiza con el fin de disponer de un medio para recuperarlos en caso de su pérdida. Las copias de seguridad son útiles ante distintos eventos y usos: recuperar los sistemas informáticos y los datos de una catástrofe informática, natural o ataque; restaurar una pequeña cantidad de archivos que pueden haberse eliminado accidentalmente, corrompido, infectado por un virus informático u otras causas; guardar información histórica de forma más económica que los discos duros y además permitiendo el traslado a ubicaciones distintas de la de los datos originales; etc..",
+	    	"color": "#1976d2"
+	    },
+	    {
+	    	"nombre": "Failsafe", 
+	    	"descripcion": "El modo a prueba de fallos, también conocido como modo seguro, es un modo de acceso usado por ciertos sistemas operativos como Microsoft Windows, Mac OS X, Linux, y otros dispositivos electrónicos.",
+	    	"color": "#1976d2"
+	    },
+	    {
+	    	"nombre": "Informática en la nube", 
+	    	"descripcion": "Conocida también como servicios en la nube, informática en la nube, nube de cómputo o nube de conceptos (del inglés cloud computing), es un paradigma que permite ofrecer servicios de computación a través de una red, que usualmente es Internet.",
+	    	"color": "#1976d2"
 	    }
-
 	]
 }
 
