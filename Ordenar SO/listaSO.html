@@ -1,0 +1,1819 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+        Array.prototype.orderByString=function(property,sortOrder,ignoreCase){
+            if (sortOrder!=-1 && sortOrder!=1) sortOrder=1;
+            this.sort(function(a,b){
+            var stringA=a[property],stringB=b[property];
+            // Si un valor es null o undefined, se convierte a cadena vacía.
+            if (stringA==null) stringA = '';
+            if (stringB==null) stringB = '';
+            // Si ignoreCase es true, se convierten ambas variables a minúsculas.
+            if (ignoreCase==true){stringA=stringA.toLowerCase();stringB=stringB.toLowerCase()}
+            var res = 0;
+            if (stringA<stringB) res = -1;
+            else if (stringA>stringB) res = 1;
+            return res*sortOrder;
+            })
+        }
+
+        datosTabla = {"datos": []};
+
+
+        $(".elemento ").each(function (indice, elemento) {
+            var nombre = $($($(elemento).children()[1]).children()[0]).text();
+            var descripcion = $($($(elemento).children()[1]).children()[1]).text();
+            datosTabla.datos[indice] = {"nombre": nombre, "descripcion": descripcion};
+
+        });
+
+        datosTabla.datos.orderByString('nombre');
+        console.log(datosTabla);
+
+
+        //console.log(data.length);
+
+        //for(i=0; i<=data.length; i++){
+           // console.log(data[i]);
+        //}
+
+        /*function recorrerArray(element, index, array){
+            console.log(element);
+        };
+
+        data.forEach(recorrerArray(element, index, array));*/
+
+        /*/recogemos los datos del JSON
+        $.getJSON( "datos.json", function(data) {
+
+            //ordenamos los datos alfabeticamente
+            var registros = data.datos;
+            registros.orderByString('nombre')
+
+            //creamos el html
+            var items = [];
+            $.each(registros,function(key, val) {
+                items.push(
+
+                    "<div>"+
+                        "<span style='color: "+val.color+"'><b>"+
+                            val.nombre+
+                            ": "+
+                        "</b></span>"+
+                        val.descripcion+
+                    "<p /><br /></div>"
+                );
+            });
+
+            //mostramos el html
+            $( "<div/>", {
+            "class": "lista",
+            html: items.join("")
+            }).appendTo( "body");
+        });*/
+    
+    });
+    
+    </script>
+
+
+
+<div class="listas_elementos" style="display: none;">
+
+                    <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372592_640px.jpg?1395518814" title="1. Windows XP" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372592_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372592_249px.jpg?1395518814" width="249" alt="Windows XP" style="display: inline;">
+                            
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>1.</strong> Windows XP</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento"><nczupj>Windows XP (cuyo nombre clave inicial fue el Whistler) es una versión de Microsoft Windows, línea de sistemas operativos desarrollado por Microsoft. Lanzado al <a href="#" rel="nofollow" onclick="Pal857428038hw.hwPlajq(&quot;mercado&quot;);return false;" style="cursor: hand; color:#006600; text-decoration:underline; border-bottom:dotted 1px;" onmouseover="Pal857428038hw.hwShow(event, this, &quot;mercado&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;solid&quot;;" onmouseout="if(!true_view)Pal857428038hw.hideMaybe(this, &quot;mercado&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;dotted 1px&quot;;" oncontextmenu="return false;">mercado</a> el 25 de octubre de 2001, en diciembre de 2013, tenía una cuota de mercado de 500 millones de ordenadores. Las letras "XP... </nczupj><a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows XP (cuyo nombre clave inicial fue el Whistler) es una versión de Microsoft Windows, línea de sistemas operativos desarrollado por Microsoft. Lanzado al mercado el 25 de octubre de 2001, en diciembre de 2013, tenía una cuota de mercado de 500 millones de ordenadores. Las letras "XP" provienen de la palabra eXPeriencia (eXPerience en inglés).<br>
+Dispone de versiones para varios entornos informáticos, incluyendo para los PC domésticos o de negocios, además de equipos portátiles, "netbooks", "tabletas" y "centros multimedia". Sucesor de Windows 2000 junto con Windows ME, y antecesor de Windows Vista, es el primer sistema operativo de Microsoft orientado al consumidor que se construye con un núcleo y arquitectura de Windows NT disponible en versiones para plataformas de 32 y 64 bits.<br>
+A diferencia de versiones anteriores de Windows, al estar basado en la arquitectura de Windows NT proveniente del código de Windows 2000, presenta mejoras en la estabilidad y el rendimiento. Tiene una interfaz gráfica de usuario (GUI) perceptiblemente reajustada (denominada Luna), la cual incluye características rediseñadas, algunas de las cuales se asemejan ligeramente a otras GUI de otros sistemas operativos, cambio promovido para un uso más fácil que en las versiones anteriores. Se introdujeron nuevas capacidades de gestión de software para evitar el "DLL Hell" (infierno de las DLLs) que plagó las viejas versiones. Es también la primera versión de Windows que utiliza la activación del producto para reducir la piratería del software.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>4559 puntos</strong></em></p>
+                                                    <p id="vote-result-4372592" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372592" id="vote-4372592-01" value="1"><label for="vote-4372592-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372592" id="vote-4372592-02" value="2"><label for="vote-4372592-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372592" id="vote-4372592-03" value="3"><label for="vote-4372592-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372592" id="vote-4372592-04" value="4"><label for="vote-4372592-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372592" id="vote-4372592-05" value="5"><label for="vote-4372592-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372593_640px.jpg?1395518814" title="2. Windows 7" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372593_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372593_249px.jpg?1395518814" width="249" alt="Windows 7" style="display: inline;">
+                            
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>2.</strong> Windows 7</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento"><nczupj>Windows 7 es una versión de Microsoft Windows, línea de sistemas operativos producida por Microsoft Corporation. Esta versión está diseñada para <a href="#" rel="nofollow" onclick="Pal857428038hw.hwPlajq(&quot;uso&quot;);return false;" style="cursor: hand; color:#006600; text-decoration:underline; border-bottom:dotted 1px;" onmouseover="Pal857428038hw.hwShow(event, this, &quot;uso&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;solid&quot;;" onmouseout="if(!true_view)Pal857428038hw.hideMaybe(this, &quot;uso&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;dotted 1px&quot;;" oncontextmenu="return false;">uso</a> en PC, incluyendo equipos de escritorio en hogares y oficinas, equipos portátiles, tablet PC, netbooks y equipos media center.2 El desarrollo de... </nczupj><a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows 7 es una versión de Microsoft Windows, línea de sistemas operativos producida por Microsoft Corporation. Esta versión está diseñada para uso en PC, incluyendo equipos de escritorio en hogares y oficinas, equipos portátiles, tablet PC, netbooks y equipos media center.2 El desarrollo de Windows 7 se completó el 22 de julio de 2009, siendo entonces confirmada su fecha de venta oficial para el 22 de octubre de 2009 junto a su equivalente para servidores Windows Server 2008 R2.3<br>
+A diferencia del gran salto arquitectónico y de características que sufrió su antecesor Windows Vista con respecto a Windows XP, Windows 7 fue concebido como una actualización incremental y focalizada de Vista y su núcleo NT 6.0, lo que permitió mantener cierto grado de compatibilidad con aplicaciones y hardware en los que éste ya era compatible.4 Sin embargo, entre las metas de desarrollo para Windows 7 se dio importancia a mejorar su interfaz para volverla más accesible al usuario e incluir nuevas características que permitieran hacer tareas de una manera más fácil y rápida, al mismo tiempo que se realizarían esfuerzos para lograr un sistema más ligero, estable y rápido.5<br>
+Diversas presentaciones ofrecidas por la compañía en 2008 se enfocaron en demostrar capacidades multitáctiles, una interfaz rediseñada junto con una nueva barra de tareas y un sistema de redes domésticas simplificado y fácil de usar denominado «Grupo en el hogar»,6 7 además de importantes mejoras en el rendimiento general del sistema operativo.7 8 9</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>4194 puntos</strong></em></p>
+                                                    <p id="vote-result-4372593" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372593" id="vote-4372593-01" value="1"><label for="vote-4372593-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372593" id="vote-4372593-02" value="2"><label for="vote-4372593-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372593" id="vote-4372593-03" value="3"><label for="vote-4372593-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372593" id="vote-4372593-04" value="4"><label for="vote-4372593-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372593" id="vote-4372593-05" value="5"><label for="vote-4372593-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372590_640px.jpg?1395518814" title="3. Android" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372590_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372590_249px.jpg?1395518814" width="249" alt="Android" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372590_249px.jpg?1395518814" alt="Android" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>3.</strong> Android</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento"><nczupj>Android es un sistema operativo basado en el kernel de Linux diseñado principalmente para dispositivos móviles con pantalla táctil, como teléfonos inteligentes o tabletas, inicialmente desarrollado por Android, Inc. Google respaldó económicamente y más tarde compró esta <a href="#" rel="nofollow" onclick="Pal857428038hw.hwPlajq(&quot;empresa&quot;);return false;" style="cursor: hand; color:#006600; text-decoration:underline; border-bottom:dotted 1px;" onmouseover="Pal857428038hw.hwShow(event, this, &quot;empresa&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;solid&quot;;" onmouseout="if(!true_view)Pal857428038hw.hideMaybe(this, &quot;empresa&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;dotted 1px&quot;;" oncontextmenu="return false;">empresa</a> en 2005.9 Android... </nczupj><a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Android es un sistema operativo basado en el kernel de Linux diseñado principalmente para dispositivos móviles con pantalla táctil, como teléfonos inteligentes o tabletas, inicialmente desarrollado por Android, Inc. Google respaldó económicamente y más tarde compró esta empresa en 2005.9 Android fue presentado en 2007 junto la fundación del Open Handset Alliance: un consorcio de compañías de hardware, software y telecomunicaciones para avanzar en los estándares abiertos de los dispositivos móviles.10 El primer móvil con el sistema operativo Android fue el HTC Dream y se vendió en octubre de 2008.11</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>3285 puntos</strong></em></p>
+                                                    <p id="vote-result-4372590" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372590" id="vote-4372590-01" value="1"><label for="vote-4372590-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372590" id="vote-4372590-02" value="2"><label for="vote-4372590-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372590" id="vote-4372590-03" value="3"><label for="vote-4372590-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372590" id="vote-4372590-04" value="4"><label for="vote-4372590-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372590" id="vote-4372590-05" value="5"><label for="vote-4372590-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373006_640px.jpg?1395518814" title="4. Ubuntu" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373006_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373006_249px.jpg?1395518814" width="249" alt="Ubuntu" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373006_249px.jpg?1395518814" alt="Ubuntu" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>4.</strong> Ubuntu</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Ubuntu es un sistema operativo basado en Linux y que se distribuye como software libre, el cual incluye su propio entorno de escritorio denominado Unity. Su nombre proviene de la ética homónima, en la que se habla de la existencia de uno mismo como cooperación de los demás.
+Está orientado al... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Ubuntu es un sistema operativo basado en Linux y que se distribuye como software libre, el cual incluye su propio entorno de escritorio denominado Unity. Su nombre proviene de la ética homónima, en la que se habla de la existencia de uno mismo como cooperación de los demás.<br>
+Está orientado al usuario novel y promedio, con un fuerte enfoque en la facilidad de uso y en mejorar la experiencia de usuario. Está compuesto de múltiple software normalmente distribuido bajo una licencia libre o de código abierto. Estadísticas web sugieren que la cuota de mercado de Ubuntu dentro de las distribuciones Linux es, aproximadamente, del 49%,3 4 y con una tendencia a aumentar como servidor web.5 Y un importante incremento activo de 20 millones de usuarios para fines del 2011.6<br>
+Su patrocinador, Canonical, es una compañía británica propiedad del empresario sudafricano Mark Shuttleworth. Ofrece el sistema de manera gratuita, y se financia por medio de servicios vinculados al sistema operativo7 8 y vendiendo soporte técnico.9 Además, al mantenerlo libre y gratuito, la empresa es capaz de aprovechar los desarrolladores de la comunidad para mejorar los componentes de su sistema operativo. Extraoficialmente, la comunidad de desarrolladores proporciona soporte para otras derivaciones de Ubuntu, con otros entornos gráficos, como Kubuntu, Xubuntu, Edubuntu, Ubuntu Studio, Mythbuntu, Ubuntu Gnome y Lubuntu.10<br>
+Canonical, además de mantener Ubuntu, también provee de una versión orientada a servidores, Ubuntu Server, una versión para empresas, Ubuntu Business Desktop Remix, una para televisores, Ubuntu TV, y una para usar el escritorio desde teléfonos inteligentes, Ubuntu for Android.11 12 13<br>
+Cada seis meses se publica una nueva versión de Ubuntu. Esta recibe soporte por parte de Canonical durante nueve meses por medio de actualizaciones de seguridad, parches para bugs críticos y actualizaciones menores de programas. Las versiones LTS (Long Term Support), que se liberan cada dos años,14 reciben soporte durante cinco años en los sistemas de escritorio y de servidor.15</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>2654 puntos</strong></em></p>
+                                                    <p id="vote-result-4373006" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373006" id="vote-4373006-01" value="1"><label for="vote-4373006-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373006" id="vote-4373006-02" value="2"><label for="vote-4373006-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373006" id="vote-4373006-03" value="3"><label for="vote-4373006-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373006" id="vote-4373006-04" value="4"><label for="vote-4373006-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373006" id="vote-4373006-05" value="5"><label for="vote-4373006-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372600_640px.jpg?1395518814" title="5. Windows 98" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372600_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372600_249px.jpg?1395518814" width="249" alt="Windows 98" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372600_249px.jpg?1395518814" alt="Windows 98" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>5.</strong> Windows 98</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento"><nczupj>Windows 98 (cuyo nombre en clave es Memphis) es un sistema operativo gráfico <a href="#" rel="nofollow" onclick="Pal857428038hw.hwPlajq(&quot;publicado&quot;);return false;" style="cursor: hand; color:#006600; text-decoration:underline; border-bottom:dotted 1px;" onmouseover="Pal857428038hw.hwShow(event, this, &quot;publicado&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;solid&quot;;" onmouseout="if(!true_view)Pal857428038hw.hideMaybe(this, &quot;publicado&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;dotted 1px&quot;;" oncontextmenu="return false;">publicado</a> el 25 de junio de 1998 por Microsoft y el sucesor de Windows 95. Como su predecesor, es un producto monolítico híbrido de 16 y 32 bits.
+La primera edición de Windows 98 fue designada por los números de versi... </nczupj><a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows 98 (cuyo nombre en clave es Memphis) es un sistema operativo gráfico publicado el 25 de junio de 1998 por Microsoft y el sucesor de Windows 95. Como su predecesor, es un producto monolítico híbrido de 16 y 32 bits.<br>
+La primera edición de Windows 98 fue designada por los números de versión internos 4.10.1998, o 4.10.1998A si había sido actualizado con el CD de seguridad de Microsoft. Windows 98 Segunda Edición está designado por los números de versión internos 4.10.2222A ó 4.10.2222B si había sido actualizado con el CD de seguridad de Microsoft. El sucesor de Windows 98 es Windows 2000.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>2330 puntos</strong></em></p>
+                                                    <p id="vote-result-4372600" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372600" id="vote-4372600-01" value="1"><label for="vote-4372600-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372600" id="vote-4372600-02" value="2"><label for="vote-4372600-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372600" id="vote-4372600-03" value="3"><label for="vote-4372600-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372600" id="vote-4372600-04" value="4"><label for="vote-4372600-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372600" id="vote-4372600-05" value="5"><label for="vote-4372600-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+                            <div class="OUTBRAIN" data-src="http://listas.20minutos.es/lista/sistemas-operativos-del-pasado-y-el-presente-378525/" data-widget-id-us="AR_1" data-widget-id-mx="AR_2" data-ob-template="20minutoses"></div>
+            
+                            <script type="text/javascript">
+	var ULTIMEDIA_mdtk = "03375733";
+	var ULTIMEDIA_async = false;
+	var ULTIMEDIA_target = "ultimedia_wrapper";
+	var ULTIMEDIA_zone = "11";
+	
+	
+</script>
+<script type="text/javascript" src="http://www.ultimedia.com/js/common/smart.js"></script><div id="ultimedia_wrapper" style="width: 100%; max-width: 656px; clear: both;"><div id="um_ultimedia_wrapper_wrap_widget_default"><div id="um_ultimedia_wrapper_title_widget" style="background-image: url(http://www.ultimedia.com/img/widget/crop_title.png); background-position: 98% 65%; background-repeat: no-repeat;"><div id="um_ultimedia_wrapper_marquee_wrap" style="height: 21px; width: 626px;"><span id="um_ultimedia_wrapper_marquee" style="position: absolute; top: 0px; left: 0px;">Últimos vídeos de Tecnología : Presentación oficial del avión chino que competirá con Boeing y Airbus</span></div></div><div class="um_ultimedia_wrapper_videoWrapper" style="float: left; max-width: 500px; height: 312px;"><div id="um_ultimedia_wrapper_iframeUltimedia_wrapper" style="position: relative; display: inline-block; width: 100%; height: auto;"><a id="beforeswfanchor0" href="#um_ultimedia_wrapper_iframeUltimedia" tabindex="-1" title="Flash start" style="border:0;clip:rect(0 0 0 0);display:block;height:1px;margin:-1px;outline:none;overflow:hidden;padding:0;position:absolute;width:1px;"></a><object type="application/x-shockwave-flash" data="http://www.ultimedia.com/jw/jwplayer.flash.swf?v=2.0.2.7305" width="100%" height="100%" bgcolor="#000000" id="um_ultimedia_wrapper_iframeUltimedia" name="um_ultimedia_wrapper_iframeUltimedia" class="jwswf swfPrev-beforeswfanchor0 swfNext-afterswfanchor0" tabindex="0" style="position: absolute;"><param name="allowfullscreen" value="true"><param name="allowscriptaccess" value="always"><param name="seamlesstabbing" value="true"><param name="wmode" value="opaque"></object><a id="afterswfanchor0" href="#um_ultimedia_wrapper_iframeUltimedia" tabindex="-1" title="Flash end" style="border:0;clip:rect(0 0 0 0);display:block;height:1px;margin:-1px;outline:none;overflow:hidden;padding:0;position:absolute;width:1px;"></a><div id="um_ultimedia_wrapper_iframeUltimedia_aspect" style="display: block; margin-top: 62.4%;"></div><div id="um_ultimedia_wrapper_iframeUltimedia_vast" style="position: absolute; top: 0px; z-index: 10; visibility: hidden;"></div><div id="um_ultimedia_wrapper_iframeUltimedia_jwpsrv" style="position: absolute; top: 0px; z-index: 11;"><div class="afs_ads" style="width: 1px; height: 1px; position: absolute; background: transparent;">&nbsp;</div></div></div><div style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: 14px; font-family: verdana, arial; left: 0px; position: absolute; z-index: 1; width: 100%; display: none; top: 0px;"><div style="height: 40px; padding: 10px 15px; position: absolute; left: 0px; top: 0px; z-index: 3; width: 95%;"><div style="width: 100%; margin: 0px; white-space: nowrap; display: block; overflow: hidden; text-overflow: ellipsis; text-align: left; font-family: sans-serif; height: 26px; line-height: 26px; font-weight: bold; font-size: 18px; color: rgb(255, 255, 255);">Presentación oficial del avión chino que competirá con Boeing y Airbus</div><div style="text-align: left; color: rgb(255, 255, 255);">01:00</div></div><div style="width: 100%; height: 60px; opacity: 0.5; background: rgb(0, 0, 0);"></div></div><div id="um_ultimedia_wrapper_iframeUltimedia_adLayer" style="display: none; z-index: 1000; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; text-align: center;"><div id="um_ultimedia_wrapper_iframeUltimedia_loading" style="z-index: 1010; position: absolute; top: 42%; left: 45%; width: 74px; height: 52px; padding-top: 22px; box-sizing: content-box; background: url(http://www.ultimedia.com/img/deliver/dock.png) 50% 50% no-repeat transparent;"><img src="http://www.ultimedia.com/img/deliver/loader3.svg"></div><img src="http://medialb.ultimedia.com/multi/35x5f/5vrp5x-HC.jpg" id="um_ultimedia_wrapper_iframeUltimedia_preview" style="z-index: 1005;"></div><a id="um_ultimedia_wrapper_iframeUltimedia_soundButton" style="position: absolute; display: none; right: 10px; top: 40px; width: 22px; height: 14px; cursor: pointer; background-image: url(http://www.ultimedia.com/img/deliver/mute.png); background-color: transparent; background-position: 0px 0px; background-repeat: no-repeat;"></a><div id="um_ultimedia_wrapper_iframeUltimedia_bandeau" style="color: rgb(255, 255, 255); font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial; width: 100%; height: 25px; position: absolute; bottom: 0px; left: 0px; z-index: 10; display: none; background-color: rgb(0, 0, 0);"><div id="um_ultimedia_wrapper_iframeUltimedia_innerBandeau" style="line-height: 25px; padding-left: 5px;"></div></div></div><div id="um_ultimedia_wrapper_list_ultimedia" class="um_ultimedia_wrapper_jcarousel" data-jcarousel="true" style="float: left; max-width: 154px; height: 312px;"><ul id="um_ultimedia_wrapper_carousel_ultimedia" style="height: 20000em; width: 100%; left: 0px; top: 0px;"><li class="um_ultimedia_wrapper_videoThumb um_ultimedia_wrapper_active um_ultimedia_wrapper_start" id="um_ultimedia_wrapper_videoThumb_5vrp5x_21" style="margin: 0px 0px 3px; height: auto; width: 156px;"><div title="Presentación oficial del avión chino que competirá con Boeing y Airbus" class="um_ultimedia_wrapper_link_videoThumb"><div class="um_ultimedia_wrapper_layer" id="um_ultimedia_wrapper_layer_active">video en curso</div><div class="um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd" id="um_ultimedia_wrapper_bg_layer_active"><!-- --></div><div class="um_ultimedia_wrapper_layer_titre um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd"><div class="um_ultimedia_wrapper_wrap_clamp"><div class="um_ultimedia_wrapper_clamp">Presentación oficial del avión chino que competirá con Boeing y Airbus</div>	</div></div><div class="um_ultimedia_wrapper_layer_date um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd">03/11/15</div><img src="http://medialb.ultimedia.com/multi/35x5f/5vrp5x-X.jpg" alt="Presentación oficial del avión chino que competirá con Boeing y Airbus" class="um_ultimedia_wrapper_vignette"></div></li><li class="um_ultimedia_wrapper_videoThumb " id="um_ultimedia_wrapper_videoThumb_5v8fuf_35" style="margin: 0px 0px 3px; height: auto; width: 156px;"><div title="Imprimir en 3D vasos sanguíneos ya es posible" class="um_ultimedia_wrapper_link_videoThumb"><div class="um_ultimedia_wrapper_layer_picto um_ultimedia_wrapper_layer"><!-- --></div><div class="um_ultimedia_wrapper_layer_titre um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd"><div class="um_ultimedia_wrapper_wrap_clamp"><div class="um_ultimedia_wrapper_clamp">Imprimir en 3D vasos sanguíneos ya es posible</div>	</div></div><div class="um_ultimedia_wrapper_layer_date um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd">02/11/15</div><img src="http://medialb.ultimedia.com/multi/35x5m/5v8fuf-X.jpg" alt="Imprimir en 3D vasos sanguíneos ya es posible" class="um_ultimedia_wrapper_vignette"></div></li><li class="um_ultimedia_wrapper_videoThumb " id="um_ultimedia_wrapper_videoThumb_5vlqvz_25" style="margin: 0px 0px 3px; height: auto; width: 156px;"><div title="ESA ofrece primera imagen del asteroide Gran Calabaza" class="um_ultimedia_wrapper_link_videoThumb"><div class="um_ultimedia_wrapper_layer_picto um_ultimedia_wrapper_layer"><!-- --></div><div class="um_ultimedia_wrapper_layer_titre um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd"><div class="um_ultimedia_wrapper_wrap_clamp"><div class="um_ultimedia_wrapper_clamp">ESA ofrece primera imagen del asteroide Gran Calabaza</div>	</div></div><div class="um_ultimedia_wrapper_layer_date um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd">29/10/15</div><img src="http://medialb.ultimedia.com/multi/35x50/5vlqvz-X.jpg" alt="ESA ofrece primera imagen del asteroide Gran Calabaza" class="um_ultimedia_wrapper_vignette"></div></li><li class="um_ultimedia_wrapper_videoThumb " id="um_ultimedia_wrapper_videoThumb_5vlu35_21" style="margin: 0px 0px 3px; height: auto; width: 156px;"><div title="Uber traslada el cariño de gatos en adopción" class="um_ultimedia_wrapper_link_videoThumb"><div class="um_ultimedia_wrapper_layer_picto um_ultimedia_wrapper_layer"><!-- --></div><div class="um_ultimedia_wrapper_layer_titre um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd"><div class="um_ultimedia_wrapper_wrap_clamp"><div class="um_ultimedia_wrapper_clamp">Uber traslada el cariño de gatos en adopción</div>	</div></div><div class="um_ultimedia_wrapper_layer_date um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd">30/10/15</div><img src="http://medialb.ultimedia.com/multi/35x53/5vlu35-X.jpg" alt="Uber traslada el cariño de gatos en adopción" class="um_ultimedia_wrapper_vignette"></div></li><li class="um_ultimedia_wrapper_videoThumb  um_ultimedia_wrapper_last_item" id="um_ultimedia_wrapper_videoThumb_5vsr05_21" style="margin: 0px 0px 3px; height: auto; padding: 0px 0px 27px; width: 156px;"><div title="Los coches de hidrógeno, estrellas del Salón del Automóvil de Tokio" class="um_ultimedia_wrapper_link_videoThumb"><div class="um_ultimedia_wrapper_layer_picto um_ultimedia_wrapper_layer"><!-- --></div><div class="um_ultimedia_wrapper_layer_titre um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd"><div class="um_ultimedia_wrapper_wrap_clamp"><div class="um_ultimedia_wrapper_clamp">Los coches de hidrógeno, estrellas del Salón ...</div>	</div></div><div class="um_ultimedia_wrapper_layer_date um_ultimedia_wrapper_layer um_ultimedia_wrapper_displayRwd">28/10/15</div><img src="http://medialb.ultimedia.com/multi/35xsv/5vsr05-X.jpg" alt="Los coches de hidrógeno, estrellas del Salón del Automóvil de Tokio" class="um_ultimedia_wrapper_vignette"></div></li></ul><a class="um_ultimedia_wrapper_btn um_ultimedia_wrapper_prev" data-jcarouselcontrol="true" style="height: 25px; left: auto; width: 100%; top: 0px; background-position: 50% -252px;"><!-- --></a><a class="um_ultimedia_wrapper_btn um_ultimedia_wrapper_next um_ultimedia_wrapper_active" data-jcarouselcontrol="true" style="height: 25px; left: auto; width: 100%; bottom: 0px; top: auto; background-position: 50% -282px;"><!-- --></a></div><div class="um_ultimedia_wrapper_clear"><!-- --></div></div></div><script type="text/javascript" src="http://www.ultimedia.com/api/widget/smart?j=new&amp;t=1446635167624&amp;otherplayer=0&amp;exclude=&amp;meta_description=Sistemas%20operativos%20del%20pasado%20y%20el%20presente&amp;meta_keywords=listas%2C%20listados%2C%20top%2C%20tops%2C%20usuarios%2C%2020minutos&amp;meta_ogtitle=Sistemas%20operativos%20del%20pasado%20y%20el%20presente&amp;meta_ogdescription=Sistemas%20operativos%20del%20pasado%20y%20el%20presente&amp;meta_title=Ranking%20de%20Sistemas%20operativos%20del%20pasado%20y%20el%20presente%20-%20Listas%20en%2020minutos.es&amp;meta_h1=Sistemas%20operativos%20del%20pasado%20y%20el%20presente&amp;meta_h2=%3Ca%20href%3D%22%2Fusuario%2Fthe-axe-man-62779%2F%22%20title%3D%22Perfil%20de%20The%20Axe%20Man%22%3EPerfil%20de%20The%20Axe%20Man%3C%2Fa%3E&amp;meta_datetime=2015-11-04T11%3A57%3A38%2B01%3A00&amp;url=http%3A%2F%2Flistas.20minutos.es%2Flista%2Fsistemas-operativos-del-pasado-y-el-presente-378525%2F&amp;mdtk=03375733&amp;zone=11&amp;layout=&amp;target=ultimedia_wrapper"></script>
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372598_640px.jpg?1395518814" title="6. MS DOS" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372598_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372598_249px.jpg?1395518814" width="249" alt="MS DOS" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372598_249px.jpg?1395518814" alt="MS DOS" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>6.</strong> MS DOS</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento"><nczupj>MS-DOS (siglas de MicroSoft Disk Operating System, Sistema operativo de disco de Microsoft) es un sistema operativo para computadoras basados en x86. Fue el miembro más popular de la <a href="#" rel="nofollow" onclick="Pal857428038hw.hwPlajq(&quot;familia&quot;);return false;" style="cursor: hand; color:#006600; text-decoration:underline; border-bottom:dotted 1px;" onmouseover="Pal857428038hw.hwShow(event, this, &quot;familia&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;solid&quot;;" onmouseout="if(!true_view)Pal857428038hw.hideMaybe(this, &quot;familia&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;dotted 1px&quot;;" oncontextmenu="return false;">familia</a> de sistemas operativos DOS de Microsoft, y el principal sistema para computadoras personales compatible... </nczupj><a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">MS-DOS (siglas de MicroSoft Disk Operating System, Sistema operativo de disco de Microsoft) es un sistema operativo para computadoras basados en x86. Fue el miembro más popular de la familia de sistemas operativos DOS de Microsoft, y el principal sistema para computadoras personales compatible con IBM PC en la década de 1980 y mediados de 1990, hasta que fue sustituida gradualmente por sistemas operativos que ofrecían una interfaz gráfica de usuario, en particular por varias generaciones de Microsoft Windows.<br>
+MS-DOS nació en 1981 al encargársele a Microsoft producir un sistema operativo para la gama de computadores personales IBM PC de IBM. En este momento, Microsoft compró los derechos de QDOS, también conocido como 86-DOS,1 de Seattle Computer Products que fue elaborado por Tim Paterson, y comenzó a trabajar en las modificaciones para poder cumplir con los requerimientos de IBM. La primera edición, MS-DOS 1.0, fue presentada en 1982.2 La versión incluida en los PC's de IBM fue conocida como PC DOS. Aunque MS-DOS y PC-DOS fueron desarrollados por Microsoft e IBM en paralelo, los dos productos se separaron con el tiempo.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>2035 puntos</strong></em></p>
+                                                    <p id="vote-result-4372598" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372598" id="vote-4372598-01" value="1"><label for="vote-4372598-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372598" id="vote-4372598-02" value="2"><label for="vote-4372598-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372598" id="vote-4372598-03" value="3"><label for="vote-4372598-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372598" id="vote-4372598-04" value="4"><label for="vote-4372598-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372598" id="vote-4372598-05" value="5"><label for="vote-4372598-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372591_640px.jpg?1395518814" title="7. Windows 95" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372591_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372591_249px.jpg?1395518814" width="249" alt="Windows 95" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372591_249px.jpg?1395518814" alt="Windows 95" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>7.</strong> Windows 95</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento"><nczupj>Windows 95 es un sistema operativo con interfaz gráfica de <a href="#" rel="nofollow" onclick="Pal857428038hw.hwPlajq(&quot;usuario&quot;);return false;" style="cursor: hand; color:#006600; text-decoration:underline; border-bottom:dotted 1px;" onmouseover="Pal857428038hw.hwShow(event, this, &quot;usuario&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;solid&quot;;" onmouseout="if(!true_view)Pal857428038hw.hideMaybe(this, &quot;usuario&quot;); this.style.cursor=&quot;hand&quot;; this.style.textDecoration=&quot;underline&quot;; this.style.borderBottom=&quot;dotted 1px&quot;;" oncontextmenu="return false;">usuario</a> híbrido de entre 16 y 32 bits. Fue lanzado al mercado el 24 de agosto de 1995 por la empresa de software Microsoft con notable éxito de ventas. Durante su desarrollo se conoció como Windows 4 o por el nombre clave Chicago... </nczupj><a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows 95 es un sistema operativo con interfaz gráfica de usuario híbrido de entre 16 y 32 bits. Fue lanzado al mercado el 24 de agosto de 1995 por la empresa de software Microsoft con notable éxito de ventas. Durante su desarrollo se conoció como Windows 4 o por el nombre clave Chicago.<br>
+Sustituyó a MS-DOS como sistema operativo y a Windows 3.x como entorno gráfico. Se encuadra dentro de la familia de sistemas operativos de Microsoft denominada Windows 9x. En la versión OSR2 (OEM Service Release 2)1 incorporó el sistema de archivos FAT32, además del primer atisbo del entonces novedoso USB.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>1786 puntos</strong></em></p>
+                                                    <p id="vote-result-4372591" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372591" id="vote-4372591-01" value="1"><label for="vote-4372591-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372591" id="vote-4372591-02" value="2"><label for="vote-4372591-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372591" id="vote-4372591-03" value="3"><label for="vote-4372591-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372591" id="vote-4372591-04" value="4"><label for="vote-4372591-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372591" id="vote-4372591-05" value="5"><label for="vote-4372591-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372595_640px.jpg?1395518814" title="8. OS X" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372595_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372595_249px.jpg?1395518814" width="249" alt="OS X" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372595_249px.jpg?1395518814" alt="OS X" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>8.</strong> OS X</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">OS X, antes llamado Mac OS X, es un sistema operativo basado en Unix, desarrollado, comercializado y vendido por Apple Inc. Ha sido incluido en su gama de computadoras Macintosh desde el año de 2002.7 8 OS X es el sucesor del Mac OS 9 (la versión final del Mac OS Classic), el sistema operativo... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">OS X, antes llamado Mac OS X, es un sistema operativo basado en Unix, desarrollado, comercializado y vendido por Apple Inc. Ha sido incluido en su gama de computadoras Macintosh desde el año de 2002.7 8 OS X es el sucesor del Mac OS 9 (la versión final del Mac OS Classic), el sistema operativo de Apple desde 1984.9 Está basado en BSD, y se construyó sobre las tecnologías desarrolladas en NeXT entre la segunda mitad de los 80's y finales de 1996, cuando Apple adquirió esta compañía.10 11 Desde la versión Mac OS X 10.5 Leopard para procesadores Intel, el sistema tiene la certificación UNIX 03.12</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>1760 puntos</strong></em></p>
+                                                    <p id="vote-result-4372595" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372595" id="vote-4372595-01" value="1"><label for="vote-4372595-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372595" id="vote-4372595-02" value="2"><label for="vote-4372595-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372595" id="vote-4372595-03" value="3"><label for="vote-4372595-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372595" id="vote-4372595-04" value="4"><label for="vote-4372595-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372595" id="vote-4372595-05" value="5"><label for="vote-4372595-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372594_640px.jpg?1395518814" title="9. Windows 8.1" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372594_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372594_249px.jpg?1395518814" width="249" alt="Windows 8.1" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372594_249px.jpg?1395518814" alt="Windows 8.1" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>9.</strong> Windows 8.1</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Windows 8 es la versión actual del sistema operativo de Microsoft Windows, producido por Microsoft para su uso en computadoras personales, incluidas computadoras de escritorio en casa y de negocios, computadoras portátiles, netbooks, tabletas, servidores y centros multimedia. Añade soporte para... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows 8 es la versión actual del sistema operativo de Microsoft Windows, producido por Microsoft para su uso en computadoras personales, incluidas computadoras de escritorio en casa y de negocios, computadoras portátiles, netbooks, tabletas, servidores y centros multimedia. Añade soporte para microprocesadores ARM, además de los microprocesadores tradicionales x86 de Intel y AMD. Su interfaz de usuario ha sido modificada para hacerla más adecuada para su uso con pantallas táctiles, además de los tradicionales ratón y teclado. Microsoft también anunció que Aero Glass no estará presente en la versión final de Windows 8.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>1617 puntos</strong></em></p>
+                                                    <p id="vote-result-4372594" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372594" id="vote-4372594-01" value="1"><label for="vote-4372594-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372594" id="vote-4372594-02" value="2"><label for="vote-4372594-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372594" id="vote-4372594-03" value="3"><label for="vote-4372594-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372594" id="vote-4372594-04" value="4"><label for="vote-4372594-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372594" id="vote-4372594-05" value="5"><label for="vote-4372594-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372870_640px.jpg?1395518814" title="10. iOS" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372870_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372870_249px.jpg?1395518814" width="249" alt="iOS" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372870_249px.jpg?1395518814" alt="iOS" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>10.</strong> iOS</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">iOS es un sistema operativo móvil de la empresa Apple Inc. Originalmente desarrollado para el iPhone (iPhone OS), siendo después usado en dispositivos como el iPod Touch, iPad y el Apple TV. Apple, Inc. no permite la instalación de iOS en hardware de terceros. Tenía el 26% de cuota de mercado de... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">iOS es un sistema operativo móvil de la empresa Apple Inc. Originalmente desarrollado para el iPhone (iPhone OS), siendo después usado en dispositivos como el iPod Touch, iPad y el Apple TV. Apple, Inc. no permite la instalación de iOS en hardware de terceros. Tenía el 26% de cuota de mercado de sistemas operativos móviles vendidos en el último cuatrimestre de 2010, detrás de Google Android y Nokia Symbian.1 En enero de 2014, el 78% de los dispositivos iOS (iPad, iPod y iPhone) poseen iOS 7.2<br>
+La interfaz de usuario de iOS está basada en el concepto de manipulación directa, usando gestos multitáctiles. Los elementos de control consisten de deslizadores, interruptores y botones. La respuesta a las órdenes del usuario es inmediata y provee de una interfaz fluida. La interacción con el sistema operativo incluye gestos como deslices, toques, pellizcos, los cuales tienen definiciones diferentes dependiendo del contexto de la interfaz. Se utilizan acelerometros internos para hacer que algunas aplicaciones respondan a sacudir el dispositivo (por ejemplo, para el comando deshacer) o rotarlo en tres dimensiones (un resultado común es cambiar de modo vertical al apaisado u horizontal).<br>
+iOS se deriva de Mac OS X, que a su vez está basado en Darwin BSD, y por lo tanto es un sistema operativo Tipo Unix.<br>
+iOS cuenta con cuatro capas de abstracción: la capa del núcleo del sistema operativo, la capa de "Servicios Principales", la capa de "Medios" y la capa de "Cocoa Touch". La versión actual del sistema operativo (iOS 7.1) ocupa más o menos 1.1 GB, variando por modelo</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>1540 puntos</strong></em></p>
+                                                    <p id="vote-result-4372870" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372870" id="vote-4372870-01" value="1"><label for="vote-4372870-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372870" id="vote-4372870-02" value="2"><label for="vote-4372870-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372870" id="vote-4372870-03" value="3"><label for="vote-4372870-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372870" id="vote-4372870-04" value="4"><label for="vote-4372870-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372870" id="vote-4372870-05" value="5"><label for="vote-4372870-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+                                        
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372601_640px.jpg?1395518814" title="11. Windows 2000" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372601_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372601_249px.jpg?1395518814" width="249" alt="Windows 2000" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372601_249px.jpg?1395518814" alt="Windows 2000" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>11.</strong> Windows 2000</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Windows 2000 es un sistema operativo de Microsoft que se puso en circulación el 17 de febrero de 2000 con un cambio de nomenclatura para su sistema NT. Así, Windows NT 5.0 pasó a llamarse Windows 2000. Fue sucedido por Windows XP para equipos de escritorio en octubre de 2001 y Windows Server... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows 2000 es un sistema operativo de Microsoft que se puso en circulación el 17 de febrero de 2000 con un cambio de nomenclatura para su sistema NT. Así, Windows NT 5.0 pasó a llamarse Windows 2000. Fue sucedido por Windows XP para equipos de escritorio en octubre de 2001 y Windows Server 2003 para servidores en abril de 2003. Su creación representó un esfuerzo por la unificación de hasta ese momento dos sistemas operativos distintos, Windows 9x y Windows NT. Dos años antes de su salida se sabía que Windows NT 5.0 estaba en proyecto, pero Windows 2000 llegó a resolver de una vez por todas las dudas.<br>
+Windows 2000 era un sistema operativo para empresas y para ejecutar servidores de red o los servidores de archivo. Dentro de las tareas que puede realizar se incluyen: crear cuentas de usuarios, asignar recursos y privilegios, actuar como servidor web, FTP, servidor de impresión, DNS o resolución de nombres de dominio, servidor DHCP, entre otros servicios básicos. Otra de las funciones que tiene, es como en todo sistema Windows la opción de utilizarlo como una estación de trabajo más de la red. Dicho sistema operativo es muy eficiente y su principal punto fuerte es el Active Directory (Directorio Activo), herramienta desde la cual se puede administrar toda la infraestructura de una organización.<br>
+En este sistema operativo, se introdujeron algunas modificaciones respecto a sus predecesores como el sistema de archivos NTFS 5, con la capacidad de cifrar y comprimir archivos. Introdujo también las mejoras en el sistema de componentes COM, introduciendo COM+ que unificó en un solo paquete de los servicios anexados y la tecnología COM y MTS de Windows NT4, con nuevas ventajas en el ámbito empresarial.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>1176 puntos</strong></em></p>
+                                                    <p id="vote-result-4372601" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372601" id="vote-4372601-01" value="1"><label for="vote-4372601-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372601" id="vote-4372601-02" value="2"><label for="vote-4372601-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372601" id="vote-4372601-03" value="3"><label for="vote-4372601-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372601" id="vote-4372601-04" value="4"><label for="vote-4372601-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372601" id="vote-4372601-05" value="5"><label for="vote-4372601-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373008_640px.jpg?1395518814" title="12. Mint" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373008_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373008_249px.jpg?1395518814" width="249" alt="Mint" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373008_249px.jpg?1395518814" alt="Mint" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>12.</strong> Mint</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Linux Mint es una distribución del sistema operativo GNU/Linux, basado en la distribución Ubuntu (que a su vez está basada en Debian). A partir del 7 de septiembre de 2010 también está disponible una edición basada en Debian.
+Linux Mint mantiene un inventario actualizado, un sistema operativo... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Linux Mint es una distribución del sistema operativo GNU/Linux, basado en la distribución Ubuntu (que a su vez está basada en Debian). A partir del 7 de septiembre de 2010 también está disponible una edición basada en Debian.<br>
+Linux Mint mantiene un inventario actualizado, un sistema operativo estable para el usuario medio, con un fuerte énfasis en la usabilidad y facilidad de instalación. Es reconocido por ser fácil de usar, especialmente para los usuarios sin experiencia previa en Linux.<br>
+Linux Mint se compone de muchos paquetes de software, los cuales se distribuyen la mayor parte bajo una licencia de software libre. La principal licencia utilizada es la GNU General Public License (GNU GPL) que, junto con la GNU Lesser General Public License (GNU LGPL), declara explícitamente que los usuarios tienen libertad para ejecutar, copiar, distribuir, estudiar, cambiar, desarrollar y mejorar el software. Linux Mint es financiada por su comunidad de usuarios. Los usuarios individuales y empresas que utilizan el sistema operativo pueden actuar como donantes,1 patrocinadores2 y socios3 de la distribución. El apoyo financiero de la comunidad y la publicidad en el sitio web ayuda a mantener Linux Mint libre y abierta.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>1041 puntos</strong></em></p>
+                                                    <p id="vote-result-4373008" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373008" id="vote-4373008-01" value="1"><label for="vote-4373008-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373008" id="vote-4373008-02" value="2"><label for="vote-4373008-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373008" id="vote-4373008-03" value="3"><label for="vote-4373008-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373008" id="vote-4373008-04" value="4"><label for="vote-4373008-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373008" id="vote-4373008-05" value="5"><label for="vote-4373008-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372597_640px.jpg?1395518814" title="13. Symbian" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372597_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372597_249px.jpg?1395518814" width="249" alt="Symbian" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372597_249px.jpg?1395518814" alt="Symbian" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>13.</strong> Symbian</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Symbian es un sistema operativo propiedad de Nokia, y que en el pasado fue producto de la alianza de varias empresas de telefonía móvil, entre las que se encontraban Nokia, Sony Mobile Communications, Psion, Samsung, Siemens, Arima, Benq, Fujitsu, Lenovo, LG, Motorola, Mitsubishi Electric... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Symbian es un sistema operativo propiedad de Nokia, y que en el pasado fue producto de la alianza de varias empresas de telefonía móvil, entre las que se encontraban Nokia, Sony Mobile Communications, Psion, Samsung, Siemens, Arima, Benq, Fujitsu, Lenovo, LG, Motorola, Mitsubishi Electric, Panasonic, Sharp, etc. Sus orígenes provenían de su antepasado EPOC32, utilizado en PDA's y Handhelds de PSION.<br>
+El objetivo de Symbian es crear un sistema operativo para terminales móviles que pudiera competir con el de Palm o el Windows Phone de Microsoft y ahora Android de Google Inc. , iOS de Apple Inc. y BlackBerry OS de Blackberry.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>1038 puntos</strong></em></p>
+                                                    <p id="vote-result-4372597" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372597" id="vote-4372597-01" value="1"><label for="vote-4372597-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372597" id="vote-4372597-02" value="2"><label for="vote-4372597-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372597" id="vote-4372597-03" value="3"><label for="vote-4372597-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372597" id="vote-4372597-04" value="4"><label for="vote-4372597-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372597" id="vote-4372597-05" value="5"><label for="vote-4372597-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372867_640px.jpg?1395518814" title="14. Windows Phone" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372867_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372867_249px.jpg?1395518814" width="249" alt="Windows Phone" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372867_249px.jpg?1395518814" alt="Windows Phone" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>14.</strong> Windows Phone</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Windows Phone es un sistema operativo móvil desarrollado por Microsoft como sucesor de Windows Mobile. A diferencia de su predecesor está enfocado en el mercado de consumo en lugar de en el mercado empresarial. Con Windows Phone Microsoft ofrece una nueva interfaz de usuario que integra varios... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows Phone es un sistema operativo móvil desarrollado por Microsoft como sucesor de Windows Mobile. A diferencia de su predecesor está enfocado en el mercado de consumo en lugar de en el mercado empresarial. Con Windows Phone Microsoft ofrece una nueva interfaz de usuario que integra varios de sus servicios propios como SkyDrive, Skype y Xbox Live en el sistema operativo. Compite directamente contra Android de Google e iOS de Apple.<br>
+El principal problema de Windows Phone es la carencia de aplicaciones.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>968 puntos</strong></em></p>
+                                                    <p id="vote-result-4372867" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372867" id="vote-4372867-01" value="1"><label for="vote-4372867-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372867" id="vote-4372867-02" value="2"><label for="vote-4372867-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372867" id="vote-4372867-03" value="3"><label for="vote-4372867-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372867" id="vote-4372867-04" value="4"><label for="vote-4372867-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372867" id="vote-4372867-05" value="5"><label for="vote-4372867-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372869_640px.jpg?1395518814" title="15. Firefox OS" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372869_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372869_249px.jpg?1395518814" width="249" alt="Firefox OS" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372869_249px.jpg?1395518814" alt="Firefox OS" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>15.</strong> Firefox OS</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Firefox OS (nombre clave: Boot to Gecko o B2G)5 es un sistema operativo móvil, basado en HTML5 con núcleo Linux, de código abierto, a diferencia de Android, para varias plataformas. Es desarrollado por Mozilla Corporation bajo el apoyo de otras empresas6 y una gran comunidad de voluntarios de... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Firefox OS (nombre clave: Boot to Gecko o B2G)5 es un sistema operativo móvil, basado en HTML5 con núcleo Linux, de código abierto, a diferencia de Android, para varias plataformas. Es desarrollado por Mozilla Corporation bajo el apoyo de otras empresas6 y una gran comunidad de voluntarios de todo el mundo. El sistema operativo está diseñado para permitir a las aplicaciones HTML5 comunicarse directamente con el hardware del dispositivo usando JavaScript y Open Web APIs.5<br>
+Inicialmente estuvo enfocado en los dispositivos móviles, smartphones y tabletas, incluidos los de gama baja;7 8 el 2 de julio de 2013, Telefónica comenzó la venta del primer terminal con Firefox OS, el ZTE Open 9 10 que fue rápidamente seguido por el teléfono Peak de Geeksphone.11 También se pudo aplicar a otros dispositivos como Raspberry Pi,12 y en el desarrollo próximo de computadores de bajo consumo13 y televisores.14</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>933 puntos</strong></em></p>
+                                                    <p id="vote-result-4372869" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372869" id="vote-4372869-01" value="1"><label for="vote-4372869-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372869" id="vote-4372869-02" value="2"><label for="vote-4372869-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372869" id="vote-4372869-03" value="3"><label for="vote-4372869-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372869" id="vote-4372869-04" value="4"><label for="vote-4372869-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372869" id="vote-4372869-05" value="5"><label for="vote-4372869-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372868_640px.jpg?1395518814" title="16. Chrome OS" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372868_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372868_249px.jpg?1395518814" width="249" alt="Chrome OS" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372868_249px.jpg?1395518814" alt="Chrome OS" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>16.</strong> Chrome OS</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Google Chrome OS es un proyecto llevado a cabo por la compañía Google para desarrollar un sistema operativo basado en web. A través de su blog oficial, Google anunció el 7 de julio de 2009 Google Chrome OS, un sistema realizado con base en código abierto (Núcleo Linux) y orientado inicialmente... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Google Chrome OS es un proyecto llevado a cabo por la compañía Google para desarrollar un sistema operativo basado en web. A través de su blog oficial, Google anunció el 7 de julio de 2009 Google Chrome OS, un sistema realizado con base en código abierto (Núcleo Linux) y orientado inicialmente para miniportátiles, estando disponible en junio de 2011.3 Funciona sobre microprocesadores con tecnología x86 o ARM.<br>
+Google ha declarado que el código fuente del proyecto Google Chrome OS fue liberado en noviembre de 2009 bajo el proyecto «Chromium OS», para incorporar la colaboración de la comunidad de software libre y ayudar en el desarrollo del proyecto.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>811 puntos</strong></em></p>
+                                                    <p id="vote-result-4372868" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372868" id="vote-4372868-01" value="1"><label for="vote-4372868-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372868" id="vote-4372868-02" value="2"><label for="vote-4372868-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372868" id="vote-4372868-03" value="3"><label for="vote-4372868-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372868" id="vote-4372868-04" value="4"><label for="vote-4372868-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372868" id="vote-4372868-05" value="5"><label for="vote-4372868-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373068_640px.jpg?1395518814" title="17. Opensuse (Sugerido por  jakoito)" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373068_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373068_249px.jpg?1395518814" width="249" alt="Opensuse (Sugerido por  jakoito)" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373068_249px.jpg?1395518814" alt="Opensuse (Sugerido por  jakoito)" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>17.</strong> Opensuse (Sugerido por  jakoito)</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">openSUSE es el nombre de la distribución y proyecto libre auspiciado por SUSE Linux GmbH (una división independiente de The Attachmate Group) y AMD3 para el desarrollo y mantenimiento de un sistema operativo basado en Linux. Después de adquirir SUSE Linux en enero de 2004,4 Novell decidió lanzar... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">openSUSE es el nombre de la distribución y proyecto libre auspiciado por SUSE Linux GmbH (una división independiente de The Attachmate Group) y AMD3 para el desarrollo y mantenimiento de un sistema operativo basado en Linux. Después de adquirir SUSE Linux en enero de 2004,4 Novell decidió lanzar SUSE Linux Professional como un proyecto completamente de código abierto, involucrando a la comunidad en el proceso de desarrollo.5 La versión inicial fue una versión beta de SUSE Linux 10.0, y la última versión estable es openSUSE 13.1</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>788 puntos</strong></em></p>
+                                                    <p id="vote-result-4373068" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373068" id="vote-4373068-01" value="1"><label for="vote-4373068-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373068" id="vote-4373068-02" value="2"><label for="vote-4373068-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373068" id="vote-4373068-03" value="3"><label for="vote-4373068-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373068" id="vote-4373068-04" value="4"><label for="vote-4373068-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373068" id="vote-4373068-05" value="5"><label for="vote-4373068-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372599_640px.jpg?1395518814" title="18. Vista" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372599_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372599_249px.jpg?1395518814" width="249" alt="Vista" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372599_249px.jpg?1395518814" alt="Vista" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>18.</strong> Vista</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Windows Vista es una versión de Microsoft Windows, línea de sistemas operativos desarrollada por Microsoft. Esta versión se enfoca para ser utilizada en equipos de escritorio en hogares y oficinas, equipos portátiles, tabletas y equipos media center.
+El proceso de desarrollo terminó el 8 de... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows Vista es una versión de Microsoft Windows, línea de sistemas operativos desarrollada por Microsoft. Esta versión se enfoca para ser utilizada en equipos de escritorio en hogares y oficinas, equipos portátiles, tabletas y equipos media center.<br>
+El proceso de desarrollo terminó el 8 de noviembre de 2006 y en los siguientes tres meses fue entregado a los fabricantes de hardware y software, clientes de negocios y canales de distribución. El 30 de enero de 2007 fue lanzado mundialmente y fue puesto a disposición para ser comprado y descargado desde el sitio web de Microsoft.<br>
+La aparición de Windows Vista viene más de cinco años después de la introducción de Windows XP, es decir, el tiempo más largo entre dos versiones consecutivas de Microsoft Windows. La campaña de lanzamiento fue incluso más costosa que la de Windows 95, ocurrida el 25 de agosto de 1995, debido a que ésta incluyó además otros productos como Microsoft Office 2007 y Exchange Server 2007.[cita requerida]</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>747 puntos</strong></em></p>
+                                                    <p id="vote-result-4372599" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372599" id="vote-4372599-01" value="1"><label for="vote-4372599-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372599" id="vote-4372599-02" value="2"><label for="vote-4372599-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372599" id="vote-4372599-03" value="3"><label for="vote-4372599-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372599" id="vote-4372599-04" value="4"><label for="vote-4372599-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372599" id="vote-4372599-05" value="5"><label for="vote-4372599-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372605_640px.jpg?1395518814" title="19. Solaris" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372605_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372605_249px.jpg?1395518814" width="249" alt="Solaris" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372605_249px.jpg?1395518814" alt="Solaris" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>19.</strong> Solaris</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Solaris es un sistema operativo de tipo Unix desarrollado desde 1992 inicialmente por Sun Microsystems y actualmente por Oracle Corporation como sucesor de SunOS. Es un sistema certificado oficialmente como versión de Unix. Funciona en arquitecturas SPARC y x86 para servidores y estaciones de... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Solaris es un sistema operativo de tipo Unix desarrollado desde 1992 inicialmente por Sun Microsystems y actualmente por Oracle Corporation como sucesor de SunOS. Es un sistema certificado oficialmente como versión de Unix. Funciona en arquitecturas SPARC y x86 para servidores y estaciones de trabajo.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>700 puntos</strong></em></p>
+                                                    <p id="vote-result-4372605" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372605" id="vote-4372605-01" value="1"><label for="vote-4372605-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372605" id="vote-4372605-02" value="2"><label for="vote-4372605-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372605" id="vote-4372605-03" value="3"><label for="vote-4372605-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372605" id="vote-4372605-04" value="4"><label for="vote-4372605-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372605" id="vote-4372605-05" value="5"><label for="vote-4372605-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372606_640px.jpg?1395518814" title="20. OpenSolaris" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372606_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372606_249px.jpg?1395518814" width="249" alt="OpenSolaris" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372606_249px.jpg?1395518814" alt="OpenSolaris" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>20.</strong> OpenSolaris</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">OpenSolaris fue un sistema operativo libre publicado en 2005 a partir de la versión privativa de Solaris de Sun Microsystems, ahora parte de Oracle Corporation. OpenSolaris es también el nombre de un proyecto iniciado en 2005 por Sun para construir y desarrollar una comunidad de usuarios... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">OpenSolaris fue un sistema operativo libre publicado en 2005 a partir de la versión privativa de Solaris de Sun Microsystems, ahora parte de Oracle Corporation. OpenSolaris es también el nombre de un proyecto iniciado en 2005 por Sun para construir y desarrollar una comunidad de usuarios alrededor de las tecnologías del sistema operativo del mismo nombre. Después de la adquisición de Sun Microsystems, en agosto de 2010, Oracle decidió interrumpir la publicación y distribución de OpenSolaris, así como su modelo de desarrollo, basado en la disponibilidad de versiones de desarrollo compiladas cada dos semanas y versiones estables cada seis meses. Sin embargo, los términos de su licencia libre no han sido modificados, por lo que el código fuente afectado por ella será publicado cuando Oracle publique nuevas versiones de Solaris.<br>
+A raíz del cierre del repositorio de OpenSolaris por parte de Oracle, un grupo de ex-desarrolladores de OpenSolaris decidió hacer una bifurcación del código y ahora el desarrollo del núcleo del sistema operativo (o lo que hubiera sido OpenSolaris) continúa con un nuevo proyecto de la comunidad llamada illumos. Illumos es básicamente el código fuente de OpenSolaris, pero reemplazando los componentes privativos que quedaban por código libre, y basado en el desarrollo continuo en forma de comunidad.<br>
+La licencia de OpenSolaris (CDDL), de tipo copyleft, no es compatible con la GPL, si bien es reconocida como una licencia libre tanto por la FSF1 como por la OSI.2<br>
+OpenSolaris se deriva del código base del BSD y System V, aunque gran parte de él ha sido modificado desde la versiones de inicios de la década de 1990. Es el único derivado del System V con el código fuente disponible. Durante algún tiempo, se especuló con la posibilidad de que Sun Microsystems licenciara OpenSolaris bajo la GPLv3,3 4 lo que facilitaría la compatibilidad con la gran cantidad de código disponible bajo GPL (especialmente en el ámbito de los sistemas Linux). Sin embargo, hasta el momento no ha habido ningún movimiento al respecto, y la mayor parte del código de OpenSolaris se sigue publicando bajo CDDL.<br>
+Alrededor de 16.400 miembros están registrados en la comunidad de OpenSolaris, parte de una activa comunidad de usuarios que está creciendo globalmente, con docenas de comunidades de tecnologías OpenSolaris desarrollándose, especialmente en su sitio web oficial.5 Hay al menos 38 grupos de usuarios a nivel mundial. Relacionada con todo ello, también está creándose una comunidad alrededor de la arquitectura de hardware libre de SPARC de Sun, llamada OpenSPARC.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>694 puntos</strong></em></p>
+                                                    <p id="vote-result-4372606" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372606" id="vote-4372606-01" value="1"><label for="vote-4372606-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372606" id="vote-4372606-02" value="2"><label for="vote-4372606-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372606" id="vote-4372606-03" value="3"><label for="vote-4372606-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372606" id="vote-4372606-04" value="4"><label for="vote-4372606-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372606" id="vote-4372606-05" value="5"><label for="vote-4372606-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+                            <div style="text-align: center">
+<script type="text/javascript" src="http://a.ligatus.com/?ids=25193&amp;t=js"></script><script type="text/javascript"> function getParamBl(t){ try { var scripts = document.getElementsByTagName("script"); var i = (t=="js" ? 2 : 1); var script = scripts[scripts.length - i]; var myURL=script.src; var index = myURL.indexOf("&bl="); param_bl=""; if (index >= 0){ param_bl = decodeURIComponent(myURL.substr(index + 4)); var urlPattern = new RegExp(regexp); if (!urlPattern.test(param_bl)) param_bl=""; } else { param_bl=top.location.href; } param_bl=encodeURIComponent(param_bl); return param_bl; } catch(err){ return ""; } } function areCookiesEnabled(){ var cookieEnabled=!!(navigator.cookieEnabled); if (typeof navigator.cookieEnabled=="undefined" && !cookieEnabled) { document.cookie="testcookie"; cookieEnabled=(document.cookie.indexOf("testcookie")!=-1); } return (cookieEnabled); } var lig_pv; function countPageView(){ try { if (typeof window.lig_pv === "undefined") { window.lig_pv = 1; } else { window.lig_pv = 0; } } catch(err){} } countPageView(); (function(){ var a=navigator.userAgent.toLowerCase(); var bce=areCookiesEnabled(); var regexp="^http[s]?://[^<>\"']+$"; var bl=getParamBl("js"); var bc=0; if(bc==2 || (bc==1 && a.indexOf("firefox")!=-1)){ document.write('<div id="ligatusframe_25193" style="width:618px;"><scr'+'ipt src="http://d.ligatus.com/?t=js&ids=25193&bce='+bce+'&bl='+bl+'&pv='+window.lig_pv+'"></scr'+'ipt></div>'); } else { document.write('<div id="ligatusframe_25193" style="width:618px;"></div>'); var k={id:"ligatus_25193",name:"ligatus_25193",src:"http://a.ligatus.com/timeout.php?ids=25193#bl="+bl+"&pv="+window.lig_pv+"",width:"618",height:"270",frameBorder:"0",scrolling:"no",allowtransparency:"true"}; var f=document.createElement("iframe"); for(var i in k) f.setAttribute(i,k[i]); document.getElementById("ligatusframe_25193").appendChild(f); } })(); var gPID="25193"; var gDom="http://a.ligatus.com/"; document.write('<scr'+'ipt type="text/javascript" src="http://i.ligatus.com/script/viewtracker-min.js"></scr'+'ipt>'); </script><div id="ligatusframe_25193" style="width:618px;"><iframe id="ligatus_25193" name="ligatus_25193" src="http://a.ligatus.com/timeout.php?ids=25193#bl=http%3A%2F%2Flistas.20minutos.es%2Flista%2Fsistemas-operativos-del-pasado-y-el-presente-378525%2F&amp;pv=1" width="618" height="270" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div><script type="text/javascript" src="http://i.ligatus.com/script/viewtracker-min.js"></script>
+</div>
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373617_640px.jpg?1395518814" title="21. Red Hat" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373617_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373617_249px.jpg?1395518814" width="249" alt="Red Hat" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373617_249px.jpg?1395518814" alt="Red Hat" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>21.</strong> Red Hat</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Red Hat es una distribución Linux creada por Red Hat, que fue una de las más populares en los entornos de usuarios domésticos.
+Es una de las distribuciones Linux de "mediana edad". La versión 1.0 fue presentada el 3 de noviembre de 1994. No es tan antigua como la distribución Slackware, pero... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Red Hat es una distribución Linux creada por Red Hat, que fue una de las más populares en los entornos de usuarios domésticos.<br>
+Es una de las distribuciones Linux de "mediana edad". La versión 1.0 fue presentada el 3 de noviembre de 1994. No es tan antigua como la distribución Slackware, pero ciertamente es más antigua que muchas otras. Fue la primera distribución que usó RPM como su formato de paquete, y en un cierto plazo ha servido como el punto de partida para varias otras distribuciones, tales como la orientada hacia PC de escritorio Mandrake Linux (originalmente Red Hat Linux con KDE), Yellow Dog Linux, la cual se inició desde Red Hat Linux con soporte para PowerPC, y ASPLinux (Red Hat Linux con mejor soporte para caracteres no-Latinos).<br>
+Desde el 2003, Red Hat ha desplazado su enfoque hacia el mercado de los negocios con la distribución Red Hat Enterprise Linux y la versión no comercial Fedora Core. Red Hat Linux 9, la versión final, llegó oficialmente al final de su vida útil el pasado 30 de abril de 2004, aunque el proyecto Fedora Legacy continuó publicando actualizaciones, hasta ser abandonado dicho proyecto a finales de 2006.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>490 puntos</strong></em></p>
+                                                    <p id="vote-result-4373617" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373617" id="vote-4373617-01" value="1"><label for="vote-4373617-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373617" id="vote-4373617-02" value="2"><label for="vote-4373617-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373617" id="vote-4373617-03" value="3"><label for="vote-4373617-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373617" id="vote-4373617-04" value="4"><label for="vote-4373617-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373617" id="vote-4373617-05" value="5"><label for="vote-4373617-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4372866_640px.jpg?1395518814" title="22. BlackBerry OS" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4372866_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4372866_249px.jpg?1395518814" width="249" alt="BlackBerry OS" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4372866_249px.jpg?1395518814" alt="BlackBerry OS" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>22.</strong> BlackBerry OS</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">El BlackBerry OS es un sistema operativo móvil desarrollado por RIM para los dispositivos BlackBerry. El sistema permite multitarea y tiene soporte para diferentes métodos de entrada adoptados por RIM para su uso en computadoras de mano, particularmente la trackwheel, trackball, touchpad y... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">El BlackBerry OS es un sistema operativo móvil desarrollado por RIM para los dispositivos BlackBerry. El sistema permite multitarea y tiene soporte para diferentes métodos de entrada adoptados por RIM para su uso en computadoras de mano, particularmente la trackwheel, trackball, touchpad y pantallas táctiles.<br>
+Su desarrollo se remonta la aparición de los primeros handheld en 1999. Estos dispositivos permiten el acceso a correo electrónico, navegación web y sincronización con programas como Microsoft Exchange o Lotus Notes aparte de poder hacer las funciones usuales de un teléfono móvil.<br>
+RIM estuvo en disputa con NTP Inc. la cual le acusaba de violar cinco patentes que pudo haber dejado sin servicio a sus usuarios en Estados Unidos (sobre tres millones). Las compañías llegaron a un acuerdo extrajudicial que soluciono la disputa en marzo de 2006 previo pago de 612 millones de dólares por parte de RIM. (Noticia)</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>453 puntos</strong></em></p>
+                                                    <p id="vote-result-4372866" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4372866" id="vote-4372866-01" value="1"><label for="vote-4372866-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372866" id="vote-4372866-02" value="2"><label for="vote-4372866-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372866" id="vote-4372866-03" value="3"><label for="vote-4372866-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372866" id="vote-4372866-04" value="4"><label for="vote-4372866-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4372866" id="vote-4372866-05" value="5"><label for="vote-4372866-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373634_640px.jpg?1395518814" title="23. Ubuntu Touch" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373634_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373634_249px.jpg?1395518814" width="249" alt="Ubuntu Touch" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373634_249px.jpg?1395518814" alt="Ubuntu Touch" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>23.</strong> Ubuntu Touch</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Ubuntu Touch es un sistema operativo móvil basado en Linux desarrollado por Canonical. Presentado el 2 de enero de 2013 al público mediante un anuncio en la web de Ubuntu, culmina el proceso de Canonical para desarrollar una interfaz que pueda utilizarse en ordenadores de sobremesa, portátiles... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Ubuntu Touch es un sistema operativo móvil basado en Linux desarrollado por Canonical. Presentado el 2 de enero de 2013 al público mediante un anuncio en la web de Ubuntu, culmina el proceso de Canonical para desarrollar una interfaz que pueda utilizarse en ordenadores de sobremesa, portátiles, netbooks, tablets y teléfonos inteligentes. Esta interfaz, Unity, se compone, a grandes rasgos, de un dock a la izquierda, una especie de panel en la parte superior y un sistema de búsqueda que emplea "lentes".</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>438 puntos</strong></em></p>
+                                                    <p id="vote-result-4373634" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373634" id="vote-4373634-01" value="1"><label for="vote-4373634-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373634" id="vote-4373634-02" value="2"><label for="vote-4373634-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373634" id="vote-4373634-03" value="3"><label for="vote-4373634-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373634" id="vote-4373634-04" value="4"><label for="vote-4373634-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373634" id="vote-4373634-05" value="5"><label for="vote-4373634-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373630_640px.jpg?1395518814" title="24. Fedora" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373630_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373630_249px.jpg?1395518814" width="249" alt="Fedora" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373630_249px.jpg?1395518814" alt="Fedora" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>24.</strong> Fedora</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Fedora (AFI: /fəˈdɔrə/) es una distribución Linux para propósitos generales basada en RPM, que se caracteriza por ser un sistema estable, la cual es mantenida gracias a una comunidad internacional de ingenieros, diseñadores gráficos y usuarios que informan de fallos y prueban nuevas tecnologías... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Fedora (AFI: /fəˈdɔrə/) es una distribución Linux para propósitos generales basada en RPM, que se caracteriza por ser un sistema estable, la cual es mantenida gracias a una comunidad internacional de ingenieros, diseñadores gráficos y usuarios que informan de fallos y prueban nuevas tecnologías. Cuenta con el respaldo y la promoción de Red Hat.<br>
+El proyecto no busca sólo incluir software libre y de código abierto, sino ser el líder en ese ámbito tecnológico.2 3 Algo que hay que destacar es que los desarrolladores de Fedora prefieren hacer cambios en las fuentes originales en lugar de aplicar los parches específicos en su distribución, de esta forma se asegura que las actualizaciones estén disponibles para todas las variantes de Linux.2 Max Spevack en una entrevista afirmó que: "Hablar de Fedora es hablar del rápido progreso del software libre y de código abierto."2 Durante sus primeras 6 versiones se llamó Fedora Core, debido a que solo incluía los paquetes más importantes del sistema operativo.<br>
+La última versión es Fedora 20, puesta a disposición del público el 17 de diciembre de 2013.<br>
+De acuerdo a DistroWatch, Fedora es la cuarta distribución de Linux más popular, por detrás de Linux Mint, Mageia y Ubuntu.4</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>437 puntos</strong></em></p>
+                                                    <p id="vote-result-4373630" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373630" id="vote-4373630-01" value="1"><label for="vote-4373630-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373630" id="vote-4373630-02" value="2"><label for="vote-4373630-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373630" id="vote-4373630-03" value="3"><label for="vote-4373630-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373630" id="vote-4373630-04" value="4"><label for="vote-4373630-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373630" id="vote-4373630-05" value="5"><label for="vote-4373630-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373629_640px.jpg?1395518814" title="25. Mandriva" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373629_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373629_249px.jpg?1395518814" width="249" alt="Mandriva" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373629_249px.jpg?1395518814" alt="Mandriva" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>25.</strong> Mandriva</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Mandrake o Mandriva Linux es una distribución Linux publicada por la compañía francesa Mandriva destinada tanto para principiantes como para usuarios experimentados, que ofrece un sistema operativo orientado a computadoras personales y también para servidores con un enfoque a los usuarios que se... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Mandrake o Mandriva Linux es una distribución Linux publicada por la compañía francesa Mandriva destinada tanto para principiantes como para usuarios experimentados, que ofrece un sistema operativo orientado a computadoras personales y también para servidores con un enfoque a los usuarios que se están introduciendo al mundo de Linux y al software libre además por tener una amplia gama y comunidad de desarrolladores, es adecuada para todo tipo de variedad de necesidades: estaciones de trabajo, creación de clústeres, servidores, firewalls, etc. Es una de las distribuciones de Linux referentes a nivel mundial.<br>
+Mandriva surgió en 2005 como resultado de la fusión de la distribución francesa Mandrake Linux y la brasileña Conectiva Linux. Se distribuye mediante la Licencia pública general de GNU, y es posible descargar su distribución en formato ISO, sus asistentes o sus repositorios.<br>
+La primera edición se basó en Red Hat Linux v5.1 y escogió el entorno gráfico de KDE v1.0. Desde entonces ha seguido su propio camino, separado de Red Hat y ha incluido numerosas herramientas propias o modificadas, fundamentalmente dirigidas a facilitar la configuración del sistema. Mandrake (su anterior nombre) también es conocida por compilar sus paquetes con optimizaciones para procesadores Pentium y superiores, incompatibles con versiones más antiguas tales como 386 y 486 , La versión estable de Mandriva Linux es Hydrogen, y fue publicada el 28 de agosto de 2011.1</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>417 puntos</strong></em></p>
+                                                    <p id="vote-result-4373629" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373629" id="vote-4373629-01" value="1"><label for="vote-4373629-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373629" id="vote-4373629-02" value="2"><label for="vote-4373629-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373629" id="vote-4373629-03" value="3"><label for="vote-4373629-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373629" id="vote-4373629-04" value="4"><label for="vote-4373629-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373629" id="vote-4373629-05" value="5"><label for="vote-4373629-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373608_640px.jpg?1395518814" title="26. Linex (Sugerido por JesseX)" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373608_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373608_249px.jpg?1395518814" width="249" alt="Linex (Sugerido por JesseX)" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373608_249px.jpg?1395518814" alt="Linex (Sugerido por JesseX)" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>26.</strong> Linex (Sugerido por JesseX)</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">gnuLinEx es una distribución Linux libre basada en Debian GNU/Linux y GNOME, contando con OpenOffice.org como suite ofimática, entre otras aplicaciones.
+Estaba impulsada por la Consejería de Economía, Comercio e Innovación de la Comunidad Autónoma de Extremadura (España), siendo pionera y... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">gnuLinEx es una distribución Linux libre basada en Debian GNU/Linux y GNOME, contando con OpenOffice.org como suite ofimática, entre otras aplicaciones.<br>
+Estaba impulsada por la Consejería de Economía, Comercio e Innovación de la Comunidad Autónoma de Extremadura (España), siendo pionera y secundada por otros organismos públicos y privados del resto de España. Durante un periodo considerable de tiempo, la comunidad extremeña ofreció también apoyo a la de Andalucía (la cual se inspiró en GnuLinex para desarrollar Guadalinex) en la implantación de soluciones abiertas en colegios, administración, etc. Posteriormente han surgido proyectos similares en otras Comunidades Autónomas, como la Comunidad Valenciana (Lliurex), Castilla-La Mancha (Molinux), Madrid (Max), Cataluña (Linkat), Galicia (Galinux).1<br>
+El 20 de octubre de 2010 se liberó LinEx 2010.2 El 13 de Octubre de 2011 se liberó Linex 2011.3 El 31 de diciembre de 2011 la Junta de Extremadura, coincidiendo con el cambio de gobierno, transfiere su mantenimiento a una fundación estatal CENATIC (Centro Nacional de Referencia de Aplicación de las Tecnologías de la Información y la Comunicación basadas en Fuentes Abiertas) que se hace cargo de asumir las funciones del CESJE (Centro de Excelencia de Software José de Espronceda), hasta la fecha era la entidad encargada del mantenimiento del software.4 CENATIC apuesta por un desarrollo 100% en comunidad de la distribución regional5 (aprovechando su relevante experiencia a nivel europeo en la creación de comunidades libres público-privadas6 ) para conseguir la mantenibilidad y sostenibilidad técnica de LinEx a futuro; situando de nuevo a Extremadura como región pionera en apoyo del software libre. El 11 de febrero de 2013, fruto de este trabajo, se lanza la versión de LinEx 2013,7 con una base totalmente actualizada a Debian Wheezy.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>397 puntos</strong></em></p>
+                                                    <p id="vote-result-4373608" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373608" id="vote-4373608-01" value="1"><label for="vote-4373608-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373608" id="vote-4373608-02" value="2"><label for="vote-4373608-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373608" id="vote-4373608-03" value="3"><label for="vote-4373608-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373608" id="vote-4373608-04" value="4"><label for="vote-4373608-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373608" id="vote-4373608-05" value="5"><label for="vote-4373608-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373607_640px.jpg?1395518814" title="27. Windows NT (sugerido por JesseX)" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373607_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373607_249px.jpg?1395518814" width="249" alt="Windows NT (sugerido por JesseX)" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373607_249px.jpg?1395518814" alt="Windows NT (sugerido por JesseX)" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>27.</strong> Windows NT (sugerido por JesseX)</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Windows NT es una familia de sistemas operativos producidos por Microsoft, de la cual la primera versión fue publicada en julio de 1993.
+Previamente a la aparición del famoso Windows 95 la empresa Microsoft concibió una nueva línea de sistemas operativos orientados a estaciones de trabajo y... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows NT es una familia de sistemas operativos producidos por Microsoft, de la cual la primera versión fue publicada en julio de 1993.<br>
+Previamente a la aparición del famoso Windows 95 la empresa Microsoft concibió una nueva línea de sistemas operativos orientados a estaciones de trabajo y servidor de red. Un sistema operativo con interfaz gráfica propia, estable y con características similares a los sistemas de red UNIX. Las letras NT provienen de la designación del producto como "Tecnología Nueva" (New Technology).<br>
+Las versiones publicadas de este sistema son: 3.1, 3.5, 3.51 y 4.0. Además, Windows NT se distribuía en dos versiones, dependiendo de la utilidad que se le fuera a dar: Workstation para ser utilizado como estación de trabajo y Server para ser utilizado como servidor.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>338 puntos</strong></em></p>
+                                                    <p id="vote-result-4373607" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373607" id="vote-4373607-01" value="1"><label for="vote-4373607-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373607" id="vote-4373607-02" value="2"><label for="vote-4373607-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373607" id="vote-4373607-03" value="3"><label for="vote-4373607-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373607" id="vote-4373607-04" value="4"><label for="vote-4373607-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373607" id="vote-4373607-05" value="5"><label for="vote-4373607-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4374048_640px.jpg?1395518814" title="28. SteamOS" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4374048_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4374048_249px.jpg?1395518814" width="249" alt="SteamOS" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4374048_249px.jpg?1395518814" alt="SteamOS" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>28.</strong> SteamOS</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">SteamOS es un sistema operativo basado en Linux desarrollado por Valve como el sistema operativo principal de la línea de videoconsolas Steam Machines. También estará disponible para ser instalado en PC.3</div>
+                            </div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>304 puntos</strong></em></p>
+                                                    <p id="vote-result-4374048" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4374048" id="vote-4374048-01" value="1"><label for="vote-4374048-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374048" id="vote-4374048-02" value="2"><label for="vote-4374048-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374048" id="vote-4374048-03" value="3"><label for="vote-4374048-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374048" id="vote-4374048-04" value="4"><label for="vote-4374048-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374048" id="vote-4374048-05" value="5"><label for="vote-4374048-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373662_640px.jpg?1395518814" title="29. Guadalinex (Sugerido por Fito )" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373662_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373662_249px.jpg?1395518814" width="249" alt="Guadalinex (Sugerido por Fito )" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373662_249px.jpg?1395518814" alt="Guadalinex (Sugerido por Fito )" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>29.</strong> Guadalinex (Sugerido por Fito )</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">es una distribución Linux promovida por la Junta de Andalucía para fomentar el uso del software libre en su comunidad autónoma. Está inspirada en GnuLinEx, un proyecto similar de la Junta de Extremadura. Inicialmente estuvo basada en Debian GNU/Linux debido al acuerdo inicial entre la Junta de... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">es una distribución Linux promovida por la Junta de Andalucía para fomentar el uso del software libre en su comunidad autónoma. Está inspirada en GnuLinEx, un proyecto similar de la Junta de Extremadura. Inicialmente estuvo basada en Debian GNU/Linux debido al acuerdo inicial entre la Junta de Andalucía y la de Extremadura, y desde la versión 3.0 se basa en Ubuntu.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>293 puntos</strong></em></p>
+                                                    <p id="vote-result-4373662" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373662" id="vote-4373662-01" value="1"><label for="vote-4373662-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373662" id="vote-4373662-02" value="2"><label for="vote-4373662-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373662" id="vote-4373662-03" value="3"><label for="vote-4373662-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373662" id="vote-4373662-04" value="4"><label for="vote-4373662-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373662" id="vote-4373662-05" value="5"><label for="vote-4373662-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373610_640px.jpg?1395518814" title="30. FreeBSD (Sugerido por JesseX)" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373610_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373610_249px.jpg?1395518814" width="249" alt="FreeBSD (Sugerido por JesseX)" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373610_249px.jpg?1395518814" alt="FreeBSD (Sugerido por JesseX)" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>30.</strong> FreeBSD (Sugerido por JesseX)</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">FreeBSD es un sistema operativo libre para computadoras basado en las CPU de arquitectura Intel, incluyendo procesadores Intel 80386, Intel 80486 (versiones SX y DX), y Pentium. También funciona en procesadores compatibles con Intel como AMD y Cyrix. Actualmente también es posible utilizarlo... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">FreeBSD es un sistema operativo libre para computadoras basado en las CPU de arquitectura Intel, incluyendo procesadores Intel 80386, Intel 80486 (versiones SX y DX), y Pentium. También funciona en procesadores compatibles con Intel como AMD y Cyrix. Actualmente también es posible utilizarlo hasta en once arquitecturas distintas1 como Alpha, AMD64, IA-64, MIPS, PowerPC y UltraSPARC.<br>
+FreeBSD está basado en la versión 4.4 BSD-Lite del Computer Systems Research Group (CSRG) de la University of California, Berkeley siguiendo la tradición que ha distinguido el desarrollo de los sistemas BSD. Además del trabajo realizado por el CSRG, el proyecto FreeBSD ha invertido miles de horas en ajustar el sistema para ofrecer las máximas prestaciones en situaciones de carga real.<br>
+La mascota del sistema operativo es Beastie.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>276 puntos</strong></em></p>
+                                                    <p id="vote-result-4373610" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373610" id="vote-4373610-01" value="1"><label for="vote-4373610-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373610" id="vote-4373610-02" value="2"><label for="vote-4373610-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373610" id="vote-4373610-03" value="3"><label for="vote-4373610-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373610" id="vote-4373610-04" value="4"><label for="vote-4373610-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373610" id="vote-4373610-05" value="5"><label for="vote-4373610-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+                            <script type="text/javascript">
+google_ad_channel = 'Listas_left';
+google_max_num_ads = 3;
+</script>
+<script type="text/javascript" src="http://rs-listas.20minutos.es/js/google-adsense.js?20100905"></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script><script src="http://pagead2.googlesyndication.com/pagead/js/r20151027/r20151006/show_ads_impl.js"></script><script language="JavaScript1.1" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-scm-20minutos_js&amp;output=js&amp;adk=511001906&amp;lmt=1446635168&amp;num_ads=3&amp;channel=Listas_left&amp;ad_type=text&amp;adtest=off&amp;ea=0&amp;oe=utf-8&amp;flash=19.0.0&amp;hl=es&amp;url=http%3A%2F%2Flistas.20minutos.es%2Flista%2Fsistemas-operativos-del-pasado-y-el-presente-378525%2F&amp;adsafe=medium&amp;wgl=1&amp;dt=1446635168019&amp;bdt=708&amp;shv=r20151027&amp;cbv=r20151006&amp;saldr=sb&amp;correlator=6014597173249&amp;frm=20&amp;ga_vid=1204807436.1446635168&amp;ga_sid=1446635168&amp;ga_hid=2070966889&amp;ga_fc=0&amp;pv=2&amp;u_tz=60&amp;u_his=1&amp;u_java=1&amp;u_h=1024&amp;u_w=1280&amp;u_ah=984&amp;u_aw=1280&amp;u_cd=24&amp;u_nplug=5&amp;u_nmime=7&amp;dff=arial&amp;dfs=12&amp;biw=1263&amp;bih=899&amp;eid=575144605%2C317150304&amp;oid=3&amp;ref=https%3A%2F%2Fwww.google.es%2F&amp;rx=0&amp;eae=2&amp;fc=88&amp;pc=1&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C984%2C1280%2C899&amp;vis=1&amp;rsz=%7C%7C%7C&amp;abl=CS&amp;ppjl=u&amp;fu=16&amp;bc=1&amp;ifi=4&amp;dtd=172"></script><div class="publi"><p class="titulo"><strong>Anuncios Google</strong></p><ul class=""><li><a class="notrack" href="http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=Ca65jpOY5VqP0DNHBb-jBhqAMoZr_jgfJxtK56gG_6KK9wAEQASCWi4UIYNWF2AKgAd-k4cIDyAEBqAMBqgSvAU_QmUwYJTuER4WQZHlqLwupp66Tk_FgU5h_C2tG3hbcB7iHb9Fo9VIZy4QgNwvA8odfPJREwV2wfNwY3z60EVakZ2tc21xUGICVBh4xen-EL3CpUAwS-f6SoC7y6Ls1r8sjpNIEIm9rMCr2U1BYHSmo-_9ws9yV5q-y8lTUMnQNoliXLnpU_2tPMKL_e6TbXZoTq3GFwsOVu_Ifaun5HaP0ut4xxCoNEd7xQKTWZXeIBgGAB4nbnj2oB6a-G9gHAdgTAw&amp;num=1&amp;cid=5GgYavkemfvO2Id55r8KQIt1&amp;sig=AOD64_1uq18-U34kQ88ohFEZtiuxGwls0w&amp;client=ca-scm-20minutos_js&amp;adurl=http://www.crtclaims.com/notices_esp.htm" target="_blank" onmouseover="window.status='crtclaims.com/ReclamacionesCRT'; return true;" onmouseout="window.status=''; return true;" title=" crtclaims.com/ReclamacionesCRT"><strong>Reclamaciones CRT</strong></a>¿Compraste Aparatos con CRT? ¡Calificas Para Recibir Dinero!<span><a class="notrack" href="http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=Ca65jpOY5VqP0DNHBb-jBhqAMoZr_jgfJxtK56gG_6KK9wAEQASCWi4UIYNWF2AKgAd-k4cIDyAEBqAMBqgSvAU_QmUwYJTuER4WQZHlqLwupp66Tk_FgU5h_C2tG3hbcB7iHb9Fo9VIZy4QgNwvA8odfPJREwV2wfNwY3z60EVakZ2tc21xUGICVBh4xen-EL3CpUAwS-f6SoC7y6Ls1r8sjpNIEIm9rMCr2U1BYHSmo-_9ws9yV5q-y8lTUMnQNoliXLnpU_2tPMKL_e6TbXZoTq3GFwsOVu_Ifaun5HaP0ut4xxCoNEd7xQKTWZXeIBgGAB4nbnj2oB6a-G9gHAdgTAw&amp;num=1&amp;cid=5GgYavkemfvO2Id55r8KQIt1&amp;sig=AOD64_1uq18-U34kQ88ohFEZtiuxGwls0w&amp;client=ca-scm-20minutos_js&amp;adurl=http://www.crtclaims.com/notices_esp.htm" target="_blank" onmouseover="window.status='crtclaims.com/ReclamacionesCRT'; return true;" onmouseout="window.status=''; return true;" title=" crtclaims.com/ReclamacionesCRT">crtclaims.com/ReclamacionesCRT</a></span></li></ul></div>
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373618_640px.jpg?1395518814" title="31. FreeDOS" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373618_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373618_249px.jpg?1395518814" width="249" alt="FreeDOS" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373618_249px.jpg?1395518814" alt="FreeDOS" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>31.</strong> FreeDOS</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">FreeDOS es un proyecto que aspira a crear un sistema operativo libre que sea totalmente compatible con las aplicaciones y los controladores de MS-DOS.
+El programa ya ha alcanzado un alto grado de madurez y tiene algunas características que no existían en MS-DOS. Algunos comandos de FreeDOS son... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">FreeDOS es un proyecto que aspira a crear un sistema operativo libre que sea totalmente compatible con las aplicaciones y los controladores de MS-DOS.<br>
+El programa ya ha alcanzado un alto grado de madurez y tiene algunas características que no existían en MS-DOS. Algunos comandos de FreeDOS son idénticos o mejores que sus equivalentes de MS-DOS, pero aún faltan algunos del sistema operativo original.<br>
+El intérprete de línea de comandos usado por FreeDOS se llama FreeCOM.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>253 puntos</strong></em></p>
+                                                    <p id="vote-result-4373618" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373618" id="vote-4373618-01" value="1"><label for="vote-4373618-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373618" id="vote-4373618-02" value="2"><label for="vote-4373618-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373618" id="vote-4373618-03" value="3"><label for="vote-4373618-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373618" id="vote-4373618-04" value="4"><label for="vote-4373618-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373618" id="vote-4373618-05" value="5"><label for="vote-4373618-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373633_640px.jpg?1395518814" title="32. BlackBerry 10" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373633_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373633_249px.jpg?1395518814" width="249" alt="BlackBerry 10" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373633_249px.jpg?1395518814" alt="BlackBerry 10" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>32.</strong> BlackBerry 10</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">BlackBerry 10 es el más reciente sistema operativo móvil propietario, desarrollado por BlackBerry para su línea de teléfono inteligentes BlackBerry .5 6 7 Está basado en QNX el cual fue adquirido por RIM en Abril de 2010. La plataforma se llamaba originalmente BBX pero se cambió cuando a RIM se... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">BlackBerry 10 es el más reciente sistema operativo móvil propietario, desarrollado por BlackBerry para su línea de teléfono inteligentes BlackBerry .5 6 7 Está basado en QNX el cual fue adquirido por RIM en Abril de 2010. La plataforma se llamaba originalmente BBX pero se cambió cuando a RIM se le bloqueó el uso de la marca comercial BBX después de la acción legal de BASIS International, quien también lo usa para su software.8 El CEO de RIM, Thorsten Heins, ha dicho que la compañía está considerando licenciar BlackBerry 10 a otros OEMs.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>226 puntos</strong></em></p>
+                                                    <p id="vote-result-4373633" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373633" id="vote-4373633-01" value="1"><label for="vote-4373633-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373633" id="vote-4373633-02" value="2"><label for="vote-4373633-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373633" id="vote-4373633-03" value="3"><label for="vote-4373633-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373633" id="vote-4373633-04" value="4"><label for="vote-4373633-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373633" id="vote-4373633-05" value="5"><label for="vote-4373633-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373632_640px.jpg?1395518814" title="33. Bada" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373632_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373632_249px.jpg?1395518814" width="249" alt="Bada" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373632_249px.jpg?1395518814" alt="Bada" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>33.</strong> Bada</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Bada («océano» o «mar» en coreano) es un sistema operativo para teléfonos móviles desarrollado por Samsung. Está diseñado para cubrir tanto los teléfonos inteligentes de gama alta como los de gama baja. Samsung afirma que bada rápidamente reemplazará la plataforma de teléfonos más básicos... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Bada («océano» o «mar» en coreano) es un sistema operativo para teléfonos móviles desarrollado por Samsung. Está diseñado para cubrir tanto los teléfonos inteligentes de gama alta como los de gama baja. Samsung afirma que bada rápidamente reemplazará la plataforma de teléfonos más básicos, convirtiendo futuros teléfonos en teléfonos inteligentes . Se basa en el sistema operativo propiedad de Samsung SHP OS, utilizado en muchos de sus teléfonos como el Samsung Wave.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>218 puntos</strong></em></p>
+                                                    <p id="vote-result-4373632" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373632" id="vote-4373632-01" value="1"><label for="vote-4373632-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373632" id="vote-4373632-02" value="2"><label for="vote-4373632-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373632" id="vote-4373632-03" value="3"><label for="vote-4373632-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373632" id="vote-4373632-04" value="4"><label for="vote-4373632-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373632" id="vote-4373632-05" value="5"><label for="vote-4373632-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373635_640px.jpg?1395518814" title="34. Mobilinux" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373635_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373635_249px.jpg?1395518814" width="249" alt="Mobilinux" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373635_249px.jpg?1395518814" alt="Mobilinux" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>34.</strong> Mobilinux</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Mobilinux es un sistema operativo para Telefonía móvil basado en Linux y anunciado por MontaVista Software el 25 de abril del 2005.</div>
+                            </div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>218 puntos</strong></em></p>
+                                                    <p id="vote-result-4373635" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373635" id="vote-4373635-01" value="1"><label for="vote-4373635-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373635" id="vote-4373635-02" value="2"><label for="vote-4373635-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373635" id="vote-4373635-03" value="3"><label for="vote-4373635-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373635" id="vote-4373635-04" value="4"><label for="vote-4373635-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373635" id="vote-4373635-05" value="5"><label for="vote-4373635-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4374722_640px.jpg?1395518814" title="35. CP/M (sugerido por pillabichos)" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4374722_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4374722_249px.jpg?1395518814" width="249" alt="CP/M (sugerido por pillabichos)" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4374722_249px.jpg?1395518814" alt="CP/M (sugerido por pillabichos)" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>35.</strong> CP/M (sugerido por pillabichos)</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">CP/M (Control Program for Microcomputers) fue un sistema operativo desarrollado por Gary Kildall para el microprocesador Intel 8080 (los Intel 8085 y Zilog Z80 podían ejecutar directamente el código del 8080, aunque lo normal era que se entregara el código recompilado para el microprocesador de... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">CP/M (Control Program for Microcomputers) fue un sistema operativo desarrollado por Gary Kildall para el microprocesador Intel 8080 (los Intel 8085 y Zilog Z80 podían ejecutar directamente el código del 8080, aunque lo normal era que se entregara el código recompilado para el microprocesador de la máquina). Se trataba del sistema operativo más popular entre las computadoras personales en los años 70. Aunque fue modificado para ejecutarse en un IBM PC, el hecho que IBM eligiera MS-DOS, al fracasar las negociaciones con Digital Research, hizo que el uso de CP/M disminuyera hasta hacerlo desaparecer. CP/M originalmente significaba Control Program/Monitor. Más tarde fue renombrado a Control Program for Microcomputers. En la época, la barra inclinada (/) tenía el significado de "diseñado para". No obstante, Gary Kildall redefinió el significado del acrónimo poco después. CP/M se convirtió en un estándar de industria para los primeros micro-ordenadores.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>202 puntos</strong></em></p>
+                                                    <p id="vote-result-4374722" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4374722" id="vote-4374722-01" value="1"><label for="vote-4374722-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374722" id="vote-4374722-02" value="2"><label for="vote-4374722-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374722" id="vote-4374722-03" value="3"><label for="vote-4374722-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374722" id="vote-4374722-04" value="4"><label for="vote-4374722-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374722" id="vote-4374722-05" value="5"><label for="vote-4374722-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373614_640px.jpg?1395518814" title="36. WebOS" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373614_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373614_249px.jpg?1395518814" width="249" alt="WebOS" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373614_249px.jpg?1395518814" alt="WebOS" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>36.</strong> WebOS</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">LG webOS o open webOS es un sistema operativo multitarea para sistema embebidos basado en Linux. orientado a Smart Tvs, pero originalmente diseñado para equipos mobiles como celulares y tablets.
+Fue presentado al público en el Consumer Electronics Show de Las Vegas el 8 de enero de 2009 junto... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">LG webOS o open webOS es un sistema operativo multitarea para sistema embebidos basado en Linux. orientado a Smart Tvs, pero originalmente diseñado para equipos mobiles como celulares y tablets.<br>
+Fue presentado al público en el Consumer Electronics Show de Las Vegas el 8 de enero de 2009 junto con el Palm Pre.1<br>
+El Palm Pre fue lanzado el 5 de junio de 2009.2<br>
+Un segundo dispositivo utilizando este sistema, el Palm Pixi, fue lanzado el 15 de noviembre de 2009.3<br>
+El 28 de abril de 2010 Hewlett-Packard Company compra Palm, Inc..4<br>
+El 18 de agosto de 2011 HP anunció que descontinuaba todos los dispositivos con webOS.5<br>
+El día 9 de diciembre de 2011, HP 6 anunció que seguirá dando soporte al sistema operativo, aunque desde ahora será software libre.<br>
+El 25 de febrero de 2013, LG compra webOS y planea incorporarlo como la plataforma con la que funcionarán sus televisores inteligentes en el futuro.7<br>
+El 6 de enero de 2014, en el CES 2014, LG presenta una gran variedad de Televisores con plataforma webOS</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>201 puntos</strong></em></p>
+                                                    <p id="vote-result-4373614" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373614" id="vote-4373614-01" value="1"><label for="vote-4373614-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373614" id="vote-4373614-02" value="2"><label for="vote-4373614-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373614" id="vote-4373614-03" value="3"><label for="vote-4373614-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373614" id="vote-4373614-04" value="4"><label for="vote-4373614-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373614" id="vote-4373614-05" value="5"><label for="vote-4373614-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373609_640px.jpg?1395518814" title="37. OS/2 (Sugerido por Frikizoide y JesseX)" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373609_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373609_249px.jpg?1395518814" width="249" alt="OS/2 (Sugerido por Frikizoide y JesseX)" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373609_249px.jpg?1395518814" alt="OS/2 (Sugerido por Frikizoide y JesseX)" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>37.</strong> OS/2 (Sugerido por Frikizoide y JesseX)</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">OS/2 es un sistema operativo de IBM que intentó suceder a DOS como sistema operativo de las computadoras personales. Se desarrolló inicialmente de manera conjunta entre Microsoft e IBM, hasta que la primera decidió seguir su camino con su Windows 3.0 e IBM se ocupó en solitario de OS/2.</div>
+                            </div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>197 puntos</strong></em></p>
+                                                    <p id="vote-result-4373609" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373609" id="vote-4373609-01" value="1"><label for="vote-4373609-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373609" id="vote-4373609-02" value="2"><label for="vote-4373609-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373609" id="vote-4373609-03" value="3"><label for="vote-4373609-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373609" id="vote-4373609-04" value="4"><label for="vote-4373609-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373609" id="vote-4373609-05" value="5"><label for="vote-4373609-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373612_640px.jpg?1395518814" title="38. Palm OS (A.K.A Garnet OS)" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373612_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373612_249px.jpg?1395518814" width="249" alt="Palm OS (A.K.A Garnet OS)" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373612_249px.jpg?1395518814" alt="Palm OS (A.K.A Garnet OS)" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>38.</strong> Palm OS (A.K.A Garnet OS)</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Palm OS (también conocido como Garnet OS) es un sistema operativo móvil desarrollado inicialmente por Palm, Inc. para PDAs en 1996. Palm OS fue diseñado para la facilidad de uso con una interfaz gráfica de usuario basada en pantallas táctiles. El sistema proporciona un conjunto de aplicaciones b... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Palm OS (también conocido como Garnet OS) es un sistema operativo móvil desarrollado inicialmente por Palm, Inc. para PDAs en 1996. Palm OS fue diseñado para la facilidad de uso con una interfaz gráfica de usuario basada en pantallas táctiles. El sistema proporciona un conjunto de aplicaciones básicas para gestión de información personal. Versiones más recientes del SO han extendido su soporte a smartphones. Muchos otros dispositivos con Palm OS han sido fabricados por varias compañías licenciatarias.<br>
+Después de la compra de la marca registrada Palm por parte de ACCESS, la versión más reciente del sistema se renombró a Garnet OS. En 2007, ACCESS introdujo el sucesor de Garnet OS, denominado Access Linux Platform y en 2009, el licenciatario principal de Palm OS, Palm, Inc., cambió de Palm OS a webOS para utilizarlo en sus dispositivos futuros.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>195 puntos</strong></em></p>
+                                                    <p id="vote-result-4373612" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373612" id="vote-4373612-01" value="1"><label for="vote-4373612-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373612" id="vote-4373612-02" value="2"><label for="vote-4373612-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373612" id="vote-4373612-03" value="3"><label for="vote-4373612-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373612" id="vote-4373612-04" value="4"><label for="vote-4373612-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373612" id="vote-4373612-05" value="5"><label for="vote-4373612-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4374723_640px.jpg?1395518814" title="39. The ZX Spectrum +3e Homepage" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4374723_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4374723_249px.jpg?1395518814" width="249" alt="The ZX Spectrum +3e Homepage" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4374723_249px.jpg?1395518814" alt="The ZX Spectrum +3e Homepage" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>39.</strong> The ZX Spectrum +3e Homepage</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">El Sinclair ZX Spectrum fue un ordenador de 8 bits basado en el microprocesador Zilog Z80A, fabricado por la compañía británica Sinclair Research y lanzado al mercado el 23 de abril de 1982.
+En Europa, el Sinclair ZX Spectrum fue uno de los microordenadores domésticos más populares de los años... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">El Sinclair ZX Spectrum fue un ordenador de 8 bits basado en el microprocesador Zilog Z80A, fabricado por la compañía británica Sinclair Research y lanzado al mercado el 23 de abril de 1982.<br>
+En Europa, el Sinclair ZX Spectrum fue uno de los microordenadores domésticos más populares de los años 1980.<br>
+Su optimizado y compacto diseño hizo las delicias de miles de aficionados a la informática y los videojuegos. Aún hoy perduran miles de fans del Spectrum que siguen jugando a sus juegos (con emuladores que cargan sus ficheros volcados de cintas). Además hay un mercado de coleccionismo tanto de cintas de juegos originales como de los propios Spectrum</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>195 puntos</strong></em></p>
+                                                    <p id="vote-result-4374723" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4374723" id="vote-4374723-01" value="1"><label for="vote-4374723-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374723" id="vote-4374723-02" value="2"><label for="vote-4374723-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374723" id="vote-4374723-03" value="3"><label for="vote-4374723-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374723" id="vote-4374723-04" value="4"><label for="vote-4374723-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4374723" id="vote-4374723-05" value="5"><label for="vote-4374723-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373613_640px.jpg?1395518814" title="40. Windows Mobile" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373613_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373613_249px.jpg?1395518814" width="249" alt="Windows Mobile" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373613_249px.jpg?1395518814" alt="Windows Mobile" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>40.</strong> Windows Mobile</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Windows Mobile es un sistema operativo móvil compacto desarrollado por Microsoft, y diseñado para su uso en teléfonos inteligentes (Smartphones) y otros dispositivos móviles.
+Se basa en el núcleo del sistema operativo Windows CE y cuenta con un conjunto de aplicaciones básicas utilizando las... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Windows Mobile es un sistema operativo móvil compacto desarrollado por Microsoft, y diseñado para su uso en teléfonos inteligentes (Smartphones) y otros dispositivos móviles.<br>
+Se basa en el núcleo del sistema operativo Windows CE y cuenta con un conjunto de aplicaciones básicas utilizando las API de Microsoft Windows. Está diseñado para ser similar a las versiones de escritorio de Windows estéticamente. Además, existe una gran oferta de software de terceros disponible para Windows Mobile, la cual se podía adquirir a través de Windows Marketplace for Mobile.<br>
+Originalmente apareció bajo el nombre de Pocket PC, como una ramificación de desarrollo de Windows CE para equipos móviles con capacidades limitadas. En la actualidad, la mayoría de los teléfonos con Windows Mobile vienen con un estilete digital, que se utiliza para introducir comandos pulsando en la pantalla.<br>
+Si bien muchos pensamos que Windows Mobile había sido descontinuado temporalmente en favor del nuevo sistema operativo Windows Phone, la amplia gama de teléfonos industriales ha hecho a Microsoft optar por una tercera linea de sistemas operativos para móviles que ha llamado Windows Embedded Handheld 6.5, que vendría a ser la nueva linea de sistemas operativos basados en Windows Mobile 6.5.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>193 puntos</strong></em></p>
+                                                    <p id="vote-result-4373613" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373613" id="vote-4373613-01" value="1"><label for="vote-4373613-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373613" id="vote-4373613-02" value="2"><label for="vote-4373613-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373613" id="vote-4373613-03" value="3"><label for="vote-4373613-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373613" id="vote-4373613-04" value="4"><label for="vote-4373613-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373613" id="vote-4373613-05" value="5"><label for="vote-4373613-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373631_640px.jpg?1395518814" title="41. Haiku" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373631_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373631_249px.jpg?1395518814" width="249" alt="Haiku" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373631_249px.jpg?1395518814" alt="Haiku" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>41.</strong> Haiku</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Haiku1 es un sistema operativo de código abierto actualmente en desarrollo que se centra específicamente en la informática personal y multimedia. Inspirado por BeOS (Be Operating System), Haiku aspira a convertirse en un sistema rápido, eficiente, fácil de usar y fácil de aprender, sin descuidar... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Haiku1 es un sistema operativo de código abierto actualmente en desarrollo que se centra específicamente en la informática personal y multimedia. Inspirado por BeOS (Be Operating System), Haiku aspira a convertirse en un sistema rápido, eficiente, fácil de usar y fácil de aprender, sin descuidar su potencia para los usuarios de todos los niveles. El proyecto está dirigido por Haiku, Inc., una organización no lucrativa situada en Nueva York.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>193 puntos</strong></em></p>
+                                                    <p id="vote-result-4373631" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373631" id="vote-4373631-01" value="1"><label for="vote-4373631-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373631" id="vote-4373631-02" value="2"><label for="vote-4373631-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373631" id="vote-4373631-03" value="3"><label for="vote-4373631-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373631" id="vote-4373631-04" value="4"><label for="vote-4373631-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373631" id="vote-4373631-05" value="5"><label for="vote-4373631-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+                        <div class="elemento ultimo">
+
+                                    <p class="fotolista">
+                        <a href="http://st-listas.20minutos.es/images/2014-03/378525/4373636_640px.jpg?1395518814" title="42. Qt Extended" class="cbox-item cboxElement">
+                            <img class="lazy" src="http://st-listas.20minutos.es/images/2014-03/378525/4373636_249px.jpg?1395518814" data-original="http://st-listas.20minutos.es/images/2014-03/378525/4373636_249px.jpg?1395518814" width="249" alt="Qt Extended" style="display: inline;">
+                            <noscript style="display: none;">&lt;img src="http://st-listas.20minutos.es/images/2014-03/378525/4373636_249px.jpg?1395518814" alt="Qt Extended" width="249"/&gt;</noscript>
+                        </a>
+                    </p>
+                
+                <div class="info ">
+                    <h3><strong>42.</strong> Qt Extended</h3>
+
+                    
+                    
+                    
+                                                                        <div class="hotwords">
+                                <div class="descripcion_elemento">Qt Extended (conocida como Qtopia hasta el 30 de septiembre de 2008) es una plataforma de aplicaciones para dispositivos móviles que utilizan Linux como sistema operativo, que era desarrollada por la empresa Qt Software. Existen dos categorías de Qt Extended, una libre, bajo licencia GPL (Opie... <a href="#" class="item-description">Ver mas</a></div>
+                            </div>
+                            <div class="descripcion_elemento_larga">Qt Extended (conocida como Qtopia hasta el 30 de septiembre de 2008) es una plataforma de aplicaciones para dispositivos móviles que utilizan Linux como sistema operativo, que era desarrollada por la empresa Qt Software. Existen dos categorías de Qt Extended, una libre, bajo licencia GPL (Opie), y otra propietaria; así como dos ediciones, una para teléfonos móviles y otra para PDAs.<br>
+Qt Software canceló el desarrollo de Qt Extended, pero como era software libre a partir de él la comunidad creó el proyecto Qt Extended Improved , y continuó construyendo.</div>
+                                            
+                    <div class="puntos">
+                        <p class="puntuacion"><em>Ha recibido <strong>192 puntos</strong></em></p>
+                                                    <p id="vote-result-4373636" style="display:none"></p>
+                            <p class="votalo">Vótalo:</p>
+                            <ol class="puntuacion vote" style="">
+                                <li><input type="radio" class="radioInput" name="vote-4373636" id="vote-4373636-01" value="1"><label for="vote-4373636-01">1 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373636" id="vote-4373636-02" value="2"><label for="vote-4373636-02">2 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373636" id="vote-4373636-03" value="3"><label for="vote-4373636-03">3 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373636" id="vote-4373636-04" value="4"><label for="vote-4373636-04">4 pto</label></li>
+                                <li><input type="radio" class="radioInput" name="vote-4373636" id="vote-4373636-05" value="5"><label for="vote-4373636-05">5 pto</label></li>
+                            </ol>
+                                            </div>
+
+                </div>
+            </div>
+
+            
+            
+            
+            
+        <div class="social-reminder">
+            <p>¿Te ha gustado la lista? ¿Te ha parecido interesante?<br>No te olvides de compartirla con tus amig@s</p>
+
+            <div class="social ui-social">
+                <div class="social-facebook"><a href="http://www.facebook.com/share.php?u=http%3A%2F%2Flistas.20minutos.es%2Flista%2Fsistemas-operativos-del-pasado-y-el-presente-378525%2F" title="Compartir en Facebook" target="_blank"><span class="icon-social icon-social-facebook"></span>Facebook</a></div>                <div class="social-twitter"><a href="http://twitter.com/share?url=http%3A%2F%2Flistas.20minutos.es%2Flista%2Fsistemas-operativos-del-pasado-y-el-presente-378525%2F&amp;text=Sistemas+operativos+del+pasado+y+el+presente" title="Compartir en Twitter" target="_blank"><span class="icon-social icon-social-twitter"></span>Twitter</a></div>                 <div class="social-google"><a href="https://plusone.google.com/_/+1/confirm?hl=es&amp;url=http%3A%2F%2Flistas.20minutos.es%2Flista%2Fsistemas-operativos-del-pasado-y-el-presente-378525%2F" title="Compartir en Google+" target="_blank"><span class="icon-social icon-social-google"></span>Google+</a></div>            </div>
+            <div class="estirar"></div>
+        </div>
+
+    </div>
