@@ -5,6 +5,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        table td {
+            border: 1px solid #ccc;
+        }
+    </style>
     <script>
 
     $(document).ready(function(){
@@ -26,8 +31,27 @@
         }
 
         //recogemos los datos del JSON
-        $.getJSON( "lib_dvd_importados.json", function(data) {
-            console.log(data);
+        $.getJSON("lib_dvd_importados.json", function(data) {
+
+            //console.log($("tr").append('<td>dato</td>'));
+
+            //fields
+            for(i=1; i<=data.Fields.length; i++){
+                $("tr").append('<td>'+data.Fields[i]+'</td>');
+            }
+            for(i=1; i<=data.Data.length; i++){
+
+                $("table").append($('<tr/>'));
+
+                for(j=1; j<=data.Data[i].length; j++){
+
+                    //console.log($("tr:last"));
+                   $("tr:last").append('<td>'+data.Data[i][j]+'</td>'); 
+
+                }
+
+            }
+            
         });
     
     });
@@ -35,5 +59,9 @@
     </script>
 </head>
     <body>
+        <table>
+            <tr>
+            </tr>
+        </table>
     </body>
 </html>

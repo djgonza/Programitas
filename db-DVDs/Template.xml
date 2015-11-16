@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bento version="4.0">
+    <library label="DVDs" ID="30886" icon_set="com.filemaker.bento.iconset.tvmoviecollection">
+        <domain recordSortDescriptors="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;data&gt;
+YnBsaXN0MDDUAQIDBAUIbW5UJHRvcFgkb2JqZWN0c1gkdmVyc2lvblkkYXJjaGl2ZXLRBgdUcm9v
+dIABrxAiCQoZISIjKi8wMTY3OD0+P0RFRktMTVJTVFlaW2BhYmdoaVUkbnVsbNILDA0OViRjbGFz
+c1pOUy5vYmplY3RzgCGqDxAREhMUFRYXGIACgAaACYAMgA+AEoAVgBiAG4Ae1BobCxwdHh8gWk5T
+U2VsZWN0b3JVTlNLZXlbTlNBc2NlbmRpbmeABIADgAUJXWdlbmVyb0duRmllbGRfECBsb2NhbGl6
+ZWRDYXNlSW5zZW5zaXRpdmVDb21wYXJlOtIkJSYpWCRjbGFzc2VzWiRjbGFzc25hbWWiJyhfEBBO
+U1NvcnREZXNjcmlwdG9yWE5TT2JqZWN0XxAQTlNTb3J0RGVzY3JpcHRvctQaGwscKywfIIAIgAeA
+BQldZ25EYXRlQ3JlYXRlZFhjb21wYXJlOtQaGwscMjMfIIALgAqABQlddGl0dWxvR25GaWVsZF8Q
+IGxvY2FsaXplZENhc2VJbnNlbnNpdGl2ZUNvbXBhcmU61BobCxw5Oh8ggA6ADYAFCV5zb3BvcnRl
+R25GaWVsZF8QIGxvY2FsaXplZENhc2VJbnNlbnNpdGl2ZUNvbXBhcmU61BobCxxAQR8ggBGAEIAF
+CV8QE2ZvckdyYWJhY2lvbkduRmllbGRfECBsb2NhbGl6ZWRDYXNlSW5zZW5zaXRpdmVDb21wYXJl
+OtQaGwscR0gfIIAUgBOABQlcZmllbGRHbkZpZWxkXxAgbG9jYWxpemVkQ2FzZUluc2Vuc2l0aXZl
+Q29tcGFyZTrUGhsLHE5PHyCAF4AWgAUJXHZpc3RhR25GaWVsZFhjb21wYXJlOtQaGwscVVYfIIAa
+gBmABQlfEBFmZWNoYVZpc3RhR25GaWVsZFhjb21wYXJlOtQaGwscXF0fIIAdgByABQldcHVudG9z
+R25GaWVsZFhjb21wYXJlOtQaGwscY2QfZoAggB+ABQhfEBVmZWNoYUluY2x1c2lvbkduRmllbGRf
+ECBsb2NhbGl6ZWRDYXNlSW5zZW5zaXRpdmVDb21wYXJlOtIkJWpro2tsKF5OU011dGFibGVBcnJh
+eVdOU0FycmF5EgABhqBfEA9OU0tleWVkQXJjaGl2ZXIACAARABYAHwAoADIANQA6ADwAYQBnAGwA
+cwB+AIAAiwCNAI8AkQCTAJUAlwCZAJsAnQCfAKgAswC5AMUAxwDJAMsAzADaAP0BAgELARYBGQEs
+ATUBSAFRAVMBVQFXAVgBZgFvAXgBegF8AX4BfwGNAbABuQG7Ab0BvwHAAc8B8gH7Af0B/wIBAgIC
+GAI7AkQCRgJIAkoCSwJYAnsChAKGAogCigKLApgCoQKqAqwCrgKwArECxQLOAtcC2QLbAt0C3gLs
+AvUC/gMAAwIDBAMFAx0DQANFA0kDWANgA2UAAAAAAAACAQAAAAAAAABvAAAAAAAAAAAAAAAAAAAD
+dw==
+&lt;/data&gt;
+&lt;/plist&gt;
+" name="lib_dvd_importados" ID="30888">
+            <field label="Fecha de creación" ID="30895" type="com.filemaker.bento.field.private.timestamp.dateCreated" name="gnDateCreated" timeStyle="0"/>
+            <field label="Fecha de modificación" ID="30903" type="com.filemaker.bento.field.private.timestamp.dateModified" name="gnDateModified"/>
+            <field label="Nº De Disco" ID="30911" type="com.filemaker.bento.field.core.choice" name="fieldGnField" choices="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;array&gt;
+	&lt;string&gt;Descargandose&lt;/string&gt;
+	&lt;string&gt;Pedida&lt;/string&gt;
+	&lt;string&gt;001&lt;/string&gt;
+	&lt;string&gt;002&lt;/string&gt;
+	&lt;string&gt;003&lt;/string&gt;
+	&lt;string&gt;004&lt;/string&gt;
+	&lt;string&gt;005&lt;/string&gt;
+	&lt;string&gt;006&lt;/string&gt;
+	&lt;string&gt;012&lt;/string&gt;
+	&lt;string&gt;441&lt;/string&gt;
+	&lt;string&gt;330&lt;/string&gt;
+	&lt;string&gt;808&lt;/string&gt;
+	&lt;string&gt;220&lt;/string&gt;
+	&lt;string&gt;442&lt;/string&gt;
+	&lt;string&gt;809&lt;/string&gt;
+	&lt;string&gt;331&lt;/string&gt;
+	&lt;string&gt;332&lt;/string&gt;
+	&lt;string&gt;221&lt;/string&gt;
+	&lt;string&gt;110&lt;/string&gt;
+	&lt;string&gt;443&lt;/string&gt;
+	&lt;string&gt;333&lt;/string&gt;
+	&lt;string&gt;222&lt;/string&gt;
+	&lt;string&gt;111&lt;/string&gt;
+	&lt;string&gt;444&lt;/string&gt;
+	&lt;string&gt;445&lt;/string&gt;
+	&lt;string&gt;334&lt;/string&gt;
+	&lt;string&gt;223&lt;/string&gt;
+	&lt;string&gt;112&lt;/string&gt;
+	&lt;string&gt;190&lt;/string&gt;
+	&lt;string&gt;446&lt;/string&gt;
+	&lt;string&gt;335&lt;/string&gt;
+	&lt;string&gt;224&lt;/string&gt;
+	&lt;string&gt;113&lt;/string&gt;
+	&lt;string&gt;080&lt;/string&gt;
+	&lt;string&gt;191&lt;/string&gt;
+	&lt;string&gt;114&lt;/string&gt;
+	&lt;string&gt;336&lt;/string&gt;
+	&lt;string&gt;225&lt;/string&gt;
+	&lt;string&gt;447&lt;/string&gt;
+	&lt;string&gt;192&lt;/string&gt;
+	&lt;string&gt;081&lt;/string&gt;
+	&lt;string&gt;115&lt;/string&gt;
+	&lt;string&gt;337&lt;/string&gt;
+	&lt;string&gt;226&lt;/string&gt;
+	&lt;string&gt;448&lt;/string&gt;
+	&lt;string&gt;810&lt;/string&gt;
+	&lt;string&gt;193&lt;/string&gt;
+	&lt;string&gt;082&lt;/string&gt;
+	&lt;string&gt;116&lt;/string&gt;
+	&lt;string&gt;227&lt;/string&gt;
+	&lt;string&gt;338&lt;/string&gt;
+	&lt;string&gt;449&lt;/string&gt;
+	&lt;string&gt;921&lt;/string&gt;
+	&lt;string&gt;811&lt;/string&gt;
+	&lt;string&gt;083&lt;/string&gt;
+	&lt;string&gt;194&lt;/string&gt;
+	&lt;string&gt;117&lt;/string&gt;
+	&lt;string&gt;339&lt;/string&gt;
+	&lt;string&gt;228&lt;/string&gt;
+	&lt;string&gt;812&lt;/string&gt;
+	&lt;string&gt;195&lt;/string&gt;
+	&lt;string&gt;084&lt;/string&gt;
+	&lt;string&gt;118&lt;/string&gt;
+	&lt;string&gt;007&lt;/string&gt;
+	&lt;string&gt;229&lt;/string&gt;
+	&lt;string&gt;813&lt;/string&gt;
+	&lt;string&gt;085&lt;/string&gt;
+	&lt;string&gt;196&lt;/string&gt;
+	&lt;string&gt;119&lt;/string&gt;
+	&lt;string&gt;008&lt;/string&gt;
+	&lt;string&gt;924&lt;/string&gt;
+	&lt;string&gt;925&lt;/string&gt;
+	&lt;string&gt;197&lt;/string&gt;
+	&lt;string&gt;086&lt;/string&gt;
+	&lt;string&gt;009&lt;/string&gt;
+	&lt;string&gt;198&lt;/string&gt;
+	&lt;string&gt;087&lt;/string&gt;
+	&lt;string&gt;816&lt;/string&gt;
+	&lt;string&gt;199&lt;/string&gt;
+	&lt;string&gt;088&lt;/string&gt;
+	&lt;string&gt;450&lt;/string&gt;
+	&lt;string&gt;817&lt;/string&gt;
+	&lt;string&gt;089&lt;/string&gt;
+	&lt;string&gt;340&lt;/string&gt;
+	&lt;string&gt;451&lt;/string&gt;
+	&lt;string&gt;818&lt;/string&gt;
+	&lt;string&gt;341&lt;/string&gt;
+	&lt;string&gt;230&lt;/string&gt;
+	&lt;string&gt;452&lt;/string&gt;
+	&lt;string&gt;819&lt;/string&gt;
+	&lt;string&gt;231&lt;/string&gt;
+	&lt;string&gt;120&lt;/string&gt;
+	&lt;string&gt;453&lt;/string&gt;
+	&lt;string&gt;342&lt;/string&gt;
+	&lt;string&gt;343&lt;/string&gt;
+	&lt;string&gt;232&lt;/string&gt;
+	&lt;string&gt;121&lt;/string&gt;
+	&lt;string&gt;454&lt;/string&gt;
+	&lt;string&gt;010&lt;/string&gt;
+	&lt;string&gt;122&lt;/string&gt;
+	&lt;string&gt;455&lt;/string&gt;
+	&lt;string&gt;011&lt;/string&gt;
+	&lt;string&gt;344&lt;/string&gt;
+	&lt;string&gt;233&lt;/string&gt;
+	&lt;string&gt;345&lt;/string&gt;
+	&lt;string&gt;234&lt;/string&gt;
+	&lt;string&gt;123&lt;/string&gt;
+	&lt;string&gt;456&lt;/string&gt;
+	&lt;string&gt;090&lt;/string&gt;
+	&lt;string&gt;235&lt;/string&gt;
+	&lt;string&gt;457&lt;/string&gt;
+	&lt;string&gt;346&lt;/string&gt;
+	&lt;string&gt;013&lt;/string&gt;
+	&lt;string&gt;124&lt;/string&gt;
+	&lt;string&gt;091&lt;/string&gt;
+	&lt;string&gt;236&lt;/string&gt;
+	&lt;string&gt;125&lt;/string&gt;
+	&lt;string&gt;014&lt;/string&gt;
+	&lt;string&gt;458&lt;/string&gt;
+	&lt;string&gt;347&lt;/string&gt;
+	&lt;string&gt;820&lt;/string&gt;
+	&lt;string&gt;092&lt;/string&gt;
+	&lt;string&gt;348&lt;/string&gt;
+	&lt;string&gt;237&lt;/string&gt;
+	&lt;string&gt;015&lt;/string&gt;
+	&lt;string&gt;126&lt;/string&gt;
+	&lt;string&gt;459&lt;/string&gt;
+	&lt;string&gt;821&lt;/string&gt;
+	&lt;string&gt;093&lt;/string&gt;
+	&lt;string&gt;016&lt;/string&gt;
+	&lt;string&gt;238&lt;/string&gt;
+	&lt;string&gt;127&lt;/string&gt;
+	&lt;string&gt;349&lt;/string&gt;
+	&lt;string&gt;822&lt;/string&gt;
+	&lt;string&gt;094&lt;/string&gt;
+	&lt;string&gt;017&lt;/string&gt;
+	&lt;string&gt;128&lt;/string&gt;
+	&lt;string&gt;239&lt;/string&gt;
+	&lt;string&gt;823&lt;/string&gt;
+	&lt;string&gt;095&lt;/string&gt;
+	&lt;string&gt;018&lt;/string&gt;
+	&lt;string&gt;129&lt;/string&gt;
+	&lt;string&gt;824&lt;/string&gt;
+	&lt;string&gt;096&lt;/string&gt;
+	&lt;string&gt;019&lt;/string&gt;
+	&lt;string&gt;825&lt;/string&gt;
+	&lt;string&gt;097&lt;/string&gt;
+	&lt;string&gt;826&lt;/string&gt;
+	&lt;string&gt;098&lt;/string&gt;
+	&lt;string&gt;460&lt;/string&gt;
+	&lt;string&gt;827&lt;/string&gt;
+	&lt;string&gt;099&lt;/string&gt;
+	&lt;string&gt;461&lt;/string&gt;
+	&lt;string&gt;350&lt;/string&gt;
+	&lt;string&gt;828&lt;/string&gt;
+	&lt;string&gt;240&lt;/string&gt;
+	&lt;string&gt;351&lt;/string&gt;
+	&lt;string&gt;829&lt;/string&gt;
+	&lt;string&gt;462&lt;/string&gt;
+	&lt;string&gt;130&lt;/string&gt;
+	&lt;string&gt;463&lt;/string&gt;
+	&lt;string&gt;241&lt;/string&gt;
+	&lt;string&gt;352&lt;/string&gt;
+	&lt;string&gt;242&lt;/string&gt;
+	&lt;string&gt;131&lt;/string&gt;
+	&lt;string&gt;464&lt;/string&gt;
+	&lt;string&gt;020&lt;/string&gt;
+	&lt;string&gt;353&lt;/string&gt;
+	&lt;string&gt;132&lt;/string&gt;
+	&lt;string&gt;465&lt;/string&gt;
+	&lt;string&gt;021&lt;/string&gt;
+	&lt;string&gt;354&lt;/string&gt;
+	&lt;string&gt;243&lt;/string&gt;
+	&lt;string&gt;133&lt;/string&gt;
+	&lt;string&gt;466&lt;/string&gt;
+	&lt;string&gt;022&lt;/string&gt;
+	&lt;string&gt;355&lt;/string&gt;
+	&lt;string&gt;244&lt;/string&gt;
+	&lt;string&gt;134&lt;/string&gt;
+	&lt;string&gt;023&lt;/string&gt;
+	&lt;string&gt;356&lt;/string&gt;
+	&lt;string&gt;245&lt;/string&gt;
+	&lt;string&gt;467&lt;/string&gt;
+	&lt;string&gt;246&lt;/string&gt;
+	&lt;string&gt;135&lt;/string&gt;
+	&lt;string&gt;024&lt;/string&gt;
+	&lt;string&gt;357&lt;/string&gt;
+	&lt;string&gt;468&lt;/string&gt;
+	&lt;string&gt;830&lt;/string&gt;
+	&lt;string&gt;247&lt;/string&gt;
+	&lt;string&gt;136&lt;/string&gt;
+	&lt;string&gt;025&lt;/string&gt;
+	&lt;string&gt;469&lt;/string&gt;
+	&lt;string&gt;358&lt;/string&gt;
+	&lt;string&gt;831&lt;/string&gt;
+	&lt;string&gt;248&lt;/string&gt;
+	&lt;string&gt;026&lt;/string&gt;
+	&lt;string&gt;359&lt;/string&gt;
+	&lt;string&gt;137&lt;/string&gt;
+	&lt;string&gt;832&lt;/string&gt;
+	&lt;string&gt;249&lt;/string&gt;
+	&lt;string&gt;138&lt;/string&gt;
+	&lt;string&gt;027&lt;/string&gt;
+	&lt;string&gt;500&lt;/string&gt;
+	&lt;string&gt;028&lt;/string&gt;
+	&lt;string&gt;139&lt;/string&gt;
+	&lt;string&gt;501&lt;/string&gt;
+	&lt;string&gt;834&lt;/string&gt;
+	&lt;string&gt;029&lt;/string&gt;
+	&lt;string&gt;502&lt;/string&gt;
+	&lt;string&gt;835&lt;/string&gt;
+	&lt;string&gt;503&lt;/string&gt;
+	&lt;string&gt;836&lt;/string&gt;
+	&lt;string&gt;470&lt;/string&gt;
+	&lt;string&gt;504&lt;/string&gt;
+	&lt;string&gt;471&lt;/string&gt;
+	&lt;string&gt;360&lt;/string&gt;
+	&lt;string&gt;505&lt;/string&gt;
+	&lt;string&gt;361&lt;/string&gt;
+	&lt;string&gt;250&lt;/string&gt;
+	&lt;string&gt;506&lt;/string&gt;
+	&lt;string&gt;839&lt;/string&gt;
+	&lt;string&gt;472&lt;/string&gt;
+	&lt;string&gt;473&lt;/string&gt;
+	&lt;string&gt;362&lt;/string&gt;
+	&lt;string&gt;251&lt;/string&gt;
+	&lt;string&gt;140&lt;/string&gt;
+	&lt;string&gt;507&lt;/string&gt;
+	&lt;string&gt;474&lt;/string&gt;
+	&lt;string&gt;363&lt;/string&gt;
+	&lt;string&gt;252&lt;/string&gt;
+	&lt;string&gt;141&lt;/string&gt;
+	&lt;string&gt;030&lt;/string&gt;
+	&lt;string&gt;508&lt;/string&gt;
+	&lt;string&gt;142&lt;/string&gt;
+	&lt;string&gt;031&lt;/string&gt;
+	&lt;string&gt;364&lt;/string&gt;
+	&lt;string&gt;509&lt;/string&gt;
+	&lt;string&gt;253&lt;/string&gt;
+	&lt;string&gt;475&lt;/string&gt;
+	&lt;string&gt;476&lt;/string&gt;
+	&lt;string&gt;032&lt;/string&gt;
+	&lt;string&gt;365&lt;/string&gt;
+	&lt;string&gt;254&lt;/string&gt;
+	&lt;string&gt;143&lt;/string&gt;
+	&lt;string&gt;144&lt;/string&gt;
+	&lt;string&gt;033&lt;/string&gt;
+	&lt;string&gt;366&lt;/string&gt;
+	&lt;string&gt;255&lt;/string&gt;
+	&lt;string&gt;477&lt;/string&gt;
+	&lt;string&gt;145&lt;/string&gt;
+	&lt;string&gt;478&lt;/string&gt;
+	&lt;string&gt;034&lt;/string&gt;
+	&lt;string&gt;367&lt;/string&gt;
+	&lt;string&gt;256&lt;/string&gt;
+	&lt;string&gt;840&lt;/string&gt;
+	&lt;string&gt;146&lt;/string&gt;
+	&lt;string&gt;479&lt;/string&gt;
+	&lt;string&gt;257&lt;/string&gt;
+	&lt;string&gt;368&lt;/string&gt;
+	&lt;string&gt;035&lt;/string&gt;
+	&lt;string&gt;036&lt;/string&gt;
+	&lt;string&gt;369&lt;/string&gt;
+	&lt;string&gt;147&lt;/string&gt;
+	&lt;string&gt;258&lt;/string&gt;
+	&lt;string&gt;842&lt;/string&gt;
+	&lt;string&gt;259&lt;/string&gt;
+	&lt;string&gt;148&lt;/string&gt;
+	&lt;string&gt;037&lt;/string&gt;
+	&lt;string&gt;510&lt;/string&gt;
+	&lt;string&gt;843&lt;/string&gt;
+	&lt;string&gt;149&lt;/string&gt;
+	&lt;string&gt;038&lt;/string&gt;
+	&lt;string&gt;400&lt;/string&gt;
+	&lt;string&gt;844&lt;/string&gt;
+	&lt;string&gt;511&lt;/string&gt;
+	&lt;string&gt;039&lt;/string&gt;
+	&lt;string&gt;512&lt;/string&gt;
+	&lt;string&gt;401&lt;/string&gt;
+	&lt;string&gt;845&lt;/string&gt;
+	&lt;string&gt;402&lt;/string&gt;
+	&lt;string&gt;513&lt;/string&gt;
+	&lt;string&gt;846&lt;/string&gt;
+	&lt;string&gt;480&lt;/string&gt;
+	&lt;string&gt;403&lt;/string&gt;
+	&lt;string&gt;514&lt;/string&gt;
+	&lt;string&gt;481&lt;/string&gt;
+	&lt;string&gt;370&lt;/string&gt;
+	&lt;string&gt;515&lt;/string&gt;
+	&lt;string&gt;848&lt;/string&gt;
+	&lt;string&gt;404&lt;/string&gt;
+	&lt;string&gt;371&lt;/string&gt;
+	&lt;string&gt;260&lt;/string&gt;
+	&lt;string&gt;516&lt;/string&gt;
+	&lt;string&gt;405&lt;/string&gt;
+	&lt;string&gt;482&lt;/string&gt;
+	&lt;string&gt;372&lt;/string&gt;
+	&lt;string&gt;261&lt;/string&gt;
+	&lt;string&gt;517&lt;/string&gt;
+	&lt;string&gt;406&lt;/string&gt;
+	&lt;string&gt;150&lt;/string&gt;
+	&lt;string&gt;483&lt;/string&gt;
+	&lt;string&gt;373&lt;/string&gt;
+	&lt;string&gt;262&lt;/string&gt;
+	&lt;string&gt;518&lt;/string&gt;
+	&lt;string&gt;407&lt;/string&gt;
+	&lt;string&gt;151&lt;/string&gt;
+	&lt;string&gt;484&lt;/string&gt;
+	&lt;string&gt;040&lt;/string&gt;
+	&lt;string&gt;374&lt;/string&gt;
+	&lt;string&gt;263&lt;/string&gt;
+	&lt;string&gt;519&lt;/string&gt;
+	&lt;string&gt;152&lt;/string&gt;
+	&lt;string&gt;485&lt;/string&gt;
+	&lt;string&gt;041&lt;/string&gt;
+	&lt;string&gt;408&lt;/string&gt;
+	&lt;string&gt;375&lt;/string&gt;
+	&lt;string&gt;264&lt;/string&gt;
+	&lt;string&gt;409&lt;/string&gt;
+	&lt;string&gt;153&lt;/string&gt;
+	&lt;string&gt;042&lt;/string&gt;
+	&lt;string&gt;486&lt;/string&gt;
+	&lt;string&gt;376&lt;/string&gt;
+	&lt;string&gt;265&lt;/string&gt;
+	&lt;string&gt;154&lt;/string&gt;
+	&lt;string&gt;487&lt;/string&gt;
+	&lt;string&gt;043&lt;/string&gt;
+	&lt;string&gt;377&lt;/string&gt;
+	&lt;string&gt;155&lt;/string&gt;
+	&lt;string&gt;488&lt;/string&gt;
+	&lt;string&gt;044&lt;/string&gt;
+	&lt;string&gt;266&lt;/string&gt;
+	&lt;string&gt;267&lt;/string&gt;
+	&lt;string&gt;489&lt;/string&gt;
+	&lt;string&gt;045&lt;/string&gt;
+	&lt;string&gt;156&lt;/string&gt;
+	&lt;string&gt;378&lt;/string&gt;
+	&lt;string&gt;046&lt;/string&gt;
+	&lt;string&gt;379&lt;/string&gt;
+	&lt;string&gt;268&lt;/string&gt;
+	&lt;string&gt;157&lt;/string&gt;
+	&lt;string&gt;047&lt;/string&gt;
+	&lt;string&gt;158&lt;/string&gt;
+	&lt;string&gt;269&lt;/string&gt;
+	&lt;string&gt;520&lt;/string&gt;
+	&lt;string&gt;048&lt;/string&gt;
+	&lt;string&gt;159&lt;/string&gt;
+	&lt;string&gt;410&lt;/string&gt;
+	&lt;string&gt;521&lt;/string&gt;
+	&lt;string&gt;049&lt;/string&gt;
+	&lt;string&gt;411&lt;/string&gt;
+	&lt;string&gt;300&lt;/string&gt;
+	&lt;string&gt;522&lt;/string&gt;
+	&lt;string&gt;301&lt;/string&gt;
+	&lt;string&gt;523&lt;/string&gt;
+	&lt;string&gt;412&lt;/string&gt;
+	&lt;string&gt;490&lt;/string&gt;
+	&lt;string&gt;413&lt;/string&gt;
+	&lt;string&gt;302&lt;/string&gt;
+	&lt;string&gt;524&lt;/string&gt;
+	&lt;string&gt;491&lt;/string&gt;
+	&lt;string&gt;380&lt;/string&gt;
+	&lt;string&gt;414&lt;/string&gt;
+	&lt;string&gt;303&lt;/string&gt;
+	&lt;string&gt;525&lt;/string&gt;
+	&lt;string&gt;270&lt;/string&gt;
+	&lt;string&gt;381&lt;/string&gt;
+	&lt;string&gt;415&lt;/string&gt;
+	&lt;string&gt;304&lt;/string&gt;
+	&lt;string&gt;492&lt;/string&gt;
+	&lt;string&gt;526&lt;/string&gt;
+	&lt;string&gt;271&lt;/string&gt;
+	&lt;string&gt;493&lt;/string&gt;
+	&lt;string&gt;305&lt;/string&gt;
+	&lt;string&gt;160&lt;/string&gt;
+	&lt;string&gt;416&lt;/string&gt;
+	&lt;string&gt;527&lt;/string&gt;
+	&lt;string&gt;382&lt;/string&gt;
+	&lt;string&gt;161&lt;/string&gt;
+	&lt;string&gt;050&lt;/string&gt;
+	&lt;string&gt;417&lt;/string&gt;
+	&lt;string&gt;306&lt;/string&gt;
+	&lt;string&gt;528&lt;/string&gt;
+	&lt;string&gt;383&lt;/string&gt;
+	&lt;string&gt;272&lt;/string&gt;
+	&lt;string&gt;273&lt;/string&gt;
+	&lt;string&gt;162&lt;/string&gt;
+	&lt;string&gt;529&lt;/string&gt;
+	&lt;string&gt;307&lt;/string&gt;
+	&lt;string&gt;495&lt;/string&gt;
+	&lt;string&gt;051&lt;/string&gt;
+	&lt;string&gt;384&lt;/string&gt;
+	&lt;string&gt;418&lt;/string&gt;
+	&lt;string&gt;052&lt;/string&gt;
+	&lt;string&gt;385&lt;/string&gt;
+	&lt;string&gt;419&lt;/string&gt;
+	&lt;string&gt;308&lt;/string&gt;
+	&lt;string&gt;496&lt;/string&gt;
+	&lt;string&gt;163&lt;/string&gt;
+	&lt;string&gt;274&lt;/string&gt;
+	&lt;string&gt;275&lt;/string&gt;
+	&lt;string&gt;164&lt;/string&gt;
+	&lt;string&gt;497&lt;/string&gt;
+	&lt;string&gt;053&lt;/string&gt;
+	&lt;string&gt;309&lt;/string&gt;
+	&lt;string&gt;386&lt;/string&gt;
+	&lt;string&gt;276&lt;/string&gt;
+	&lt;string&gt;165&lt;/string&gt;
+	&lt;string&gt;498&lt;/string&gt;
+	&lt;string&gt;054&lt;/string&gt;
+	&lt;string&gt;387&lt;/string&gt;
+	&lt;string&gt;277&lt;/string&gt;
+	&lt;string&gt;166&lt;/string&gt;
+	&lt;string&gt;499&lt;/string&gt;
+	&lt;string&gt;388&lt;/string&gt;
+	&lt;string&gt;055&lt;/string&gt;
+	&lt;string&gt;167&lt;/string&gt;
+	&lt;string&gt;056&lt;/string&gt;
+	&lt;string&gt;389&lt;/string&gt;
+	&lt;string&gt;278&lt;/string&gt;
+	&lt;string&gt;279&lt;/string&gt;
+	&lt;string&gt;168&lt;/string&gt;
+	&lt;string&gt;057&lt;/string&gt;
+	&lt;string&gt;530&lt;/string&gt;
+	&lt;string&gt;169&lt;/string&gt;
+	&lt;string&gt;058&lt;/string&gt;
+	&lt;string&gt;420&lt;/string&gt;
+	&lt;string&gt;531&lt;/string&gt;
+	&lt;string&gt;059&lt;/string&gt;
+	&lt;string&gt;310&lt;/string&gt;
+	&lt;string&gt;532&lt;/string&gt;
+	&lt;string&gt;421&lt;/string&gt;
+	&lt;string&gt;200&lt;/string&gt;
+	&lt;string&gt;533&lt;/string&gt;
+	&lt;string&gt;311&lt;/string&gt;
+	&lt;string&gt;422&lt;/string&gt;
+	&lt;string&gt;312&lt;/string&gt;
+	&lt;string&gt;201&lt;/string&gt;
+	&lt;string&gt;423&lt;/string&gt;
+	&lt;string&gt;534&lt;/string&gt;
+	&lt;string&gt;390&lt;/string&gt;
+	&lt;string&gt;313&lt;/string&gt;
+	&lt;string&gt;202&lt;/string&gt;
+	&lt;string&gt;424&lt;/string&gt;
+	&lt;string&gt;535&lt;/string&gt;
+	&lt;string&gt;280&lt;/string&gt;
+	&lt;string&gt;391&lt;/string&gt;
+	&lt;string&gt;314&lt;/string&gt;
+	&lt;string&gt;203&lt;/string&gt;
+	&lt;string&gt;425&lt;/string&gt;
+	&lt;string&gt;392&lt;/string&gt;
+	&lt;string&gt;281&lt;/string&gt;
+	&lt;string&gt;315&lt;/string&gt;
+	&lt;string&gt;426&lt;/string&gt;
+	&lt;string&gt;204&lt;/string&gt;
+	&lt;string&gt;060&lt;/string&gt;
+	&lt;string&gt;282&lt;/string&gt;
+	&lt;string&gt;205&lt;/string&gt;
+	&lt;string&gt;427&lt;/string&gt;
+	&lt;string&gt;316&lt;/string&gt;
+	&lt;string&gt;393&lt;/string&gt;
+	&lt;string&gt;171&lt;/string&gt;
+	&lt;string&gt;172&lt;/string&gt;
+	&lt;string&gt;061&lt;/string&gt;
+	&lt;string&gt;317&lt;/string&gt;
+	&lt;string&gt;206&lt;/string&gt;
+	&lt;string&gt;394&lt;/string&gt;
+	&lt;string&gt;283&lt;/string&gt;
+	&lt;string&gt;428&lt;/string&gt;
+	&lt;string&gt;901&lt;/string&gt;
+	&lt;string&gt;173&lt;/string&gt;
+	&lt;string&gt;062&lt;/string&gt;
+	&lt;string&gt;318&lt;/string&gt;
+	&lt;string&gt;207&lt;/string&gt;
+	&lt;string&gt;395&lt;/string&gt;
+	&lt;string&gt;429&lt;/string&gt;
+	&lt;string&gt;284&lt;/string&gt;
+	&lt;string&gt;902&lt;/string&gt;
+	&lt;string&gt;396&lt;/string&gt;
+	&lt;string&gt;285&lt;/string&gt;
+	&lt;string&gt;319&lt;/string&gt;
+	&lt;string&gt;208&lt;/string&gt;
+	&lt;string&gt;063&lt;/string&gt;
+	&lt;string&gt;174&lt;/string&gt;
+	&lt;string&gt;175&lt;/string&gt;
+	&lt;string&gt;064&lt;/string&gt;
+	&lt;string&gt;397&lt;/string&gt;
+	&lt;string&gt;286&lt;/string&gt;
+	&lt;string&gt;209&lt;/string&gt;
+	&lt;string&gt;904&lt;/string&gt;
+	&lt;string&gt;176&lt;/string&gt;
+	&lt;string&gt;065&lt;/string&gt;
+	&lt;string&gt;398&lt;/string&gt;
+	&lt;string&gt;287&lt;/string&gt;
+	&lt;string&gt;177&lt;/string&gt;
+	&lt;string&gt;288&lt;/string&gt;
+	&lt;string&gt;399&lt;/string&gt;
+	&lt;string&gt;066&lt;/string&gt;
+	&lt;string&gt;906&lt;/string&gt;
+	&lt;string&gt;178&lt;/string&gt;
+	&lt;string&gt;289&lt;/string&gt;
+	&lt;string&gt;067&lt;/string&gt;
+	&lt;string&gt;907&lt;/string&gt;
+	&lt;string&gt;179&lt;/string&gt;
+	&lt;string&gt;068&lt;/string&gt;
+	&lt;string&gt;430&lt;/string&gt;
+	&lt;string&gt;908&lt;/string&gt;
+	&lt;string&gt;069&lt;/string&gt;
+	&lt;string&gt;431&lt;/string&gt;
+	&lt;string&gt;320&lt;/string&gt;
+	&lt;string&gt;909&lt;/string&gt;
+	&lt;string&gt;210&lt;/string&gt;
+	&lt;string&gt;432&lt;/string&gt;
+	&lt;string&gt;321&lt;/string&gt;
+	&lt;string&gt;211&lt;/string&gt;
+	&lt;string&gt;100&lt;/string&gt;
+	&lt;string&gt;322&lt;/string&gt;
+	&lt;string&gt;433&lt;/string&gt;
+	&lt;string&gt;434&lt;/string&gt;
+	&lt;string&gt;323&lt;/string&gt;
+	&lt;string&gt;101&lt;/string&gt;
+	&lt;string&gt;212&lt;/string&gt;
+	&lt;string&gt;290&lt;/string&gt;
+	&lt;string&gt;213&lt;/string&gt;
+	&lt;string&gt;102&lt;/string&gt;
+	&lt;string&gt;324&lt;/string&gt;
+	&lt;string&gt;435&lt;/string&gt;
+	&lt;string&gt;291&lt;/string&gt;
+	&lt;string&gt;180&lt;/string&gt;
+	&lt;string&gt;214&lt;/string&gt;
+	&lt;string&gt;103&lt;/string&gt;
+	&lt;string&gt;325&lt;/string&gt;
+	&lt;string&gt;436&lt;/string&gt;
+	&lt;string&gt;292&lt;/string&gt;
+	&lt;string&gt;181&lt;/string&gt;
+	&lt;string&gt;437&lt;/string&gt;
+	&lt;string&gt;326&lt;/string&gt;
+	&lt;string&gt;070&lt;/string&gt;
+	&lt;string&gt;104&lt;/string&gt;
+	&lt;string&gt;215&lt;/string&gt;
+	&lt;string&gt;910&lt;/string&gt;
+	&lt;string&gt;293&lt;/string&gt;
+	&lt;string&gt;182&lt;/string&gt;
+	&lt;string&gt;071&lt;/string&gt;
+	&lt;string&gt;438&lt;/string&gt;
+	&lt;string&gt;105&lt;/string&gt;
+	&lt;string&gt;216&lt;/string&gt;
+	&lt;string&gt;327&lt;/string&gt;
+	&lt;string&gt;183&lt;/string&gt;
+	&lt;string&gt;072&lt;/string&gt;
+	&lt;string&gt;217&lt;/string&gt;
+	&lt;string&gt;439&lt;/string&gt;
+	&lt;string&gt;294&lt;/string&gt;
+	&lt;string&gt;328&lt;/string&gt;
+	&lt;string&gt;106&lt;/string&gt;
+	&lt;string&gt;801&lt;/string&gt;
+	&lt;string&gt;184&lt;/string&gt;
+	&lt;string&gt;073&lt;/string&gt;
+	&lt;string&gt;218&lt;/string&gt;
+	&lt;string&gt;329&lt;/string&gt;
+	&lt;string&gt;295&lt;/string&gt;
+	&lt;string&gt;107&lt;/string&gt;
+	&lt;string&gt;912&lt;/string&gt;
+	&lt;string&gt;802&lt;/string&gt;
+	&lt;string&gt;296&lt;/string&gt;
+	&lt;string&gt;185&lt;/string&gt;
+	&lt;string&gt;219&lt;/string&gt;
+	&lt;string&gt;108&lt;/string&gt;
+	&lt;string&gt;074&lt;/string&gt;
+	&lt;string&gt;914&lt;/string&gt;
+	&lt;string&gt;186&lt;/string&gt;
+	&lt;string&gt;075&lt;/string&gt;
+	&lt;string&gt;109&lt;/string&gt;
+	&lt;string&gt;297&lt;/string&gt;
+	&lt;string&gt;803&lt;/string&gt;
+	&lt;string&gt;804&lt;/string&gt;
+	&lt;string&gt;298&lt;/string&gt;
+	&lt;string&gt;187&lt;/string&gt;
+	&lt;string&gt;076&lt;/string&gt;
+	&lt;string&gt;805&lt;/string&gt;
+	&lt;string&gt;077&lt;/string&gt;
+	&lt;string&gt;299&lt;/string&gt;
+	&lt;string&gt;188&lt;/string&gt;
+	&lt;string&gt;916&lt;/string&gt;
+	&lt;string&gt;806&lt;/string&gt;
+	&lt;string&gt;078&lt;/string&gt;
+	&lt;string&gt;189&lt;/string&gt;
+	&lt;string&gt;440&lt;/string&gt;
+	&lt;string&gt;918&lt;/string&gt;
+	&lt;string&gt;079&lt;/string&gt;
+	&lt;string&gt;807&lt;/string&gt;
+&lt;/array&gt;
+&lt;/plist&gt;
+"/>
+            <field label="Titulo" ID="30917" type="com.filemaker.bento.field.core.text" name="tituloGnField"/>
+            <field label="Soporte" ID="30923" type="com.filemaker.bento.field.core.choice" name="soporteGnField" choices="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;array&gt;
+	&lt;string&gt;Public&lt;/string&gt;
+	&lt;string&gt;Multiusos&lt;/string&gt;
+	&lt;string&gt;Video Club 1&lt;/string&gt;
+	&lt;string&gt;Video Club 2&lt;/string&gt;
+	&lt;string&gt;Video Club 3&lt;/string&gt;
+	&lt;string&gt;Video Club 4&lt;/string&gt;
+	&lt;string&gt;Lan&amp;amp;EMT&lt;/string&gt;
+	&lt;string&gt;Emetec&lt;/string&gt;
+	&lt;string&gt;DVD - RW&lt;/string&gt;
+	&lt;string&gt;DVD - R&lt;/string&gt;
+	&lt;string&gt;Vista-Borrada&lt;/string&gt;
+&lt;/array&gt;
+&lt;/plist&gt;
+"/>
+            <field label="ForGrabacion" ID="30929" type="com.filemaker.bento.field.core.choice" name="forGrabacionGnField" choices="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;array&gt;
+	&lt;string&gt;DVD-Rip:Avi&lt;/string&gt;
+	&lt;string&gt;BDRemux&lt;/string&gt;
+	&lt;string&gt;BluRay&lt;/string&gt;
+	&lt;string&gt;BluRay (DTS)&lt;/string&gt;
+	&lt;string&gt;HDRip&lt;/string&gt;
+	&lt;string&gt;DVD-Rip:Mpg&lt;/string&gt;
+	&lt;string&gt;DVDR:Vob&lt;/string&gt;
+	&lt;string&gt;MKV&lt;/string&gt;
+	&lt;string&gt;MKV (Micro HD)&lt;/string&gt;
+	&lt;string&gt;ISO&lt;/string&gt;
+	&lt;string&gt;DVDScreener&lt;/string&gt;
+	&lt;string&gt;Blu-Ray Screener&lt;/string&gt;
+	&lt;string&gt;Ts-Screener&lt;/string&gt;
+	&lt;string&gt;3D&lt;/string&gt;
+&lt;/array&gt;
+&lt;/plist&gt;
+"/>
+            <field label="Genero" ID="30935" type="com.filemaker.bento.field.core.choice" name="generoGnField" choices="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;array&gt;
+	&lt;string&gt;Accion&lt;/string&gt;
+	&lt;string&gt;Animacion&lt;/string&gt;
+	&lt;string&gt;Aventura&lt;/string&gt;
+	&lt;string&gt;Belico&lt;/string&gt;
+	&lt;string&gt;Biografia&lt;/string&gt;
+	&lt;string&gt;Ciencia Ficcion&lt;/string&gt;
+	&lt;string&gt;Comedia&lt;/string&gt;
+	&lt;string&gt;Comedia-Drama&lt;/string&gt;
+	&lt;string&gt;Comedia-Romance&lt;/string&gt;
+	&lt;string&gt;Crimen&lt;/string&gt;
+	&lt;string&gt;Deporte&lt;/string&gt;
+	&lt;string&gt;Documental&lt;/string&gt;
+	&lt;string&gt;Drama&lt;/string&gt;
+	&lt;string&gt;Drama-Belica&lt;/string&gt;
+	&lt;string&gt;Drama-Fantastico&lt;/string&gt;
+	&lt;string&gt;Drama-Misterio&lt;/string&gt;
+	&lt;string&gt;Drama-Romance&lt;/string&gt;
+	&lt;string&gt;Drama-Suspense&lt;/string&gt;
+	&lt;string&gt;Drama-Terror&lt;/string&gt;
+	&lt;string&gt;Erotica&lt;/string&gt;
+	&lt;string&gt;Fantastica&lt;/string&gt;
+	&lt;string&gt;Ficcion&lt;/string&gt;
+	&lt;string&gt;Ficcion-Accion&lt;/string&gt;
+	&lt;string&gt;Ficcion-Aventura&lt;/string&gt;
+	&lt;string&gt;Ficcion-Comedia&lt;/string&gt;
+	&lt;string&gt;Ficcion-Crimen&lt;/string&gt;
+	&lt;string&gt;Ficcion-Drama&lt;/string&gt;
+	&lt;string&gt;Ficcion-Fantastica&lt;/string&gt;
+	&lt;string&gt;Ficcion-Romance&lt;/string&gt;
+	&lt;string&gt;Ficcion-Suspense&lt;/string&gt;
+	&lt;string&gt;Ficcion-Terror&lt;/string&gt;
+	&lt;string&gt;Historico&lt;/string&gt;
+	&lt;string&gt;Misterio&lt;/string&gt;
+	&lt;string&gt;Musical&lt;/string&gt;
+	&lt;string&gt;Romantico&lt;/string&gt;
+	&lt;string&gt;Serie&lt;/string&gt;
+	&lt;string&gt;Suspense&lt;/string&gt;
+	&lt;string&gt;Thriller&lt;/string&gt;
+	&lt;string&gt;Terror&lt;/string&gt;
+	&lt;string&gt;Westerm&lt;/string&gt;
+&lt;/array&gt;
+&lt;/plist&gt;
+"/>
+            <field label="Nacionalidad" ID="30941" type="com.filemaker.bento.field.core.choice" name="nacionalidadGnField" choices="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;array&gt;
+	&lt;string&gt;USA&lt;/string&gt;
+	&lt;string&gt;Alemania&lt;/string&gt;
+	&lt;string&gt;Arabia Saudi&lt;/string&gt;
+	&lt;string&gt;Argentina&lt;/string&gt;
+	&lt;string&gt;Australia&lt;/string&gt;
+	&lt;string&gt;Austria&lt;/string&gt;
+	&lt;string&gt;Belgica&lt;/string&gt;
+	&lt;string&gt;Brasil&lt;/string&gt;
+	&lt;string&gt;Bulgaria&lt;/string&gt;
+	&lt;string&gt;Canada&lt;/string&gt;
+	&lt;string&gt;Chequia&lt;/string&gt;
+	&lt;string&gt;Corea Sur&lt;/string&gt;
+	&lt;string&gt;Croacia&lt;/string&gt;
+	&lt;string&gt;Cuba&lt;/string&gt;
+	&lt;string&gt;Chile&lt;/string&gt;
+	&lt;string&gt;China&lt;/string&gt;
+	&lt;string&gt;Colombia&lt;/string&gt;
+	&lt;string&gt;Dinamarca&lt;/string&gt;
+	&lt;string&gt;Ecuador&lt;/string&gt;
+	&lt;string&gt;España&lt;/string&gt;
+	&lt;string&gt;Estonia&lt;/string&gt;
+	&lt;string&gt;Francia&lt;/string&gt;
+	&lt;string&gt;Finlandia&lt;/string&gt;
+	&lt;string&gt;Hungria&lt;/string&gt;
+	&lt;string&gt;Honduras&lt;/string&gt;
+	&lt;string&gt;Hong Kong&lt;/string&gt;
+	&lt;string&gt;Holanda&lt;/string&gt;
+	&lt;string&gt;India&lt;/string&gt;
+	&lt;string&gt;Indonesia&lt;/string&gt;
+	&lt;string&gt;Iran&lt;/string&gt;
+	&lt;string&gt;Irlanda&lt;/string&gt;
+	&lt;string&gt;Islandia&lt;/string&gt;
+	&lt;string&gt;Israel&lt;/string&gt;
+	&lt;string&gt;Italia&lt;/string&gt;
+	&lt;string&gt;Japon&lt;/string&gt;
+	&lt;string&gt;Mexico&lt;/string&gt;
+	&lt;string&gt;Noruega&lt;/string&gt;
+	&lt;string&gt;Nueva Zelanda&lt;/string&gt;
+	&lt;string&gt;Paraguay&lt;/string&gt;
+	&lt;string&gt;Peru&lt;/string&gt;
+	&lt;string&gt;Polonia&lt;/string&gt;
+	&lt;string&gt;Portugal&lt;/string&gt;
+	&lt;string&gt;Reino Unido&lt;/string&gt;
+	&lt;string&gt;Republica Dominicana&lt;/string&gt;
+	&lt;string&gt;Rumania&lt;/string&gt;
+	&lt;string&gt;Rusa&lt;/string&gt;
+	&lt;string&gt;Suecia&lt;/string&gt;
+	&lt;string&gt;Suiza&lt;/string&gt;
+	&lt;string&gt;Tailandia&lt;/string&gt;
+	&lt;string&gt;Turquia&lt;/string&gt;
+	&lt;string&gt;Ucrania&lt;/string&gt;
+	&lt;string&gt;Uruguay&lt;/string&gt;
+	&lt;string&gt;Venezuela&lt;/string&gt;
+	&lt;string&gt;Yugoslavia&lt;/string&gt;
+&lt;/array&gt;
+&lt;/plist&gt;
+"/>
+            <field label="Vista" ID="30947" type="com.filemaker.bento.field.core.checkbox" name="vistaGnField"/>
+            <field label="Duracion" ID="30953" type="com.filemaker.bento.field.core.time" name="duracionGnField"/>
+            <field label="Año" ID="30959" type="com.filemaker.bento.field.core.text" name="field1GnField"/>
+            <field label="Notas" ID="30965" type="com.filemaker.bento.field.core.text" name="notasGnField"/>
+            <field label="Fecha Inclusion" ID="30971" type="com.filemaker.bento.field.core.text" name="fechaInclusionGnField"/>
+            <field label="Fecha Vista" ID="30977" type="com.filemaker.bento.field.core.date" name="fechaVistaGnField"/>
+            <field label="Minutos" ID="30989" type="com.filemaker.bento.field.core.number" name="minutosGnField" alignment="1"/>
+            <field label="Puntos" ID="30995" type="com.filemaker.bento.field.core.number" name="puntosGnField" decimalPlaces="1" alignment="1"/>
+            <field label="columnDivider" ID="31072" type="com.filemaker.bento.field.layout.columnDivider" name="columnDividerGnField"/>
+            <field label="columnDivider 1" ID="34314" type="com.filemaker.bento.field.layout.columnDivider" name="columnDivider1GnField"/>
+            <field label="Caratula" ID="34319" type="com.filemaker.bento.field.core.media" name="caratulaGnField"/>
+            <field label="Tamaño (Gb)" ID="37939" type="com.filemaker.bento.field.core.number" name="field2GnField" decimalPlaces="3" alignment="1"/>
+            <field label="Director" ID="37955" type="com.filemaker.bento.field.core.text" name="directorGnField"/>
+            <field label="IMDB" ID="80963" type="com.filemaker.bento.field.core.number" name="iMDBGnField" alignment="1" decimalPlaces="1"/>
+            <field label="Reparto" ID="37966" type="com.filemaker.bento.field.core.text" name="protagonistasGnField"/>
+            <field label="Resumen" ID="84535" type="com.filemaker.bento.field.core.text" name="resumenGnField"/>
+            <views>
+                <table showGridLines="no">
+                    <column name="fieldGnField" fieldID="30911" localizedDataValueIdentifierLabel="Nº De Disco" width="56"/>
+                    <column name="gnDateCreated" fieldID="30895" localizedDataValueIdentifierLabel="Fecha de creación"/>
+                    <column name="tituloGnField" fieldID="30917" localizedDataValueIdentifierLabel="Titulo" width="214.31640625"/>
+                    <column name="soporteGnField" fieldID="30923" localizedDataValueIdentifierLabel="Soporte" width="118"/>
+                    <column name="forGrabacionGnField" fieldID="30929" localizedDataValueIdentifierLabel="ForGrabacion" width="127.28125"/>
+                    <column name="generoGnField" fieldID="30935" localizedDataValueIdentifierLabel="Genero" width="152"/>
+                    <column name="nacionalidadGnField" fieldID="30941" localizedDataValueIdentifierLabel="Nacionalidad" width="67"/>
+                    <column name="iMDBGnField" fieldID="80963" localizedDataValueIdentifierLabel="IMDB" width="52.0234375"/>
+                    <column name="caratulaGnField" fieldID="34319" localizedDataValueIdentifierLabel="Caratula" width="47" visible="no"/>
+                    <column name="vistaGnField" fieldID="30947" localizedDataValueIdentifierLabel="Vista" width="42"/>
+                    <column name="duracionGnField" fieldID="30953" localizedDataValueIdentifierLabel="Duracion" width="50"/>
+                    <column name="field1GnField" fieldID="30959" localizedDataValueIdentifierLabel="Año" width="46"/>
+                    <column name="notasGnField" fieldID="30965" localizedDataValueIdentifierLabel="Notas" width="56"/>
+                    <column name="fechaVistaGnField" fieldID="30977" localizedDataValueIdentifierLabel="Fecha Vista"/>
+                    <column name="minutosGnField" fieldID="30989" localizedDataValueIdentifierLabel="Minutos" width="48"/>
+                    <column name="puntosGnField" fieldID="30995" localizedDataValueIdentifierLabel="Puntos" width="56"/>
+                    <column name="field2GnField" fieldID="37939" localizedDataValueIdentifierLabel="Tamaño (Gb)" width="44"/>
+                    <column name="directorGnField" fieldID="37955" localizedDataValueIdentifierLabel="Director"/>
+                    <column name="protagonistasGnField" fieldID="37966" localizedDataValueIdentifierLabel="Reparto"/>
+                    <column name="resumenGnField" fieldID="84535" localizedDataValueIdentifierLabel="Resumen"/>
+                </table>
+                <grid displayType="0" gridSize="64">
+                    <element name="puntosGnField" fieldID="30995" type="4"/>
+                    <element name="caratulaGnField" fieldID="34319" type="1"/>
+                    <element name="tituloGnField" fieldID="30917" type="2"/>
+                </grid>
+                <presentation label="Formulario sin título" webScriptSafeFormLabel="Formulario sin título" version="1" order="0" type="com.filemaker.bento.presentation.view.core.form" labelLocation="1" themeID="com.filemaker.bento.theme.core.blueworld" displayType="0">
+                    <presentationCell name="columnDividerGnField" fieldID="31072" label="columnDivider" dataEditable="no" version="0" order="0" type="com.filemaker.bento.presentation.cell.form.core.layout.column" visible="no" width="280.4648" height="0" flowDirection="0" displayType="0" displayX="2" displayY="0" displayWidth="304.4648" displayHeight="0"/>
+                    <presentationCell name="caratulaGnField" fieldID="34319" label="Caratula" version="0" order="0" type="com.filemaker.bento.presentation.cell.form.core.media" visible="no" width="260.5" height="352.9531" flowDirection="2" displayType="0" displayX="2" displayY="2" displayWidth="278.5" displayHeight="399.9531"/>
+                    <presentationCell name="gnDateCreated" fieldID="30895" label="Fecha de creación" dataEditable="no" version="0" order="1" type="com.filemaker.bento.presentation.cell.form.core.text.formatted.timestamp.date" visible="no" width="111" height="27" flowDirection="1" displayType="0" displayX="2" displayY="401.9531" displayWidth="129" displayHeight="74"/>
+                    <presentationCell name="columnDivider1GnField" fieldID="34314" label="columnDivider 1" dataEditable="no" version="0" order="1" type="com.filemaker.bento.presentation.cell.form.core.layout.column" visible="no" width="781" height="0" flowDirection="0" displayType="0" displayX="306.4648" displayY="0" displayWidth="805" displayHeight="0"/>
+                    <presentationCell name="vistaGnField" fieldID="30947" label="Vista" version="0" order="2" type="com.filemaker.bento.presentation.cell.form.core.button.checkbox" visible="no" width="56" height="19" flowDirection="1" displayType="0" displayX="2" displayY="475.9531" displayWidth="74" displayHeight="43"/>
+                    <presentationCell name="fechaVistaGnField" fieldID="30977" label="Fecha Vista" version="0" order="3" type="com.filemaker.bento.presentation.cell.form.core.text.formatted.timestamp.date" visible="no" width="122" height="27" flowDirection="1" displayType="0" displayX="2" displayY="518.9531" displayWidth="140" displayHeight="74"/>
+                    <presentationCell name="puntosGnField" fieldID="30995" label="Puntos" version="0" order="4" type="com.filemaker.bento.presentation.cell.form.core.text.formatted.number" visible="no" width="48" height="27" flowDirection="0" displayType="0" displayX="142" displayY="518.9531" displayWidth="66" displayHeight="74"/>
+                    <presentationCell name="tituloGnField" fieldID="30917" label="Titulo" version="0" order="5" type="com.filemaker.bento.presentation.cell.form.core.text" visible="no" width="451" height="32" textSize="larger" flowDirection="2" displayType="0" displayX="306.4648" displayY="2" displayWidth="469" displayHeight="79"/>
+                    <presentationCell name="field1GnField" fieldID="30959" label="Año" version="0" order="6" type="com.filemaker.bento.presentation.cell.form.core.text" visible="no" width="48" height="27" flowDirection="0" displayType="0" displayX="775.4648" displayY="2" displayWidth="66" displayHeight="74"/>
+                    <presentationCell name="generoGnField" fieldID="30935" label="Genero" version="0" order="7" type="com.filemaker.bento.presentation.cell.form.core.popupbutton.choice" visible="no" width="135" height="26" flowDirection="1" displayType="0" displayX="306.4648" displayY="81" displayWidth="153" displayHeight="73"/>
+                    <presentationCell name="nacionalidadGnField" fieldID="30941" label="Nacionalidad" version="0" order="8" type="com.filemaker.bento.presentation.cell.form.core.popupbutton.choice" visible="no" width="119" height="26" flowDirection="0" displayType="0" displayX="459.4648" displayY="81" displayWidth="137" displayHeight="73"/>
+                    <presentationCell name="forGrabacionGnField" fieldID="30929" label="ForGrabacion" version="0" order="9" type="com.filemaker.bento.presentation.cell.form.core.popupbutton.choice" visible="no" width="150" height="26" flowDirection="0" displayType="0" displayX="596.4648" displayY="81" displayWidth="168" displayHeight="73"/>
+                    <presentationCell name="soporteGnField" fieldID="30923" label="Soporte" version="0" order="10" type="com.filemaker.bento.presentation.cell.form.core.popupbutton.choice" visible="no" width="129" height="26" flowDirection="1" displayType="0" displayX="306.4648" displayY="154" displayWidth="147" displayHeight="73"/>
+                    <presentationCell name="minutosGnField" fieldID="30989" label="Minutos" version="0" order="11" type="com.filemaker.bento.presentation.cell.form.core.text.formatted.number" visible="no" width="50" height="27" flowDirection="1" displayType="0" displayX="306.4648" displayY="227" displayWidth="68" displayHeight="74"/>
+                    <presentationCell name="duracionGnField" fieldID="30953" label="Duracion" version="0" order="12" type="com.filemaker.bento.presentation.cell.form.core.text.formatted.timestamp.time" visible="no" width="66" height="27" flowDirection="0" displayType="0" displayX="374.4648" displayY="227" displayWidth="84" displayHeight="74"/>
+                    <presentationCell name="iMDBGnField" fieldID="80963" label="IMDB" version="0" order="13" type="com.filemaker.bento.presentation.cell.form.core.text.formatted.number" visible="no" width="48" height="27" flowDirection="0" displayType="0" displayX="458.4648" displayY="227" displayWidth="66" displayHeight="74"/>
+                    <presentationCell name="directorGnField" fieldID="37955" label="Director" version="0" order="14" type="com.filemaker.bento.presentation.cell.form.core.text" visible="no" width="651" height="27" flowDirection="1" displayType="0" displayX="306.4648" displayY="301" displayWidth="669" displayHeight="74"/>
+                    <presentationCell name="protagonistasGnField" fieldID="37966" label="Reparto" version="0" order="15" type="com.filemaker.bento.presentation.cell.form.core.text" visible="no" width="651" height="164" flowDirection="1" displayType="0" displayX="306.4648" displayY="375" displayWidth="669" displayHeight="211"/>
+                    <presentationCell name="resumenGnField" fieldID="84535" label="Resumen" version="0" order="16" type="com.filemaker.bento.presentation.cell.form.core.text" visible="no" width="635" height="196" flowDirection="1" displayType="0" displayX="306.4648" displayY="586" displayWidth="653" displayHeight="243"/>
+                </presentation>
+            </views>
+        </domain>
+    </library>
+</bento>
