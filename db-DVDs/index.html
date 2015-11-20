@@ -5,6 +5,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+    
     <style>
         table td {
             border: 1px solid #ccc;
@@ -38,6 +40,7 @@
             //fields
             for(i=1; i<=data.Fields.length; i++){
                 $("tr").append('<td>'+data.Fields[i]+'</td>');
+                //$("tr").append('<td>${data.Fields[i]}</td>');
             }
             for(i=1; i<=data.Data.length; i++){
 
