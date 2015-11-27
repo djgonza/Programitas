@@ -4,62 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
-    
-    <style>
-        table td {
-            border: 1px solid #ccc;
-        }
-    </style>
-    <script>
 
-    $(document).ready(function(){
-
-        Array.prototype.orderByString=function(property,sortOrder,ignoreCase){
-            if (sortOrder!=-1 && sortOrder!=1) sortOrder=1;
-            this.sort(function(a,b){
-            var stringA=a[property],stringB=b[property];
-            // Si un valor es null o undefined, se convierte a cadena vacía.
-            if (stringA==null) stringA = '';
-            if (stringB==null) stringB = '';
-            // Si ignoreCase es true, se convierten ambas variables a minúsculas.
-            if (ignoreCase==true){stringA=stringA.toLowerCase();stringB=stringB.toLowerCase()}
-            var res = 0;
-            if (stringA<stringB) res = -1;
-            else if (stringA>stringB) res = 1;
-            return res*sortOrder;
-            })
-        }
-
-        //recogemos los datos del JSON
-        $.getJSON("lib_dvd_importados.json", function(data) {
-
-            //console.log($("tr").append('<td>dato</td>'));
-
-            //fields
-            for(i=1; i<=data.Fields.length; i++){
-                $("tr").append('<td>'+data.Fields[i]+'</td>');
-                //$("tr").append('<td>${data.Fields[i]}</td>');
-            }
-            for(i=1; i<=data.Data.length; i++){
-
-                $("table").append($('<tr/>'));
-
-                for(j=1; j<=data.Data[i].length; j++){
-
-                    //console.log($("tr:last"));
-                   $("tr:last").append('<td>'+data.Data[i][j]+'</td>'); 
-
-                }
-
-            }
-            
-        });
-    
-    });
-    
-    </script>
 </head>
     <body>
         <table>
@@ -68,3 +13,13 @@
         </table>
     </body>
 </html>
+
+<!-- Librerias -->
+<script src="js/lib/jquery.js"></script>
+<script src="js/lib/underscore.js"></script>
+<script src="js/lib/backbone.js"></script>
+<script src="js/lib/utilidades.js"></script>
+
+<!-- Source Code-->
+<script src="js/peliculasModel.js"></script>
+<script src="js/main.js"></script>
