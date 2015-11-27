@@ -1,4 +1,4 @@
-Pelicula = Backbone.Model.extend({
+window.Pelicula = Backbone.Model.extend({
 
 	mostrar: function () {
 
