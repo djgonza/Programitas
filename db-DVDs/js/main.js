@@ -6,7 +6,7 @@ $(document).ready(function(){
     $.getJSON("lib_dvd_importados.json").success(function (data) {
 
         var listaPeliculas = [];
-        var numeroPeliculas = 10; //data.Data.length;
+        var numeroPeliculas = data.Data.length;
 
         /* Recorremos todas las peliculas*/
         for(i=0; i<numeroPeliculas; i++){
@@ -25,8 +25,12 @@ $(document).ready(function(){
             });
         }
 
+        
+
         /* Creamos la coleccion */
         Peliculas = new Libreria (listaPeliculas);
+
+        console.log(Peliculas);
 
         /* Renderiza */
         Peliculas.models[1].set("generoGnField", "cine");
