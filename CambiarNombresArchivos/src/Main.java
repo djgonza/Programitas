@@ -16,6 +16,7 @@ public class Main {
 	private JTextField formato;
 	private File directorio;
 	private File[] ficheros;
+	private File[] deshacer;
 
 	/**
 	 * Launch the application.
@@ -51,12 +52,37 @@ public class Main {
 		
 	}
 	
+	public void deshacerCambios() {
+		
+		leerArchivos ();
+		
+		//recorremos los archivos nuevos
+		for (int j=0; j<this.ficheros.length; j++){
+			
+			//comprobamos la extension
+		  	if(this.ficheros[j].getName().endsWith(this.formato.getText())){
+		  		
+		  		//recorremos los archivos viejos
+		  		for (int i=0; i<this.deshacer.length; i++){
+		  			
+		  			//aplicamos el cambio de nombre al fichero antiguo
+					String nombre = renombrar(this.deshacer[i].getName());
+					
+					//si es el archivo anterior lo renombramos con el antiguo nombre
+					if(nombre.equals(this.ficheros[j].getName())){
+						this.ficheros[j].renameTo(new File(this.deshacer[i].getName()));
+					}
+		  		}
+		  	}
+		
+		}
+		
+	}
+	
 	public void ejecutarCambios() {
 		
-		//recorremos los archivos
-		//for (int i=0; i<this.ficheros.length; i++){
-			//System.out.println(ficheros[i]);
-		//}
+		//deshacer cambios
+		this.deshacer = directorio.listFiles();
 		
 		//comprovamos que hay foramto
 		if(!this.formato.getText().equals("")){
@@ -69,8 +95,6 @@ public class Main {
 	
 		  		//comprobamos la extension
 			  	if(nombre.endsWith(this.formato.getText())){
-			  		
-			  		System.out.println(this.ficheros[i]);
 			  		
 			  		//renombramos el archivo
 				  	this.ficheros[i].renameTo(new File(renombrar(nombre)));
@@ -116,16 +140,12 @@ public class Main {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				//comprovamos si hay formato
-				System.out.println("click");
-				System.out.println(formato.getText());
-				
 				leerArchivos ();
 				ejecutarCambios();
 				
 			}
 		});
-		btnCambiar.setBounds(165, 220, 117, 29);
+		btnCambiar.setBounds(168, 202, 117, 29);
 		frame.getContentPane().add(btnCambiar);
 		
 		cadenaBuscar = new JTextField();
@@ -156,5 +176,15 @@ public class Main {
 		lblFormato.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFormato.setBounds(187, 42, 61, 16);
 		frame.getContentPane().add(lblFormato);
+		
+		JButton btnDeshacer = new JButton("Deshacer");
+		btnDeshacer.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				deshacerCambios();
+			}
+		});
+		btnDeshacer.setBounds(168, 243, 117, 29);
+		frame.getContentPane().add(btnDeshacer);
 	}
 }
