@@ -14,38 +14,34 @@ public class CambiarNombre {
 			//sacamos el nombre del archivo
 		  	String nombre = ficheros[i].getName();
 		 
-		  	//comprovamos que no son los ficheros fuenta
-		  	if(!nombre.equals("CambiarNombre.class") && !nombre.equals("CambiarNombre.java")){
+	  		//comprobamos la extension
+		  	if(nombre.endsWith(".jpg")){
 
-			  	//comprobamos la extension
-			  	if(nombre.endsWith(".mp3")){
+		  		//definimos la posicion que tomara
+		  		posicion++;
 
-			  		//definimos la posicion que tomara
-			  		posicion++;
+		  		//renombremos el archivo
+		  		String nuevoNombre = renombrar(nombre, posicion);
+		  		//System.out.println(nombre);
 
-			  		//renombremos el archivo
-			  		String nuevoNombre = renombrar(nombre, posicion);
-			  		//System.out.println(nombre);
-
-					//comprobamos que no exista un archivo con el nuevo nombre
-				  	if(!new File(nuevoNombre).exists()){
-				  		//renombramos el archivo
-				  		boolean success = ficheros[i].renameTo(new File(nuevoNombre));
-		            	if (!success)
-		                	System.out.println("Error intentando cambiar el nombre de fichero");
-				  	}else{
-				  		System.out.println("El archivo ya existe");
-				  	}
-			  	}	
+				//comprobamos que no exista un archivo con el nuevo nombre
+			  	if(!new File(nuevoNombre).exists()){
+			  		//renombramos el archivo
+			  		boolean success = ficheros[i].renameTo(new File(nuevoNombre));
+	            	if (!success)
+	                	System.out.println("Error intentando cambiar el nombre de fichero");
+			  	}else{
+			  		System.out.println("El archivo ya existe");
+			  	}
+		  	}	
 		  	
-		  	}
 		}
 
 	}
 
 	public static String renombrar (String nombre, int posicion) {
 		
-		String nuevoNombre = "";
+		String nuevoNombre = "Planeta.jpg";
 
 		/*for(int i=0; i<nombre.length(); i++){
 
@@ -55,7 +51,7 @@ public class CambiarNombre {
 			
 		}*/
 
-		System.out.println();
+		//System.out.println();
 
 		//.substring(0, i);
 		
