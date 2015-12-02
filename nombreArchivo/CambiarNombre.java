@@ -13,19 +13,29 @@ public class CambiarNombre {
 		for (int i=0; i<ficheros.length; i++){
 			//sacamos el nombre del archivo
 		  	String nombre = ficheros[i].getName();
-		 
+
 	  		//comprobamos la extension
 		  	if(nombre.endsWith(".jpg")){
+
+		  		System.out.println(nombre);
 
 		  		//definimos la posicion que tomara
 		  		posicion++;
 
 		  		//renombremos el archivo
 		  		String nuevoNombre = renombrar(nombre, posicion);
-		  		//System.out.println(nombre);
+		  		
+		  		//variable para saber si existe el fichero
+		  		int existe = 0;
+		  		//recorremos los archivos del directorio
+		  		for (int j=0; j<ficheros.length; j++){
+		  			//si existe sumamos
+		  			if(ficheros[j].getName() == nuevoNombre)
+		  				existe++;
+		  		}
 
 				//comprobamos que no exista un archivo con el nuevo nombre
-			  	if(!new File(nuevoNombre).exists()){
+			  	if(existe==0){
 			  		//renombramos el archivo
 			  		boolean success = ficheros[i].renameTo(new File(nuevoNombre));
 	            	if (!success)
@@ -41,7 +51,7 @@ public class CambiarNombre {
 
 	public static String renombrar (String nombre, int posicion) {
 		
-		String nuevoNombre = "Planeta.jpg";
+		String nuevoNombre = posicion+".jpg";
 
 		/*for(int i=0; i<nombre.length(); i++){
 
@@ -55,7 +65,7 @@ public class CambiarNombre {
 
 		//.substring(0, i);
 		
-		return nombre;
+		return nuevoNombre;
 	}
 
 	public static void main(String[] args) {
