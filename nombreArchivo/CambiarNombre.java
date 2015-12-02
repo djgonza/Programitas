@@ -3,7 +3,7 @@ import java.io.*;
 public class CambiarNombre {
 
 	public static void leerDirectorio () {
-		String extension = ".jpg";
+		String extension = "mp3";
 		//posicion para el nombre
 		int posicion = 0;
 		//leemos el directorio
@@ -14,6 +14,8 @@ public class CambiarNombre {
 		for (int i=0; i<ficheros.length; i++){
 			//sacamos el nombre del archivo
 		  	String nombre = ficheros[i].getName();
+
+		  	System.out.println(nombre);
 
 	  		//comprobamos la extension
 		  	if(nombre.endsWith(extension)){
@@ -51,39 +53,9 @@ public class CambiarNombre {
 	public static String renombrar (String nombre, int posicion, String extension) {
 		
 		String nuevoNombre = "";
-		if(posicion<10)
-			nuevoNombre += "0";
-		nuevoNombre = posicion+""+extension;
-
-		//sacamos la extension
-		/*String[] nombreSplit = nombre.split(".", 2);
-		System.out.println(nombreSplit.length);
-			//System.out.print(nombreSplit[0]+" "+nombreSplit[1]);
-			for (int j=0; j<nombreSplit.length; j++){
-				System.out.println(nombreSplit[j]);
-			}*/
-
-
-		//nombre.codePointAt();
-
-
-		for (String retval: nombre.split(".", 0)){
-	        System.out.println(retval);
-	    }
-
-		for(int i=0; i<nombre.length(); i++){
-
-			//comprovamos si es un numero
-			//if(!nombre.substring(i, i+1))
-				//System.out.println(nombre.substring(i, i+1));
-				//nuevoNombre += nombre.substring(0, i);
-			
-		}
-
-		//System.out.println();
-
-		//.substring(0, i);
-		
+		//nuevoNombre = nombre.replace(".", "");
+		nuevoNombre = nombre.replaceAll("mp3", ".mp3");
+		System.out.println(nuevoNombre);
 		return nuevoNombre;
 	}
 
