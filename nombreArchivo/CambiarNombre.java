@@ -67,7 +67,7 @@ public class CambiarNombre {
 		//nombre.codePointAt();
 
 
-		for (String retval: nombre.split(".", 2)){
+		for (String retval: nombre.split(".", 0)){
 	        System.out.println(retval);
 	    }
 
