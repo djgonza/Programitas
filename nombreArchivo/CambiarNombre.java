@@ -17,8 +17,6 @@ public class CambiarNombre {
 	  		//comprobamos la extension
 		  	if(nombre.endsWith(".jpg")){
 
-		  		System.out.println(nombre);
-
 		  		//definimos la posicion que tomara
 		  		posicion++;
 
@@ -53,13 +51,14 @@ public class CambiarNombre {
 		
 		String nuevoNombre = posicion+".jpg";
 
-		/*for(int i=0; i<nombre.length(); i++){
+		for(int i=0; i<nombre.length(); i++){
 
 			//comprovamos si es un numero
-			if(!nombre.substring(0, i).isNumeric())
-				nuevoNombre += nombre.substring(0, i);
+			//if(!nombre.substring(i, i+1))
+				System.out.println(nombre.substring(i, i+1));
+				//nuevoNombre += nombre.substring(0, i);
 			
-		}*/
+		}
 
 		//System.out.println();
 
