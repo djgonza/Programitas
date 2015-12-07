@@ -1,3 +1,4 @@
+import java.io.*;
 
 public class Controlador {
 
@@ -9,6 +10,29 @@ public class Controlador {
 		//inicializamos el lector de ficheros con la ruta
 		ficheros = new InteraccionArchivos("./pruebas");
 		nombre = new FormatearNombres ();
+	}
+
+	/*************************************************************************/
+
+	public void deshacer () {
+
+		//guardamos los antiguos ficheros
+		File[] ficherosAntiguos = ficheros.getFicheros().clone();
+
+		//recargamos los archivos
+		ficheros.leerArchivos();
+
+		//recorremos los archivos y reemplazamos el nombre
+		for (int i=0; i<ficheros.getFicheros().length; i++) {
+
+			//definimos el nombre del archivo
+			nombre.setCadena (ficherosAntiguos[i].getName());
+
+			//renombramos el archivo
+			ficheros.renombrar (i, nombre.getCadena());
+
+		}
+
 	}
 
 	/*************************************************************************/
@@ -88,34 +112,6 @@ public class Controlador {
 
 	/*************************************************************************/
 
-	public void eliminarCaracteresConflictivos (String terminaEn) {
-
-		//recargamos los archivos
-		ficheros.leerArchivos();
-
-		//recorremos los archivos y reemplazamos los caracteres
-		for (int i=0; i<ficheros.getFicheros().length; i++) {
-
-			//definimos el nombre del archivo
-			nombre.setCadena (ficheros.getFicheros()[i].getName());
-
-		  	//comprobamos que es el archivo que queremos
-			if(nombre.getCadena().endsWith(terminaEn)){
-
-				//aplicamos el filtro
-				nombre.eliminarCaracteresConflictivos();
-
-				//renombramos el archivo
-				ficheros.renombrar (i+1, nombre.getCadena());
-
-			}
-
-		}
-
-	}
-
-	/*************************************************************************/
-
 	public void ponerEnMayusculas (String terminaEn) {
 
 		//recargamos los archivos
@@ -183,8 +179,10 @@ public class Controlador {
 
 		Controlador demo = new Controlador();
 
+		demo.eliminar(true, "_", ".jpg");
+		demo.deshacer();
 		//demo.eliminar(true, "_", ".jpg");
-		demo.reemplazar(false, "_", " ", ".jpg");
+		//demo.reemplazar(false, "CR", "Cr", ".jpg");
 		//demo.eliminarCaracteresConflictivos(".jpg");
 		//demo.ponerEnMayusculas(".jpg");
 		//demo.numerar(".jpg");

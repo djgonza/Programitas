@@ -53,7 +53,7 @@ public class FormatearNombres {
 	//reemplaza la primera cadena por la segunda en la posicion asignada
 	public void reemplazarPorPosicion (int posicion) {
 
-		if(posicion>0)
+		if(posicion>=0)
 			cadena = cadena.substring(0, posicion) + 
 					cadenaReemplazar +
 					cadena.substring(posicion+cadenaBuscar.length(), cadena.length());
@@ -73,8 +73,12 @@ public class FormatearNombres {
 	//elimina el primer caracter en la posicion asignada
 	public void eliminarPorPosicionCaracter (int posicion) {
 
-		if(posicion>0)
-			cadena = cadena.substring(0, posicion) + cadena.substring(posicion+1, cadena.length());
+		if(posicion>=0)
+			cadena = cadena.substring (0, posicion) + 
+					 cadena.substring (
+						posicion+cadenaBuscar.length(), 
+						cadena.length()
+					 );
 
 	}
 
@@ -83,28 +87,6 @@ public class FormatearNombres {
 		for (int i = -1; (i = cadena.indexOf(cadenaBuscar, i+1)) != -1;) { 
 			eliminarPorPosicionCaracter(i);
 		}
-	}
-
-	//elimina todos los caracteres conflictivos
-	public void eliminarCaracteresConflictivos () {
-
-		setCadenaBuscar("[");
-		eliminarTodosCaracteres ();
-
-		setCadenaBuscar("]");
-		eliminarTodosCaracteres ();
-
-		setCadenaBuscar("(");
-		eliminarTodosCaracteres ();
-
-		setCadenaBuscar(")");
-		eliminarTodosCaracteres ();
-
-		setCadenaBuscar("{");
-		eliminarTodosCaracteres ();
-
-		setCadenaBuscar("}");
-		eliminarTodosCaracteres ();
 	}
 
 	/*************************************************************************/
@@ -162,20 +144,24 @@ public class FormatearNombres {
 
 		FormatearNombres demo = new FormatearNombres(cadena);
 
-		demo.eliminarCaracteresConflictivos();
-		System.out.println(demo.cadena);
+		//demo.eliminarCaracteresConflictivos();
+		//System.out.println(demo.cadena);
 
-		demo.ponerMayusculas(".mp3");
-		System.out.println(demo.cadena);
+		//demo.ponerMayusculas(".mp3");
+		//System.out.println(demo.cadena);
+
+		//demo.setCadenaBuscar("[ES UNA]");
+		//demo.setCadenaReemplazar("es una");
+		//demo.eliminarPorPosicionCaracter ();
 
 
-		demo.setCadenaBuscar(".");
-		demo.setCadenaReemplazar(" ");
-		demo.reemplazarTodasCadenas();
-		System.out.println(demo.cadena);
+		//demo.setCadenaBuscar("[ES UNA]");
+		//demo.setCadenaReemplazar("es una");
+		//demo.reemplazarTodasCadenas();
+		//System.out.println(demo.cadena);
 
-		demo.numerarCadena(100);
-		System.out.println(demo.cadena);
+		//demo.numerarCadena(100);
+		//System.out.println(demo.cadena);
 
 	}
 

@@ -4,26 +4,12 @@ public class InteraccionArchivos {
 
 	private File directorio;
 	private File[] ficheros;
-	private File[] antiguosFicheros;
 	private String path;
 
 	public InteraccionArchivos (String path){
 
 		this.path = path;
 		leerArchivos ();
-
-	}
-
-	public void leerArchivos  () {
-
-		//leemos el directorio
-		this.directorio = new File(path);
-
-		//leemos todos los ficheros del directorio
-		this.ficheros = this.directorio.listFiles();
-
-		//guardamos los ficheros antiguos para deshacer
-		this.antiguosFicheros = this.directorio.listFiles();
 
 	}
 
@@ -39,10 +25,6 @@ public class InteraccionArchivos {
 		return ficheros;
 	}
 
-	public File[] getAntiguosFicheros () {
-		return antiguosFicheros;
-	}
-
 	//setters
 
 	public void setDirectorio (File directorio) {
@@ -53,16 +35,25 @@ public class InteraccionArchivos {
 		this.ficheros = ficheros;
 	}
 
-	public void setAntiguosFicheros (File[] antiguosFicheros) {
-		this.antiguosFicheros = antiguosFicheros;
-	}
-
 	/*************************************************************************/
 
 	//renombra el fichero especificado mediante la posicion
 	public void renombrar (int posicion, String cadena) {
 
+		//renombramos los ficheros
 		ficheros[posicion].renameTo(new File(path+"/"+cadena));
+
+	}
+
+	/*************************************************************************/
+
+	public void leerArchivos  () {
+
+		//leemos el directorio
+		this.directorio = new File(path);
+
+		//leemos todos los ficheros del directorio
+		this.ficheros = this.directorio.listFiles();
 
 	}
 

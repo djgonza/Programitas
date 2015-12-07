@@ -63,27 +63,28 @@ public class Main {
 
 		JLabel lblCadenaABuscar = new JLabel("Cadena a Buscar");
 		lblCadenaABuscar.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCadenaABuscar.setBounds(15, 90, 150, 15);
+		lblCadenaABuscar.setBounds(15, 85, 150, 15);
 		frame.getContentPane().add(lblCadenaABuscar);
 		
 		JLabel lblCadenaAReemplazar = new JLabel("Cadena a Reemplazar");
-		lblCadenaAReemplazar.setBounds(15, 165, 150, 15);
+		lblCadenaAReemplazar.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCadenaAReemplazar.setBounds(15, 150, 150, 15);
 		frame.getContentPane().add(lblCadenaAReemplazar);
 
 		/************ texts fields ************/
 
 		terminaEn = new JTextField();
-		terminaEn.setBounds(15, 45, 150, 30);
+		terminaEn.setBounds(15, 35, 150, 30);
 		frame.getContentPane().add(terminaEn);
 		terminaEn.setColumns(10);
 
 		cadenaBuscar = new JTextField();
-		cadenaBuscar.setBounds(15, 120, 150, 30);
+		cadenaBuscar.setBounds(15, 105, 150, 30);
 		frame.getContentPane().add(cadenaBuscar);
 		cadenaBuscar.setColumns(10);
 		
 		cadenaReemplazar = new JTextField();
-		cadenaReemplazar.setBounds(15, 195, 150, 30);
+		cadenaReemplazar.setBounds(15, 175, 150, 30);
 		frame.getContentPane().add(cadenaReemplazar);
 		cadenaReemplazar.setColumns(10);
 		
@@ -99,7 +100,7 @@ public class Main {
 										terminaEn.getText());
 			}
 		});
-		btnCambiarPrimero.setBounds(180, 5, 150, 30);
+		btnCambiarPrimero.setBounds(180, 35, 150, 30);
 		frame.getContentPane().add(btnCambiarPrimero);
 
 		JButton btnCambiarTodo = new JButton("Cambiar Todo");
@@ -114,29 +115,8 @@ public class Main {
 				
 			}
 		});
-		btnCambiarTodo.setBounds(180, 40, 150, 30);
+		btnCambiarTodo.setBounds(180, 70, 150, 30);
 		frame.getContentPane().add(btnCambiarTodo);
-
-		JButton btnEliminarCaracteres = new JButton("Eliminar Caracteres");
-		btnEliminarCaracteres.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				controlador.eliminarCaracteresConflictivos (terminaEn.getText());
-				
-			}
-		});
-		btnEliminarCaracteres.setBounds(180, 75, 150, 30);
-		frame.getContentPane().add(btnEliminarCaracteres);
-		
-		JButton btnFormatearMayusculas = new JButton("For. Mayusculas");
-		btnFormatearMayusculas.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				controlador.ponerEnMayusculas (terminaEn.getText());
-			}
-		});
-		btnFormatearMayusculas.setBounds(180, 110, 150, 30);
-		frame.getContentPane().add(btnFormatearMayusculas);
 
 		JButton btnEliminarPrimero = new JButton("Eliminar Primero");
 		btnEliminarPrimero.addMouseListener(new MouseAdapter() {
@@ -149,7 +129,7 @@ public class Main {
 				
 			}
 		});
-		btnEliminarPrimero.setBounds(180, 145, 150, 30);
+		btnEliminarPrimero.setBounds(180, 105, 150, 30);
 		frame.getContentPane().add(btnEliminarPrimero);
 
 		JButton btnEliminarTodos = new JButton("Eliminar Todos");
@@ -163,17 +143,27 @@ public class Main {
 
 			}
 		});
-		btnEliminarTodos.setBounds(180, 180, 150, 30);
+		btnEliminarTodos.setBounds(180, 140, 150, 30);
 		frame.getContentPane().add(btnEliminarTodos);
+
+		JButton btnFormatearMayusculas = new JButton("For. Mayusculas");
+		btnFormatearMayusculas.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				controlador.ponerEnMayusculas (terminaEn.getText());
+			}
+		});
+		btnFormatearMayusculas.setBounds(180, 175, 150, 30);
+		frame.getContentPane().add(btnFormatearMayusculas);
 
 		JButton btnDeshacer = new JButton("Deshacer");
 		btnDeshacer.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				controlador.deshacer ();
 			}
 		});
-		btnDeshacer.setBounds(180, 215, 150, 30);
+		btnDeshacer.setBounds(15, 220, 150, 30);
 		frame.getContentPane().add(btnDeshacer);
 		
 	}
