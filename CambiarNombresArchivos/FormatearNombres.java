@@ -50,7 +50,9 @@ public class FormatearNombres {
 
 	/*************************************************************************/
 
-	//reemplaza la primera cadena por la segunda en la posicion asignada
+	/**
+     * Reemplaza la primera cadena por la segunda en la posicion asignada
+     */
 	public void reemplazarPorPosicion (int posicion) {
 
 		if(posicion>=0)
@@ -60,7 +62,9 @@ public class FormatearNombres {
 
 	}
 
-	//reemplaza la primera cadena por la segunda todas las coincidencias
+	/**
+     * Reemplaza la primera cadena por la segunda todas las coincidencias
+     */
 	public void reemplazarTodasCadenas () {
 
 		for (int i = -1; (i = cadena.indexOf(cadenaBuscar, i+1)) != -1;) {
@@ -70,7 +74,9 @@ public class FormatearNombres {
 
 	/*************************************************************************/
 
-	//elimina el primer caracter en la posicion asignada
+	/**
+     * Elimina el primer caracter en la posicion asignada
+     */
 	public void eliminarPorPosicionCaracter (int posicion) {
 
 		if(posicion>=0)
@@ -82,7 +88,9 @@ public class FormatearNombres {
 
 	}
 
-	//busca todos los caracteres de una cadena y los elimina
+	/**
+     * Busca todos los caracteres de una cadena y los elimina
+     */
 	public void eliminarTodosCaracteres () {
 		for (int i = -1; (i = cadena.indexOf(cadenaBuscar, i+1)) != -1;) { 
 			eliminarPorPosicionCaracter(i);
@@ -91,7 +99,9 @@ public class FormatearNombres {
 
 	/*************************************************************************/
 
-	//pone la primera letra de una cadena en mayusculas
+	/**
+     * Pone la primera letra de una cadena en mayusculas
+     */
 	public void ponerMayusculas (String terminaEn) {
 
 		//ponemos todo en minusculas
@@ -129,7 +139,9 @@ public class FormatearNombres {
 
 	/*************************************************************************/
 
-	//recive un numero y lo pone al principio de la cadena
+	/**
+     * Recive un numero y lo pone al principio de la cadena
+     */
 	public void numerarCadena (int numero) {
 
 		cadena = String.format("%02d %s", numero, cadena);

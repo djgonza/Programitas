@@ -14,6 +14,9 @@ public class Controlador {
 
 	/*************************************************************************/
 
+	/**
+     * Renombra los archivos al paso anterior
+     */
 	public void deshacer () {
 
 		//guardamos los antiguos ficheros
@@ -37,6 +40,11 @@ public class Controlador {
 
 	/*************************************************************************/
 
+	/**
+     * 	Reemplaza cadenaBuscar por cadenaReemplazar
+     *	Cuando todas es true reemplaza todas las coincidencias
+     *	Cuando todas es false reemplaza solo la primera
+     */
 	public void reemplazar (Boolean todas, String cadenaBuscar, String cadenaReemplazar, String terminaEn) {
 
 		//recargamos los archivos
@@ -75,6 +83,11 @@ public class Controlador {
 
 	/*************************************************************************/
 
+	/**
+     * 	Elimina cadenaBuscar
+     *	Cuando todas es true elimina todas las coincidencias
+     *	Cuando todas es false elimina solo la primera
+     */
 	public void eliminar (Boolean todas, String cadenaBuscar, String terminaEn) {
 
 		//recargamos los archivos
@@ -112,6 +125,10 @@ public class Controlador {
 
 	/*************************************************************************/
 
+	/**
+     * 	Pone en mayusculas la primera letra de cada palabra que encuentra
+     *	Respeta la terminacion que no es modificada
+     */
 	public void ponerEnMayusculas (String terminaEn) {
 
 		//recargamos los archivos
@@ -140,6 +157,9 @@ public class Controlador {
 
 	/*************************************************************************/
 
+	/**
+     * 	Numera los archivos segun la posicion en la que los encuentre
+     */
 	public void numerar (String terminaEn) {
 
 		//recargamos los archivos
@@ -161,8 +181,6 @@ public class Controlador {
 
 				//aplicamos el filtro
 				nombre.numerarCadena(contador);
-
-				System.out.println(nombre.getCadena());
 
 				//renombramos el archivo
 				ficheros.renombrar (i, nombre.getCadena());

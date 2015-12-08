@@ -156,6 +156,16 @@ public class Main {
 		btnFormatearMayusculas.setBounds(180, 175, 150, 30);
 		frame.getContentPane().add(btnFormatearMayusculas);
 
+		JButton btnNumerar = new JButton("Numerar");
+		btnNumerar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				controlador.numerar (terminaEn.getText());
+			}
+		});
+		btnNumerar.setBounds(180, 210, 150, 30);
+		frame.getContentPane().add(btnNumerar);
+
 		JButton btnDeshacer = new JButton("Deshacer");
 		btnDeshacer.addMouseListener(new MouseAdapter() {
 			@Override

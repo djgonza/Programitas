@@ -37,7 +37,9 @@ public class InteraccionArchivos {
 
 	/*************************************************************************/
 
-	//renombra el fichero especificado mediante la posicion
+	/**
+     * Renombra el fichero especificado mediante la posicion
+     */
 	public void renombrar (int posicion, String cadena) {
 
 		//renombramos los ficheros
@@ -47,6 +49,9 @@ public class InteraccionArchivos {
 
 	/*************************************************************************/
 
+	/**
+     * Lee los archivos de la ruta especificada y los almacena
+     */
 	public void leerArchivos  () {
 
 		//leemos el directorio
