@@ -156,11 +156,8 @@ public class FormatearNombres {
 
 		FormatearNombres demo = new FormatearNombres(cadena);
 
-		//demo.eliminarCaracteresConflictivos();
-		//System.out.println(demo.cadena);
-
-		//demo.ponerMayusculas(".mp3");
-		//System.out.println(demo.cadena);
+		demo.ponerMayusculas(".mp3");
+		System.out.println(demo.cadena);
 
 		//demo.setCadenaBuscar("[ES UNA]");
 		//demo.setCadenaReemplazar("es una");

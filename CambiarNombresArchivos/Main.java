@@ -3,6 +3,7 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JFileChooser;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -50,7 +51,7 @@ public class Main {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setBounds(0, 0, 350, 280);
+		frame.setBounds(0, 0, 450, 280);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -175,6 +176,23 @@ public class Main {
 		});
 		btnDeshacer.setBounds(15, 220, 150, 30);
 		frame.getContentPane().add(btnDeshacer);
+
+		JButton btnRuta = new JButton("Seleccionar Ruta");
+		btnRuta.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JFileChooser chooser = new JFileChooser();
+				chooser.showOpenDialog(frame);
+			    System.out.println("You chose to open this file: " +
+			    					chooser.getSelectedFile().getAbsolutePath());
+			}
+		});
+		btnRuta.setBounds(300, 30, 150, 30);
+		frame.getContentPane().add(btnRuta);
+
+		/********************** Selector de ficheros *******************************/
+		
+		
 		
 	}
 }
