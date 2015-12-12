@@ -7,6 +7,9 @@ import javax.swing.JFileChooser;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+
 
 public class Main {
 
@@ -39,10 +42,23 @@ public class Main {
 	 */
 	public Main() {
 
+		//poner look and feel del sistema en el que nos encontramos
+		try
+		{
+		   UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		}
+		catch (Exception e)
+		{
+		   e.printStackTrace();
+		}
+
+		//UIManager.setLookAndFeel("com.apple.laf.AquaLookAndFeel");
+
 		//iniciamos el controlador
 		controlador = new Controlador();
 		//iniciamos la vista
 		initialize();
+
 	}
 
 	/**
@@ -185,6 +201,8 @@ public class Main {
 				chooser.showOpenDialog(frame);
 			    System.out.println("You chose to open this file: " +
 			    					chooser.getSelectedFile().getAbsolutePath());
+                
+
 			}
 		});
 		btnRuta.setBounds(300, 30, 150, 30);

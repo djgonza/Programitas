@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.ControladorVistaPrincipal">
+   <children>
+      <BorderPane prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <BorderPane prefHeight="642.0" prefWidth="802.0" BorderPane.alignment="CENTER">
+               <center>
+                  <ListView fx:id="listaFicheros" BorderPane.alignment="CENTER" />
+               </center>
+               <left>
+                  <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="184.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="16.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Pane prefHeight="60.0" prefWidth="184.0">
+                                 <children>
+                                    <Button layoutX="102.0" layoutY="17.0" mnemonicParsing="false" onAction="#deshacer" prefHeight="26.0" prefWidth="82.0" text="Deshacer" />
+                                 </children>
+                              </Pane>
+                              <Label prefHeight="45.0" prefWidth="182.0" text="Cadena a Buscar" />
+                              <TextField fx:id="cadenaBuscar" />
+                              <Label layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="182.0" text="Cadena a Reemplazar" />
+                              <TextField fx:id="cadenaReemplazar" layoutX="10.0" layoutY="39.0" />
+                              <Label layoutX="10.0" layoutY="115.0" prefHeight="45.0" prefWidth="182.0" text="Reemplazar" />
+                              <HBox prefHeight="72.0" prefWidth="184.0">
+                                 <children>
+                                    <Pane prefHeight="100.0" prefWidth="20.0" />
+                                    <VBox prefHeight="76.0" prefWidth="165.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#reemplazarPrimeraCoincidencia" prefHeight="26.0" prefWidth="165.0" text="Primera Coincidencia" />
+                                          <Pane prefHeight="20.0" prefWidth="165.0" />
+                                          <Button mnemonicParsing="false" onAction="#reemplazarTodasCoincidencias" prefHeight="26.0" prefWidth="170.0" text="Todas Coincidencias" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Label layoutX="10.0" layoutY="186.0" prefHeight="45.0" prefWidth="182.0" text="Eliminar" />
+                              <HBox layoutX="10.0" layoutY="231.0" prefHeight="72.0" prefWidth="184.0">
+                                 <children>
+                                    <Pane prefHeight="100.0" prefWidth="20.0" />
+                                    <VBox prefHeight="76.0" prefWidth="165.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#borrarPrimeraCoincidencia" prefHeight="26.0" prefWidth="165.0" text="Primera Coincidencia" />
+                                          <Pane prefHeight="20.0" prefWidth="165.0" />
+                                          <Button mnemonicParsing="false" onAction="#borrarTodasCoincidencias" prefHeight="26.0" prefWidth="170.0" text="Todas Coincidencias" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Label layoutX="10.0" layoutY="303.0" prefHeight="45.0" prefWidth="182.0" text="Otras Acciones" />
+                              <HBox layoutX="10.0" layoutY="348.0" prefHeight="119.0" prefWidth="184.0">
+                                 <children>
+                                    <Pane prefHeight="100.0" prefWidth="20.0" />
+                                    <VBox prefHeight="121.0" prefWidth="165.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#formatearMayusculas" prefHeight="26.0" prefWidth="165.0" text="Formatear Mayusculas" />
+                                          <Pane prefHeight="20.0" prefWidth="165.0" />
+                                          <Button mnemonicParsing="false" onAction="#numerar" prefHeight="26.0" prefWidth="170.0" text="Numerar" />
+                                          <Pane layoutX="10.0" layoutY="36.0" prefHeight="20.0" prefWidth="165.0" />
+                                          <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onAction="#metadatos" prefHeight="26.0" prefWidth="170.0" text="Metadatos" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </left>
+               <top>
+                  <HBox prefHeight="40.0" prefWidth="984.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <BorderPane>
+                           <top>
+                              <Pane prefHeight="5.0" prefWidth="584.0" BorderPane.alignment="CENTER" />
+                           </top>
+                           <left>
+                              <Button mnemonicParsing="false" onAction="#leerDirectorio" text="Seleccionar" BorderPane.alignment="CENTER" />
+                           </left>
+                           <center>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="ruta" layoutX="17.0" layoutY="10.0" prefHeight="16.0" prefWidth="259.0" text="Seleccione un directorio" />
+                                 </children>
+                              </AnchorPane>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </center>
+         <right>
+            <Pane prefHeight="719.0" prefWidth="20.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <Pane prefHeight="20.0" prefWidth="1024.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <left>
+            <Pane prefHeight="719.0" prefWidth="20.0" BorderPane.alignment="CENTER" />
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
