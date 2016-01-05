@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.control.SelectionMode;
 import javafx.stage.DirectoryChooser;
 import javafx.scene.control.Label;
@@ -30,6 +31,8 @@ public class ControladorVistaPrincipal {
 
 		//cargamos la lista en la vista
 		listaFicheros = new ListView<String>();
+		listaFicheros.setEditable(true);
+		listaFicheros.setCellFactory(TextFieldListCell.forListView());
 		//creamos el selector de directorios
 		directorioChooser = new DirectoryChooser();
 		//ponemos el titulo al dialogo
@@ -142,6 +145,8 @@ public class ControladorVistaPrincipal {
 	
 	@FXML
 	private void numerar () {
+		System.out.println("click");
+		
 	}
 	
 	@FXML

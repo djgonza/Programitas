@@ -33,7 +33,7 @@
          <center>
             <BorderPane prefHeight="642.0" prefWidth="802.0" BorderPane.alignment="CENTER">
                <center>
-                  <ListView fx:id="listaFicheros" BorderPane.alignment="CENTER" />
+                  <ListView fx:id="listaFicheros" editable="true" onEditCancel="#numerar" onEditCommit="#numerar" onEditStart="#numerar" BorderPane.alignment="CENTER" />
                </center>
                <left>
                   <GridPane BorderPane.alignment="CENTER">
