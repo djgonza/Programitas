@@ -13,6 +13,7 @@ $(document).ready(function(){
         var actores = [];
         var pelicula = '';
         var actorPelicula = '';
+        var contadorActores = 1;
 
         /* Recorremos todas las peliculas*/
         for(i=0; i<numeroPeliculas; i++){
@@ -31,53 +32,58 @@ $(document).ready(function(){
             });
 
             //sql directores
-            director += "INSERT INTO director VALUES (NULL, '"+data.Data[i][19]+"');";
+            director += "INSERT INTO director VALUES (NULL, '"+data.Data[i][19]+"');\n";
 
             //sql peliculas
-            pelicula += "INSERT INTO pelicula VALUES (NULL, '";
+            pelicula += "INSERT INTO pelicula VALUES (NULL, ";
                 //caratula
-                pelicula += ""+data.Data[i][0]+",";
+                pelicula += "'"+data.Data[i][0]+"', ";
                 //duracion
-                pelicula += ""+data.Data[i][10].t+",";
+                pelicula += "'"+data.Data[i][10].e+"', ";
                 //vista
-                pelicula += ""+data.Data[i][9]+",";
+                if(data.Data[i][9] == 0){
+                    pelicula += "false, ";
+                }else{
+                    pelicula += "true, ";
+                }
                 //año
-                pelicula += ""+data.Data[i][11]+",";
+                pelicula += "'"+data.Data[i][11]+"-01-01', ";
                 //formato
-                pelicula += ""+data.Data[i][5]+",";
+                pelicula += "'"+data.Data[i][5]+"', ";
                 //genero
-                pelicula += ""+data.Data[i][7]+",";
+                pelicula += "'"+data.Data[i][7]+"', ";
                 //nacionalidad
-                pelicula += ""+data.Data[i][8]+",";
+                pelicula += "'"+data.Data[i][8]+"', ";
                 //puntuación
                 if(data.Data[i][16]){
-                    pelicula += ""+data.Data[i][16].e+",";
+                    pelicula += ""+data.Data[i][16].e+", ";
                 }else{
-                    pelicula += ""+data.Data[i][16]+",";
+                    pelicula += ""+data.Data[i][16]+", ";
                 }             
                 //soporte
-                pelicula += ""+data.Data[i][6]+",";
+                pelicula += "'"+data.Data[i][6]+"', ";
                 //titulo
-                pelicula += ""+data.Data[i][4]+",";
+                pelicula += "'"+data.Data[i][4]+"', ";
                 //director
-                pelicula += ""+i+",";
+                pelicula += ""+(i+1)+"";
 
-            pelicula += "');";
+            pelicula += ");\n";
 
             //sql actores
             actores = data.Data[i][21].split(",");
             for (k=0; k<actores.length; k++){
-                actor += "INSERT INTO actor VALUES (NULL, '"+actores[k]+"');";
-                actorPelicula += "INSERT INTO actor_pelicula VALUES ("+k+", '"+i+"');";
+                actor += "INSERT INTO actor VALUES (NULL, '"+actores[k]+"');\n";
+                actorPelicula += "INSERT INTO actor_pelicula VALUES ("+(i+1)+", "+contadorActores+");\n";
+                contadorActores++;
             }
 
             //console.log(data.Data[i]);
 
         }
 
-        console.log(director);
-        console.log(actor);
-        console.log(pelicula);
+        //console.log(director);
+        //console.log(actor);
+        //console.log(pelicula);
         console.log(actorPelicula);
 
         /* Creamos la coleccion */
