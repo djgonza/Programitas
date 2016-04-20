@@ -1,0 +1,25 @@
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+
+var socket = io();
+  	function enviar(){
+
+  		console.log("click" + $("#texto").val());
+  		socket.emit("msg", $("#texto").val());
+
+  		socket.on("msg", function (msg) {
+
+  			console.log(msg);
+  			$('ul').append("<li>"+msg+"</li>");
+
+  		});
+
+  	}
+
+</script>
+
+
+<input type="text" id="texto"></input>
+<button onclick="enviar()">Enviar</button>
+<ul id="ul"></ul>
