@@ -1,76 +1,84 @@
 'use strict';
 
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var express = require('express');
+var app 	= express();
+var http 	= require('http').Server(app);
+var io 		= require('socket.io')(http);
+
+/* Clases */
+var Sala 	= require('./lib/sala');
+var Jugador = require('./lib/jugador');
+
+// contenido estatico
+app.use(express.static('client'));
 
 app.get('/', function(req, res){
-  res.sendfile('index.html');
+  res.sendfile('./client/index.html');
 });
 
-var salas = new Map();
-
-function Sala() {
-	this.jugadores = new Array();
-	this.lleno = false;
-	
-}
-
-function crearSalas () {
-	
-	for (var i = 0; i < 20; i++) {
-		salas.set(i, new Sala());
-	}
-
-	console.log(salas);
-
-}
-
-class Carta {
-	
-	constructor(palo, numero) {
-		this.palo = palo;
-		this.numero = numero;
-	}
-
-	equals (carta){
-		if(this.numero == carta.numero)
-			return true;
-		else
-			return false;
-	}
-
-	static compare (a, b){
-
-		if(a.numero > b.numero)
-			return 1;
-		if(a.numero < b.numero)
-			return -1;
-		else
-			return 0;
-
-	}
-
-	compareTo (carta) {
-
-		if(this.numero > carta.numero)
-			return 1;
-		if(this.numero < carta.numero)
-			return -1;
-		else
-			return 0;
-
-	}
-
-}
+var sala = new Sala(2);
+var jugadores = new Set();
 
 io.on('connection', function(socket){
   
-	console.log('a user connected');
+	console.log('Usuario Conectado');
 
-	socket.on('chat message', function(msg){
-		console.log('message: ' + msg);
-		io.emit('msg', "El mensaje");
+	// enviamos las mesas
+	sala.mesas.forEach( 
+
+		function(mesa, i) {
+		
+			var msg = {
+
+				jugadores: JSON.stringify(mesa.jugadores)
+
+			}
+
+			io.to(socket.id).emit('mesa', msg);
+
+		}
+
+	);
+
+	// eventos
+	socket.on('validarNombre', function(nombre){
+
+		// validamos que no este ocupado ese nombre
+		var valido = true;
+
+		jugadores.forEach( 
+
+			function(jugador, i) {
+
+				if(jugador.nombre === nombre){
+
+					valido = false;
+					return;
+
+				}
+
+			}
+
+		);
+
+		// si esta libre
+		if(valido){
+
+			// guardamos el jugador
+			jugadores.add(new Jugador(socket.id, nombre));
+			console.log(jugadores);
+
+			// avisamos de nombre correcto
+			io.to(socket.id).emit('validarNombre', true);
+
+		// si esta ocupado
+		}else{
+
+			//avisamos de nombre incorrecto
+			io.to(socket.id).emit('validarNombre', false);
+
+		}
+
 	});
 
 	socket.on('disconnect', function(){
@@ -80,15 +88,8 @@ io.on('connection', function(socket){
 });
 
 http.listen(3000, function(){
+	
 	console.log('listening on *:3000');
-	//crearSalas();
-
-	var a = new Carta('c', 5);
-	var b = new Carta('e', 5);
-
-	console.log(a.compareTo(b));
-	a.numero = 3;
-	console.log(a.compareTo(b));
 
 });
 
