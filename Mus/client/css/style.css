@@ -29,11 +29,26 @@ body {
     bottom: 0;
 }
 
-#pantallaInicio {
+.flex {
 	display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
+}
+
+#inicio {
+	width: 50%;
+    height: 50%;
+    align-self: center;
+    left: 25%;
+}
+
+.mesa {
+	width: 45%;
+	margin: 2.5%;
+	padding: 2.5%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 

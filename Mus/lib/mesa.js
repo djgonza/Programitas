@@ -5,12 +5,12 @@ var Jugador = require('./jugador');
 
 class Mesa {
 
-	constructor () {
+	constructor (tipo) {
 		
-		this.jugadores 	= new Set();
-		this.estado 	= 0; // 0,1,2,3 -> hay huecos, 4 -> llena
-		this.baraja 	= this.crearBaraja(0); // 0 -> 4 reyes, 1 -> 8 reyes
-		this.puntaucion = {
+		this.jugadores 	= new Array(4);
+		this.tipo 		= tipo; // 0 -> 4 reyes, 1 -> 8 reyes
+		this.baraja 	= this.crearBaraja(this.tipo); 
+		this.puntuacion = {
 			grande 	: 0,
 			pequeña : 0,
 			pares 	: 0,
@@ -199,41 +199,30 @@ class Mesa {
 
 	}
 
-	/* añade un jugador a la mesa 
+	/* añade un jugador a la mesa
 	 * si esta no esta completa 
+	 * param: nombre de un jugador, posicion en la mesa
 	 */
 	addJugador (jugador, posicion) {
-		
-		if(this.estado < 4){
 
-			if(posicion != null){
+		if(posicion < 0 > 4)
+			return false;
 
-				this.jugadores.set(posicion, jugador);
-
-			}else{
-
-				for(var i = 0; i < 4; i++){
-
-					if(this.jugadores.get(i) == undefined){
-
-						this.jugadores.set(i, jugador);
-						return;
-
-					}
-
-				}
-			}
-
+		if(this.jugadores[posicion] == null){
+			this.jugadores[posicion] = jugador;
+			return true;
 		}
+
+		return false;
 
 	}
 
 	/* */
-	deleteJugador (posicion) {
-		this.jugadores.delete (posicion);
+	removeJugador (posicion) {
+
+		this.jugadores.splice (posicion);
+
 	}
-
-
 
 
 }
