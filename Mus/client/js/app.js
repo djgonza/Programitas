@@ -2,6 +2,8 @@
 
 var socket = io();
 var mesas = new Map();
+var nombreJugador = "";
+var mesaJuego = null;
 
 $(function () {
 
@@ -11,6 +13,7 @@ $(function () {
 		var nombre = $("#inputSetName").val();
 
 		if(validarNombre(nombre)){
+			nombreJugador = nombre;
 			socket.emit('validarNombre', nombre);
 			$('#validarNombrePreload').removeClass('hide');
 			$('#buttonSetName').addClass('hide');
@@ -67,7 +70,18 @@ $(function () {
 
 	socket.on('setAsiento', function (mesa) {
 
-		mesas.get(mesa.id).addJugador (mesa.jugador, mesa.posicion);
+		if(mesa.jugador == nombreJugador){
+
+			$('#mesas').addClass('hide');
+			$('#mesaJuego').removeClass('hide');
+
+			mesaJuego = new MesaJuego(document.getElementById('mesaJuego'), mesa.id, mesa.posicion);
+
+		}else{
+
+			mesas.get(mesa.id).addJugador (mesa.jugador, mesa.posicion);
+		
+		}
 
 	});
 

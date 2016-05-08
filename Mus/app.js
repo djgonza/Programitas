@@ -90,6 +90,7 @@ io.on('connection', function(socket){
 		/* si añadimos el jugador notificamos a todos */
 		if(mesas.get(mesa.id).addJugador (jugadores.get(socket.id).nombre, mesa.posicion)){
 
+			/* avisamos a todos que el asiento a sido ocupado */
 			io.emit('setAsiento', {
 				id: mesa.id,
 				posicion: mesa.posicion,
