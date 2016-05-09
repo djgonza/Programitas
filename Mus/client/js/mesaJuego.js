@@ -21,6 +21,7 @@ class MesaJuego {
 						 	// 4 -> juego
 						 	// 5 -> punto
 						 	// 6 -> mostrarCartas
+						 	// 7 -> finJuego
 
 		this.secciones = new Array(9);
 		this.baraja = new Map(); 		// baraja con 8s y 9s
@@ -29,6 +30,16 @@ class MesaJuego {
 		this.crearBaraja ();
 
 
+
+	}
+
+	iniciarJuego () {
+
+		while (this.jugada != 7){
+
+			
+
+		}
 
 	}
 

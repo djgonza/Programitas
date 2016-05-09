@@ -14,7 +14,7 @@ $(function () {
 
 		if(validarNombre(nombre)){
 			nombreJugador = nombre;
-			socket.emit('validarNombre', nombre);
+			socket.emit('acceder', nombre);
 			$('#validarNombrePreload').removeClass('hide');
 			$('#buttonSetName').addClass('hide');
 		}
@@ -35,7 +35,7 @@ $(function () {
 
 
 	/* sockets */
-	socket.on('validarNombre', function (validacion) {
+	socket.on('acceder', function (validacion) {
 
 		if(validacion){
 			$('#inicio').addClass('hide');
@@ -54,17 +54,21 @@ $(function () {
 
 		mesas.set(mesa.id, new Mesa(mesa.id, mesa.tipo, $('#mesas'), this));
 
-		mesa.jugadores.forEach( 
-			
-			function(jugador, i) {
-			
-				if(jugador){
-					mesas.get(mesa.id).addJugador(jugador, i);
+		console.log(mesa.jugadores);
+
+		if(mesa.jugadores.size){
+			mesa.jugadores.forEach( 
+				
+				function(jugador, i) {
+				
+					if(jugador){
+						//mesas.get(mesa.id).addJugador(jugador, i);
+					}
+
 				}
 
-			}
-
-		);
+			);
+		}
 
 	});
 

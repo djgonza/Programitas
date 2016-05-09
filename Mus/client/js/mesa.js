@@ -46,14 +46,16 @@ class Mesa {
 
 			
 			/* Eventos */
-			asiento.on('click', function () {
+			asiento.on('click', function (a) {
+
+				console.log(a);
 
 				/* avisar al server */
 				clase.socket.emit('setAsiento', {
 					id: clase.id,
+					nombreJugador: "",//nombreJugador,
 					posicion: this.id
 				});
-
 
 			});
 

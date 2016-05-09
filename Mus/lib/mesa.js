@@ -7,7 +7,7 @@ class Mesa {
 
 	constructor (tipo) {
 		
-		this.jugadores 	= new Array(4);
+		this.jugadores 	= new Map();
 		this.tipo 		= tipo; // 0 -> 4 reyes, 1 -> 8 reyes
 		this.baraja 	= this.crearBaraja(this.tipo); 
 		this.puntuacion = {
@@ -18,12 +18,6 @@ class Mesa {
 			equipoA : 0,
 			equipoB : 0
 		}
-
-		//console.log(this.baraja);
-
-		this.barajar();
-
-		//console.log(this.cartasEnBaraja());
 	
 
 	}
@@ -208,19 +202,62 @@ class Mesa {
 		if(posicion < 0 > 4)
 			return false;
 
-		if(this.jugadores[posicion] == null){
-			this.jugadores[posicion] = jugador;
+		if(!this.jugadores.has(posicion)){
+
+			this.jugadores.set(posicion, jugador);
+
+			/* si se llena la sala iniciamos el juego */
+			if(this.jugadores.size == 4){
+				this.iniciarJuego();
+			}
+
 			return true;
+
 		}
 
 		return false;
 
 	}
 
-	/* */
-	removeJugador (posicion) {
+	getJugadores () {
 
-		this.jugadores.splice (posicion);
+		var jugadores = [];
+
+		this.jugadores.forEach (
+
+			function (jugador, i) {
+
+				jugadores[i] = jugador.nombre;
+
+			}
+
+		);
+
+		return jugadores;
+
+	}
+
+	/* */
+	deleteJugador (nombre) {
+
+		this.jugadores.forEach (
+
+			function (jugador, i) {
+
+				if(jugador.nombre == nombre)
+					this.jugadores.delete(nombre);
+
+			}
+
+		);
+
+	}
+
+	iniciarJuego () {
+
+		console.log("Iniciar Juego");
+
+
 
 	}
 

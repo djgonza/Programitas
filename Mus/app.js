@@ -15,53 +15,58 @@ var jugadores = new Map();
 app.use(express.static('client'));
 
 app.get('/', function(req, res){
-  res.sendfile('./client/index.html');
+	res.sendfile('./client/index.html');
 });
 
 
 /* sockets */
 io.on('connection', function(socket){
-  
-	console.log('Usuario Conectado');
 
 	// eventos
-	socket.on('validarNombre', function(nombre){
-
-		// validamos que no este ocupado ese nombre
-		var valido = true;
-
-		jugadores.forEach( 
-
-			function(jugador, i) {
-
-				if(jugador.nombre === nombre){
-
-					valido = false;
-					return;
-
-				}
-
-			}
-
-		);
+	socket.on('acceder', function(nombre){
 
 		// si esta libre
-		if(valido){
+		if(!jugadores.has(nombre)){
+
+			// guardamos el nombre en el socket
+			socket.nombre = nombre;
 
 			// guardamos el jugador
-			jugadores.set(socket.id, new Jugador(socket.id, nombre));
-			//console.log(jugadores);
+			jugadores.set(nombre, new Jugador(io, socket, nombre));
 
 			// avisamos de nombre correcto
-			io.to(socket.id).emit('validarNombre', true);
+			io.to(socket.id).emit('acceder', true);
+
+			console.log('Usuario Conectado -> ' + jugadores.size);
 
 		// si esta ocupado
 		}else{
 
 			//avisamos de nombre incorrecto
-			io.to(socket.id).emit('validarNombre', false);
+			io.to(socket.id).emit('acceder', false);
 
 		}
+
+	});
+
+	socket.on('disconnect', function(){
+
+		if(!jugadores.has(socket.nombre))
+			return;
+
+		/* borramos el jugador de la mesa*/
+		var mesa = jugadores.get (socket.nombre).mesa;
+		
+		if(mesa != null){
+
+			mesa.deleteJugador (socket.nombre);
+
+		}
+
+		/* borramos el jugador de la lista */
+		jugadores.delete(socket.nombre);
+
+		console.log('Usuario Desconectado -> ' + jugadores.size);
 
 	});
 
@@ -75,7 +80,7 @@ io.on('connection', function(socket){
 
 					id : i,
 					tipo : mesa.tipo,
-					jugadores : mesa.jugadores
+					jugadores : mesa.getJugadores ()
 
 				});
 
@@ -87,61 +92,26 @@ io.on('connection', function(socket){
 
 	socket.on('setAsiento', function (mesa) {
 
-		/* si añadimos el jugador notificamos a todos */
-		if(mesas.get(mesa.id).addJugador (jugadores.get(socket.id).nombre, mesa.posicion)){
+		/* 
+			mesa: {
+				id,
+				posicion
+			}
+		*/
+
+		/* si añadimos el jugador */
+		if(mesas.get(mesa.id).addJugador (jugadores.get(socket.nombre), mesa.posicion)){
 
 			/* avisamos a todos que el asiento a sido ocupado */
 			io.emit('setAsiento', {
 				id: mesa.id,
 				posicion: mesa.posicion,
-				jugador: jugadores.get(socket.id).nombre
+				jugador: jugadores.get(socket.nombre).nombre
 			});
 
 		}
 
 	});
-
-	socket.on('disconnect', function(){
-
-		if(!jugadores.get(socket.id))
-			return;
-
-		var nombre = jugadores.get(socket.id).nombre;
-
-		/* buscamos el jugador para eliminarlo de la mesa en la que estaba */
-		mesas.forEach( 
-
-			function(mesa, i) {
-			
-				mesa.jugadores.forEach( 
-					
-					function(jugador, j) {
-
-						if(jugador == nombre){
-							mesa.removeJugador(j);
-							io.emit('unsetAsiento', {
-								id: i,
-								posicion: j
-							});
-
-						}
-
-					}
-
-				);
-
-			}
-
-		);
-
-		/* borramos el jugador de la lista */
-		jugadores.delete(socket.id);
-
-
-		console.log('Usuario Desconectado');
-
-	});
-
 
 });
 
