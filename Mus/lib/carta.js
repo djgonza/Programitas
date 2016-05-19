@@ -19,7 +19,14 @@ class Carta {
 		
 	}
 
-	/*
+	getEstado () {
+		return this.estado;
+	}
+
+	getId () {
+		return this.id;
+	}
+	
 	equals (carta){
 		if(this.id == carta.id)
 			return true;
@@ -48,7 +55,6 @@ class Carta {
 			return 0;
 
 	}
-	*/
 
 }
 

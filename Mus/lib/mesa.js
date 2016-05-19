@@ -1,201 +1,84 @@
 'use strict';
 
-var Carta = require('./carta');
 var Jugador = require('./jugador');
+var Baraja = require('./baraja');
+var Puntuacion = require('./puntuacion');
 
 class Mesa {
 
-	constructor (tipo) {
+	constructor (io, room, tipo) {
 		
-		this.jugadores 	= new Map();
-		this.tipo 		= tipo; // 0 -> 4 reyes, 1 -> 8 reyes
-		this.baraja 	= this.crearBaraja(this.tipo); 
-		this.puntuacion = {
-			grande 	: 0,
-			pequeña : 0,
-			pares 	: 0,
-			juego 	: 0,
-			equipoA : 0,
-			equipoB : 0
-		}
-	
+		this.io 		= io;
+		this.room 		= room;
+		this.jugadores 	= new Map ();
+		this.mano 		= null;
+		this.baraja 	= new Baraja (tipo);
+		this.puntuacion = new Puntuacion ();
+		this.idTimeout  = null;
+		this.esperando  = null; // null -> sin iniciar
+								// 0 -> todos han hablado
+								// 1 - 4 -> jugador al que esperamos
 
+		this.estado 	= 0; 	// 0 -> esperando jugadores
+								// 1 -> mus
+								// 2 -> descarte
+								// 3 -> grande
+								// 4 -> pequeña
+								// 5 -> pares
+								// 6 -> juego
+								// 7 -> punto
+								// 8 -> contarPuntos
 	}
 
-	/* carga las cartas para esta mesa */
-	crearBaraja (tipo){
+	/* actualiza la mano al siguiente jugador */
+	setMano () {
 
-		var baraja = new Map();
-
-		for(var i = 0; i < 40; i++){
-			
-			var valor = i % 10 + 1;
-			
-			baraja.set(new Carta(i, valor));
-
+		if(this.mano == null){
+			this.mano = 0;
+		}else if(this.mano == 3){
+			this.mano = 0;
+		}else{
+			this.mano++;
 		}
-
-		//baraja con 8 reyes
-		if(tipo == 1){
-
-			baraja.set(1, new Carta(1, 1));
-			baraja.set(2, new Carta(2, 10));
-
-			baraja.set(11, new Carta(11, 1));
-			baraja.set(12, new Carta(12, 10));
-
-			baraja.set(21, new Carta(21, 1));
-			baraja.set(22, new Carta(22, 10));
-
-			baraja.set(31, new Carta(31, 1));
-			baraja.set(32, new Carta(32, 10));
-
-		}
-
-		return baraja;
-
 	}
 
-	/* resetea la baraja */
-	resetearBaraja () {
-		crearBaraja ();
-	}
-
-
-	/* reordena las cartas */
-	barajar () {
-
-		var currentIndex = this.baraja.size, temporaryValue, randomIndex;
-
-		while (0 !== currentIndex) {
-
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex -= 1;
-
-			temporaryValue = this.baraja.get(currentIndex);
-			this.baraja.set(currentIndex, this.baraja.get(randomIndex));
-			this.baraja.set(randomIndex, temporaryValue);
-
-		}
-
-	}
-
-	/* reparte 16 cartas, 4 por jugador */
-	repartirCartas () {
-
-		// nos aseguramos que hay cartas para repartir
-		this.recogerCartas();
+	/* devuelve el siguiente jugador en hablar */
+	setJugadorSiguiente () {
 		
-		//contabilizamos cuantas cartas hay que repartir
-		var cartasARepartir = 0;
-		this.jugadores.forEach( function(jugador, i) {
-			cartasARepartir += 4 - jugador.cartasEnMano;
-		});
-
-		// repartimos las cartas
-		var i = 0;
-		var jugador = 0;
-		while(i < cartasARepartir){
-
-			this.jugadores.forEach( 
-				
-				function(jugador) {
-					
-					if(jugador.cartasEnMano < 4){
-
-						this.darCarta(jugador);
-
-					}
-
-				}
-
-			);
-
+		if(this.esperando == null){
+			this.esperando = this.mano;
+		}else if(this.esperando == 0){
+			this.esperando = null;
+		}else if(this.esperando == this.mano){
+			this.esperando = 0;
+		}else if(this.esperando == 3){
+			this.esperando = 1;
+		}else{
+			this.esperando++;
 		}
 
 	}
 
-	/* reparte una carta a un jugador y la saca de la baraja */
-	darCarta (jugador) {
+	setSiguienteEstado () {
 
-		this.baraja.forEach( 
-			
-			function(carta) {
-				
-				if(carta.estado == 0){
-
-					jugador.recogerCarta(carta);
-					carta.estado == 1;
-				
-				}
-
-			}
-
-		);
-
-	}
-
-	/* pasamos las cartas desechadas a la baraja */
-	recogerCartas () {
-
-		// si no hay cartas para todos
-		if(this.cartasEnBaraja < 16){
-			
-			// pasamos las cartas desechadas a la baraja
-			this.baraja.forEach( 
-				
-				function(carta, i) {
-					
-					if(carta.estado == 2)
-						carta.setEstado(0);
-
-				}
-
-			);
-
-			// volvemos a barajar
-			this.barajar ();
-
+		if(this.estado == 8){
+			this.estado = 1;
+		}else{
+			this.estado++;
 		}
 
-	}
-
-
-	/* devuelve el numero de cartas 
-	 * que aun se pueden repartir 
-	 */
-	cartasEnBaraja () {
-
-		var contador = 0;
-
-		this.baraja.forEach ( 
-			
-			function(carta, i) {
-
-				if(carta.estado == 0)
-					contador++;
-
+		// reseteamos el haHablado de los jugadores
+		this.jugadore.forEach (
+			function (jugador) {
+				jugador.haHablado = false;
 			}
-
 		);
-
-		return contador;
-
-	}
-
-	/* */
-	actualizarPuntuacion (puntos, equipo) {
-
-	}
-
-	/* */
-	actualizarEstado () {
 
 	}
 
 	/* añade un jugador a la mesa
 	 * si esta no esta completa 
-	 * param: nombre de un jugador, posicion en la mesa
+	 * param: obj jugador, posicion en la mesa
 	 */
 	addJugador (jugador, posicion) {
 
@@ -205,6 +88,7 @@ class Mesa {
 		if(!this.jugadores.has(posicion)){
 
 			this.jugadores.set(posicion, jugador);
+			//jugador.addMesa(this);
 
 			/* si se llena la sala iniciamos el juego */
 			if(this.jugadores.size == 4){
@@ -219,48 +103,185 @@ class Mesa {
 
 	}
 
-	getJugadores () {
+	/* saca a un jugador de la mesa */
+	leaveJugador (nombre) {
 
-		var jugadores = [];
+		// actualizamos al jugador
+		this.jugadores.setMesa(null);
+		this.sendEventAll('leaveJugador', {
+			mesa: this.room,
+			nombre: nombre
+		});
 
-		this.jugadores.forEach (
+	}
 
-			function (jugador, i) {
+	/* envia el evento a todos los jugadores */
+	sendEventAll (event, msg) {
+		this.io.emit(event, msg);
+	}
 
-				jugadores[i] = jugador.nombre;
+	/* envia el evento a los jugadores de la mesa */
+	sendEventRoom (event, msg) {
+		this.io.to(this.room).emit(event, msg);
+	}
 
+	/* reparte las cartas que necesita a los jugadores */
+	repartirCartas () {
+		
+		//contabilizamos cuantas cartas hay que repartir
+		var cartasARepartir = 0;
+		this.jugadores.forEach( 
+			function(jugador, i) {
+				cartasARepartir += jugador.getCartasNecesita();
 			}
-
 		);
 
-		return jugadores;
+		// repartimos las cartas
+		var i = 0;
+		while(i < cartasARepartir){
+
+			this.jugadores.forEach( 
+				
+				function(jugador) {
+					
+					var carta = this.cartas.getSiguienteCarta ();
+					jugador.setCarta (carta.getId());
+
+				}
+
+			);
+
+		}
 
 	}
 
-	/* */
-	deleteJugador (nombre) {
+	/* loop principal del juego */
+	jugada () {
 
-		this.jugadores.forEach (
+		switch(this.estado) {
 
-			function (jugador, i) {
+			// mus
+			case 1:
+				
+			break;
+			// descarte
+			case 2:
+				
+			break;
+			// grande
+			case 3:
+				
+			break;
+			// pequeña
+			case 4:
+				
+			break;
+			// pares
+			case 5:
+				
+			break;
+			// juego
+			case 6:
+				
+			break;
+			// punto
+			case 7:
+				
+			break;
+			// contar Puntos
+			case 8:
 
-				if(jugador.nombre == nombre)
-					this.jugadores.delete(nombre);
+			break;
 
+		}
+
+		// timer a 1 minuto
+		this.idTimeout = setTimeout(this.jugada(), 60000);
+
+	}
+
+	/* pide mus a los jugadores */
+	getMus () {
+
+		// si todos han costestado
+		if(this.esperando == 0){
+			// pedimos a todos que se descarten
+			this.sendEventRoom('descarte', null);
+		}else{
+			// definimos el siguiete jugador
+			this.setJugadorSiguiente ();
+			// preguntamos si este quiere mus
+			this.jugadores.get(this.esperando).sendEvent('¿quieres Mus?', null);
+		}
+
+	}
+
+	/* recibe la validacion del jugador para el mus */
+	setMus (validacion) {
+		
+		// si quiere mus
+		if(validacion){
+			// pedimos mus al siguiente jugador
+			this.pedirMus ();
+		// si no quiere mus
+		}else{
+			// cortamos el mus actualizando el estado de la mesa
+			this.setSiguienteEstado ();
+		}
+
+	}
+
+	/* pide que quiere hacer en la grande el jugador */
+	setGrande (jugador) {
+
+
+
+	}
+
+	/* recibe la respuesta del jugador 
+	 * respuesta = {
+		msg: no quiero | quiero | apuesto,
+		puntos: valor
+	 }
+	 * 
+	*/
+	getGrande (jugador, respuesta) {
+
+		// si apuesta habla el siguiente jugador
+		if(respuesta.msg == 'apuesto'){
+			// se suma la apuesta al bote de grande
+			this.puntuacion.sumarGrande(respuesta);
+			// avisamos a todos que han apostado a grande
+			this.sendEventRoom ('apuesta grande', {
+				jugador: this.jugadores.get(jugador).nombre,
+				puntos: respuesta.puntos
+			});
+			// habla el siguiente jugador
+			this.setJugadorSiguiente ();
+		// si se acepta la apuesta
+		}else {
+			// si quiere la apuesta
+			if(respuesta.msg == 'quiero'){
+				// actualizamos el estado al siguiente
+				this.setSiguienteEstado ();
+			}
+			// si no quiere
+			if(respuesta.msg == 'no quiero'){
+				// actualizamos el estado de hablado del jugador
+				this.jugadores.get(jugador).hablado = true;
+				// comprovamos que el compañero a hablado
+				if(this.getCompañero(jugador).hablado){
+					// actualizamos el estado al siguiente
+					this.setSiguienteEstado ();
+				}else{
+					// preguntamos al compañero que quiere hacer
+					
+				}
 			}
 
-		);
+		}
 
 	}
-
-	iniciarJuego () {
-
-		console.log("Iniciar Juego");
-
-
-
-	}
-
 
 }
 

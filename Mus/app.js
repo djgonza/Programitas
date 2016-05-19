@@ -119,7 +119,7 @@ http.listen(3000, function(){
 
 	for (var i = 0; i < 10; i++) {
 
-		mesas.set(i, new Mesa(0));
+		mesas.set(i, new Mesa(io, 0));
 
 	}
 
