@@ -12,6 +12,7 @@ class Mesa {
 		this.room 		= room;
 		this.jugadores 	= new Map ();
 		this.mano 		= null;
+		console.log(Baraja);
 		this.baraja 	= new Baraja (tipo);
 		this.puntuacion = new Puntuacion ();
 		this.idTimeout  = null;
@@ -28,6 +29,10 @@ class Mesa {
 								// 6 -> juego
 								// 7 -> punto
 								// 8 -> contarPuntos
+	}
+
+	getJugadores () {
+		return 1;
 	}
 
 	/* actualiza la mano al siguiente jugador */

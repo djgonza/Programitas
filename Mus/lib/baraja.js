@@ -157,3 +157,5 @@ class Baraja {
 
 
 }
+
+module.exports = Baraja;

@@ -129,3 +129,5 @@ class Puntuacion {
 
 
 }
+
+module.exports = Puntuacion;
